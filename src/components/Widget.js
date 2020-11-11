@@ -17,7 +17,7 @@ export default class Widget extends Component {
 
     render(){
         return (
-            <div className={"widget "+thisprops.className}>
+            <div className={"widget "+this.props.className}>
                 {this.props.children}
             </div>
         )

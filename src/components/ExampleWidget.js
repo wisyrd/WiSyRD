@@ -3,6 +3,7 @@ import Widget from './Widget';
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class ExampleWidget extends Widget {
+
     render() {
         return (
             <div className={"widget example-widget"}>
