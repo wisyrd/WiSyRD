@@ -1,5 +1,6 @@
 import ExampleWidget from './components/ExampleWidget';
 import Widget from './components/Widget';
+import DoubleCheckbox from "./components/DoubleCheckbox"
 
 import { ThemeProvider } from 'emotion-theming'
 import theme from '@rebass/preset'
@@ -13,6 +14,9 @@ function App() {
         <ExampleWidget>Here is my second example widget</ExampleWidget>
         <ExampleWidget>Here is my second example widget</ExampleWidget>
         <ExampleWidget>Here is my second example widget</ExampleWidget>
+      <DoubleCheckbox/>
+      <DoubleCheckbox/>
+      <DoubleCheckbox/>
       </Tiles>
     </ThemeProvider>
   );
