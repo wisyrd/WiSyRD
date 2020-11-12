@@ -1,5 +1,9 @@
 import React from 'react';
 import Widget from './Widget';
+import { ThemeProvider } from 'emotion-theming'
+import { Box, Card, Image, Heading, Text, Button } from 'rebass'
+import theme from '@rebass/preset'
+import { Tiles } from '@rebass/layout'
 
 // On the left, a checkbox that can be clicked on twice; once to indicate proficiency, a second time to indicate expertise
 
@@ -11,7 +15,7 @@ import Widget from './Widget';
 
 //extends Widget
 
-export default class SkillWidget extends React.Component {
+export default class SkillWidget extends Widget {
     state = {
         acProficiency: 0,
         ahProficiency: 0,
@@ -192,13 +196,16 @@ export default class SkillWidget extends React.Component {
 
     render() {
         return (
-            <div>
+            <Box>
                 <h1>Skillz</h1>
                 <p>{this.props.children}</p>
-                <button className="prof-button" onClick={this.indicateAcProf} style={{ float: "left" }}>Proficiency Button</button>
+                <Button variant='primary' mr={2} onClick={this.indicateAcProf} style={{ float: "left" }}>Proficiency Button</Button>
                 {this.acProfCheckbox()}
-                <p className="skill-numbers">10 Acrobatics</p>
-                <p>Proficiency: {this.state.acProficiency}</p>
+                <Text
+                fontSize={[ 3, 4, 5 ]}
+                fontWeight='bold'
+                color='primary'>10 Acrobatics
+                Proficiency: {this.state.acProficiency}</Text>
                 <button className="prof-button" onClick={this.indicateAhProf} style={{ float: "left" }}>Proficiency Button</button><p className="skill-numbers">10 Animal Handling</p>
                 <p>Proficiency: {this.state.ahProficiency}</p>
                 <button className="prof-button" onClick={this.indicateArProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Arcana</p>
@@ -234,7 +241,7 @@ export default class SkillWidget extends React.Component {
                 <button className="prof-button" onClick={this.indicateSuProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Survival</p>
                 <p>Proficiency: {this.state.suProficiency}</p>
                 <button className="tutorial-button" /* onClick={this.tutorialOpen}*/>Tutorial Button</button>
-            </div>
+            </Box>
         )
     }
 }
