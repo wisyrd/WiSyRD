@@ -1,6 +1,7 @@
 import ExampleWidget from './components/ExampleWidget';
 import Widget from './components/Widget';
 import renderWidgets from './WidgetRenderer';
+import DoubleCheckbox from './components/DoubleCheckbox'
 
 import { ThemeProvider } from 'emotion-theming'
 import theme from '@rebass/preset'
@@ -20,6 +21,7 @@ function App() {
     <ThemeProvider className="App" theme={theme}>
       <Tiles columns={[1, 2, 4]}>
         {renderWidgets(widgets)}
+        <DoubleCheckbox />
       </Tiles>
     </ThemeProvider>
   );
