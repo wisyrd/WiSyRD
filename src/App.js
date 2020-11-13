@@ -1,5 +1,6 @@
 // import BasicWidget from './components/BasicWidget';
 import AttackWidget from './components/AttacksWidget';
+import InventoryWidget from './components/InventoryWidget';
 import Widget from './components/Widget';
 import renderWidgets from './WidgetRenderer';
 import DoubleCheckbox from './components/DoubleCheckbox'
