@@ -4,9 +4,9 @@ import {Input, Label} from "@rebass/forms"
 import Widget from './Widget';
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
-export default class ExampleWidget extends Widget {
+export default class BasicWidget extends Widget {
 
-    render() {
+    renderFrame() {
         return (
           
             <Box {...this.props} className={"widget example-widget"}>

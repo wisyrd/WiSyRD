@@ -1,4 +1,4 @@
-import ExampleWidget from './components/ExampleWidget';
+import BasicWidget from './components/BasicWidget';
 import Widget from './components/Widget';
 
 import { ThemeProvider } from 'emotion-theming'
