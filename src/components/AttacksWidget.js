@@ -3,7 +3,6 @@ import { Box, Heading, Text, Flex } from "rebass";
 import Widget from "./Widget";
 import { Label, Input } from "@rebass/forms";
 
-// Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class AttacksWidget extends Widget {
   render() {
     return (
@@ -48,3 +47,4 @@ export default class AttacksWidget extends Widget {
     );
   }
 }
+
