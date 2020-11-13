@@ -6,6 +6,7 @@ import DoubleCheckbox from './components/DoubleCheckbox'
 import { ThemeProvider } from 'emotion-theming'
 import theme from '@rebass/preset'
 import { Tiles } from '@rebass/layout'
+import NotesWidget from './components/NotesWidget';
 
 let widgets = [
   new AttackWidget({x: 7, children: "Hello"}),
@@ -13,7 +14,8 @@ let widgets = [
   new AttackWidget({x: 2, children: "baby!"}),
   new AttackWidget({x: 4, children: "Hello"}),
   new AttackWidget({x: 5, children: "my"}),
-  new AttackWidget({x: 3, children: "honey!"})
+  new AttackWidget({x: 3, children: "honey!"}),
+  new NotesWidget({x: 1, children: ""})
 ]
 
 function App() {
