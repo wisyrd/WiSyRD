@@ -6,6 +6,12 @@ import Widget from './Widget';
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class BasicWidget extends Widget {
 
+    constructor(props){
+        super(props);
+        this.title = "Basic Info widget";
+        this.widgetType = "Basic-widget"
+    }
+
     renderPanel() {
         return (<>
                  <Flex>
