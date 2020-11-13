@@ -20,8 +20,15 @@ function App() {
   return (
     <ThemeProvider className="App" theme={theme}>
       <Tiles columns={[1, 2, 4]}>
+<<<<<<< HEAD
+        {/* <ExampleWidget>Hello World!</ExampleWidget>
+        <ExampleWidget>Here is my second example widget</ExampleWidget>
+        <ExampleWidget>Here is my second example widget</ExampleWidget> */}
+        <ExampleWidget>Here is my second example widget</ExampleWidget>
+=======
         {renderWidgets(widgets)}
         <DoubleCheckbox />
+>>>>>>> d0cad5ff784fad8a3d91741d22bebf5f42c75701
       </Tiles>
     </ThemeProvider>
   );
