@@ -6,12 +6,9 @@ import Widget from './Widget';
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class BasicWidget extends Widget {
 
-    renderFrame() {
-        return (
-          
-            <Box {...this.props} className={"widget example-widget"}>
-                <Heading>Basic Information</Heading>
-                    <Flex>
+    renderPanel() {
+        return (<>
+                 <Flex>
                     {/* <Label htmlFor='Character Name'>
                             Name:
                             </Label> */}
@@ -64,8 +61,7 @@ export default class BasicWidget extends Widget {
                             placeholder='Subclass'
                         width={1 / 2} />
                 </Flex>
-                </Box>
-                
+            </>
         )
     }
 }
