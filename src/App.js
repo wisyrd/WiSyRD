@@ -1,4 +1,6 @@
 import BasicWidget from './components/BasicWidget';
+import ExampleWidget from './components/ExampleWidget'
+import Attributes from './components/Attributes'
 import AttackWidget from './components/AttacksWidget';
 import InventoryWidget from './components/InventoryWidget';
 import Widget from './components/Widget';
@@ -26,8 +28,15 @@ function App() {
   return (
     <ThemeProvider className="App" theme={theme}>
       <Tiles columns={[1, 2, 4]}>
+<<<<<<< HEAD
+        <ExampleWidget></ExampleWidget>
+        
+        
+=======
+>>>>>>> dev
         {renderWidgets(widgets)}
       </Tiles>
+      <Attributes></Attributes>
     </ThemeProvider>
   );
 }
