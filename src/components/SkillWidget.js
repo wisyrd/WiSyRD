@@ -4,6 +4,7 @@ import { ThemeProvider } from 'emotion-theming'
 import { Box, Card, Image, Heading, Text, Button } from 'rebass'
 import theme from '@rebass/preset'
 import { Tiles } from '@rebass/layout'
+import DoubleCheckbox from './DoubleCheckbox'
 
 // On the left, a checkbox that can be clicked on twice; once to indicate proficiency, a second time to indicate expertise
 
@@ -12,8 +13,6 @@ import { Tiles } from '@rebass/layout'
 // Eventually, import number for skill from props. But for now, populate it with default numbers. No exporting needed because the calculations are made in app's state.
 
 // Lower right will have a ? that, when clicked, will open a modal explaining each skill, how the number is calculated, and what proficiency/expertise means.
-
-//extends Widget
 
 export default class SkillWidget extends Widget {
     state = {
@@ -199,46 +198,45 @@ export default class SkillWidget extends Widget {
             <Box>
                 <h1>Skillz</h1>
                 <p>{this.props.children}</p>
-                <Button variant='primary' mr={2} onClick={this.indicateAcProf} style={{ float: "left" }}>Proficiency Button</Button>
-                {this.acProfCheckbox()}
+                <DoubleCheckbox/>
                 <Text
                 fontSize={[ 3, 4, 5 ]}
                 fontWeight='bold'
                 color='primary'>10 Acrobatics
                 Proficiency: {this.state.acProficiency}</Text>
-                <button className="prof-button" onClick={this.indicateAhProf} style={{ float: "left" }}>Proficiency Button</button><p className="skill-numbers">10 Animal Handling</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Animal Handling</p>
                 <p>Proficiency: {this.state.ahProficiency}</p>
-                <button className="prof-button" onClick={this.indicateArProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Arcana</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Arcana</p>
                 <p>Proficiency: {this.state.arProficiency}</p>
-                <button className="prof-button" onClick={this.indicateAtProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Athletics</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Athletics</p>
                 <p>Proficiency: {this.state.atProficiency}</p>
-                <button className="prof-button" onClick={this.indicateDeProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Deception</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Deception</p>
                 <p>Proficiency: {this.state.deProficiency}</p>
-                <button className="prof-button" onClick={this.indicateHiProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 History</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 History</p>
                 <p>Proficiency: {this.state.hiProficiency}</p>
-                <button className="prof-button" onClick={this.indicateInsProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Insight</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Insight</p>
                 <p>Proficiency: {this.state.insProficiency}</p>
-                <button className="prof-button" onClick={this.indicateIntProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Intimidation</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Intimidation</p>
                 <p>Proficiency: {this.state.intProficiency}</p>
-                <button className="prof-button" onClick={this.indicateInvProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Investigation</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Investigation</p>
                 <p>Proficiency: {this.state.invProficiency}</p>
-                <button className="prof-button" onClick={this.indicateMeProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Medicine</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Medicine</p>
                 <p>Proficiency: {this.state.meProficiency}</p>
-                <button className="prof-button" onClick={this.indicateNaProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Nature</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Nature</p>
                 <p>Proficiency: {this.state.naProficiency}</p>
-                <button className="prof-button" onClick={this.indicatePercProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Perception</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Perception</p>
                 <p>Proficiency: {this.state.percProficiency}</p>
-                <button className="prof-button" onClick={this.indicatePerfProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Performance</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Performance</p>
                 <p>Proficiency: {this.state.perfProficiency}</p>
-                <button className="prof-button" onClick={this.indicatePersProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Persuasion</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Persuasion</p>
                 <p>Proficiency: {this.state.persProficiency}</p>
-                <button className="prof-button" onClick={this.indicateReProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Religion</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Religion</p>
                 <p>Proficiency: {this.state.reProficiency}</p>
-                <button className="prof-button" onClick={this.indicateSlProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Sleight of Hand</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Sleight of Hand</p>
                 <p>Proficiency: {this.state.slProficiency}</p>
-                <button className="prof-button" onClick={this.indicateStProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Stealth</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Stealth</p>
                 <p>Proficiency: {this.state.stProficiency}</p>
-                <button className="prof-button" onClick={this.indicateSuProf} style={{float: "left"}}>Proficiency Button</button><p className="skill-numbers">10 Survival</p>
+                <DoubleCheckbox/><p className="skill-numbers">10 Survival</p>
                 <p>Proficiency: {this.state.suProficiency}</p>
                 <button className="tutorial-button" /* onClick={this.tutorialOpen}*/>Tutorial Button</button>
             </Box>
