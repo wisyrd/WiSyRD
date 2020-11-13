@@ -13,7 +13,7 @@ let widgets = [
   // new AttackWidget({x: 7, children: "Hello"}),
   // new AttackWidget({x: 6, children: "my"}),
   // new AttackWidget({x: 2, children: "baby!"}),
-  // new AttackWidget({x: 4, children: "Hello"}),
+  new BasicWidget({x: 4, children: "Hello"}),
   new InventoryWidget({x: 5, children: "my"}),
   new AttackWidget({x: 3, children: "honey!"})
 ]
