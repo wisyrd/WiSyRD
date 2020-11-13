@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Box, Heading } from "rebass";
 
 export default class Widget extends Component {
     
@@ -17,9 +18,23 @@ export default class Widget extends Component {
 
     render(){
         return (
-            <div className={"widget "+this.props.className}>
-                {this.props.children}
-            </div>
+            <Box
+                className={`widget ${this.widgetType} ${this.props.className?this.props.className:""}`}
+                bg="#dddddd">
+                <Box bg="primary" color="white" px={2}>
+                <Heading>{this.id} {this.title}</Heading>
+                </Box>
+                <Box p={1}>
+                    {this.renderPanel()}
+                </Box>
+            </Box>
+        )
+    }
+
+    // OVERRIDE THIS
+    renderPanel(){
+        return (
+            <Heading>YOU FORGOT TO OVERRIDE THE renderFrame() METHOD</Heading>
         )
     }
     
