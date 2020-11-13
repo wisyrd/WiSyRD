@@ -185,12 +185,9 @@ export default class SkillWidget extends Widget {
     }
 
     acProfCheckbox = () => {
-        if (this.state.acProficiency === 0)
-        {return <h3 style={{ float: "left" }}>Ac not Prof</h3>;}
-        else if (this.state.acProficiency === 1)
-        {return <h3 style={{ float: "left" }}>Ac kinda Prof</h3>;}
-        else if (this.state.acProficiency === 2)
-        {return <h3 style={{ float: "left" }}>Ac v Prof</h3>;}
+        if (this.state.acProficiency === 0) { return <h3 style={{ float: "left" }}>Ac not Prof</h3>; }
+        else if (this.state.acProficiency === 1) { return <h3 style={{ float: "left" }}>Ac kinda Prof</h3>; }
+        else if (this.state.acProficiency === 2) { return <h3 style={{ float: "left" }}>Ac v Prof</h3>; }
     }
 
     render() {
@@ -198,45 +195,45 @@ export default class SkillWidget extends Widget {
             <Box>
                 <h1>Skillz</h1>
                 <p>{this.props.children}</p>
-                <DoubleCheckbox/>
+                <DoubleCheckbox />
                 <Text
-                fontSize={[ 3, 4, 5 ]}
-                fontWeight='bold'
-                color='primary'>10 Acrobatics
+                    fontSize={[3, 4, 5]}
+                    fontWeight='bold'
+                    color='primary'>10 Acrobatics
                 Proficiency: {this.state.acProficiency}</Text>
-                <DoubleCheckbox/><p className="skill-numbers">10 Animal Handling</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Animal Handling</p>
                 <p>Proficiency: {this.state.ahProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Arcana</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Arcana</p>
                 <p>Proficiency: {this.state.arProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Athletics</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Athletics</p>
                 <p>Proficiency: {this.state.atProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Deception</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Deception</p>
                 <p>Proficiency: {this.state.deProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 History</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 History</p>
                 <p>Proficiency: {this.state.hiProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Insight</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Insight</p>
                 <p>Proficiency: {this.state.insProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Intimidation</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Intimidation</p>
                 <p>Proficiency: {this.state.intProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Investigation</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Investigation</p>
                 <p>Proficiency: {this.state.invProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Medicine</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Medicine</p>
                 <p>Proficiency: {this.state.meProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Nature</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Nature</p>
                 <p>Proficiency: {this.state.naProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Perception</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Perception</p>
                 <p>Proficiency: {this.state.percProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Performance</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Performance</p>
                 <p>Proficiency: {this.state.perfProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Persuasion</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Persuasion</p>
                 <p>Proficiency: {this.state.persProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Religion</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Religion</p>
                 <p>Proficiency: {this.state.reProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Sleight of Hand</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Sleight of Hand</p>
                 <p>Proficiency: {this.state.slProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Stealth</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Stealth</p>
                 <p>Proficiency: {this.state.stProficiency}</p>
-                <DoubleCheckbox/><p className="skill-numbers">10 Survival</p>
+                <DoubleCheckbox /><p className="skill-numbers">10 Survival</p>
                 <p>Proficiency: {this.state.suProficiency}</p>
                 <button className="tutorial-button" /* onClick={this.tutorialOpen}*/>Tutorial Button</button>
             </Box>
