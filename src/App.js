@@ -9,9 +9,9 @@ function App() {
   return (
     <ThemeProvider className="App" theme={theme}>
       <Tiles columns={[1, 2, 4]}>
-        <ExampleWidget>Hello World!</ExampleWidget>
+        {/* <ExampleWidget>Hello World!</ExampleWidget>
         <ExampleWidget>Here is my second example widget</ExampleWidget>
-        <ExampleWidget>Here is my second example widget</ExampleWidget>
+        <ExampleWidget>Here is my second example widget</ExampleWidget> */}
         <ExampleWidget>Here is my second example widget</ExampleWidget>
       </Tiles>
     </ThemeProvider>
