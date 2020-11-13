@@ -8,6 +8,7 @@ import SkillWidget from "./components/SkillWidget"
 import { ThemeProvider } from 'emotion-theming'
 import theme from '@rebass/preset'
 import { Tiles } from '@rebass/layout'
+import NotesWidget from './components/NotesWidget';
 
 let widgets = [
   new AttackWidget({x: 7, children: "Hello"}),
