@@ -1,4 +1,6 @@
 import BasicWidget from './components/BasicWidget';
+import ExampleWidget from './components/ExampleWidget'
+import Attributes from './components/Attributes'
 import AttackWidget from './components/AttacksWidget';
 import Widget from './components/Widget';
 import renderWidgets from './WidgetRenderer';
@@ -23,9 +25,11 @@ function App() {
       <Tiles columns={[1, 2, 4]}>
         <ExampleWidget></ExampleWidget>
         
+        
         {renderWidgets(widgets)}
         <DoubleCheckbox />
       </Tiles>
+      <Attributes></Attributes>
     </ThemeProvider>
   );
 }
