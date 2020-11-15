@@ -2,6 +2,9 @@ import React from "react";
 import { Box, Button, Heading, Text, Flex } from "rebass";
 import { Input, Label, Checkbox, Slider } from "@rebass/forms";
 import Widget from "./Widget";
+const DESCRIPTIONS = [
+  "Not exhausted", "Disadvantage on Ability Checks", "	Speed halved", "Disadvantage on Attack rolls and Saving Throws", "Hit point maximum halved","Speed reduced to 0", "Death"
+]
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class ExplorationWidget extends Widget {
@@ -16,7 +19,7 @@ export default class ExplorationWidget extends Widget {
     this.handleIncrement = (event) => {
       console.log("handleIncrement");
       console.log(event.target.value);
-      this.setState({ value: event.target.value });
+      this.setState({ value: event.target.value, description: DESCRIPTIONS[event.target.value] });
       console.log(this.state);
     };
   }
@@ -99,20 +102,7 @@ export default class ExplorationWidget extends Widget {
           </Box>
         </Flex>
         <Box>
-          <Label htmlFor="exhaustion">Exhaustion:</Label>
-          {/* {this.state.value} */}
-           {/* const Exhaustion (event) => {
-              if (this.state.value === 1) {
-                  <ul>
-                      "You're tired"
-                  </ul>
-                  
-              } else {
-                  <ul>
-                      "Not tired"
-                  </ul>
-              }
-        }  */}
+          <Label htmlFor="exhaustion">Exhaustion: {this.state.value}</Label>
           <Slider
             onChange={this.handleIncrement}
             id="exhaustion"
@@ -122,6 +112,9 @@ export default class ExplorationWidget extends Widget {
             max="6"
             bg="primary"
           />
+          <Text>
+            {this.state.description}
+          </Text>
         </Box>
         {/* <Box>
            <Text>
