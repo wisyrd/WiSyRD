@@ -13,6 +13,8 @@ import { ThemeProvider } from 'emotion-theming'
 import theme from '@rebass/preset'
 import { Tiles } from '@rebass/layout'
 import NotesWidget from './components/NotesWidget';
+import CombatStat from './components/CombatStat';
+import ExplorationWidget from './components/ExplorationWidget';
 
 let widgets = [
   new BasicWidget({x: 7, children: "Hello"}),
@@ -28,13 +30,8 @@ function App() {
   return (
     <ThemeProvider className="App" theme={theme}>
       <Tiles columns={[1, 2, 4]}>
-<<<<<<< HEAD
-        <ExampleWidget></ExampleWidget>
-        
-        
-=======
->>>>>>> dev
         {renderWidgets(widgets)}
+        <ExplorationWidget />
       </Tiles>
       <Attributes></Attributes>
     </ThemeProvider>
