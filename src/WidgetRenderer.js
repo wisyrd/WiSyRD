@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Tiles} from "@rebass/layout"
+import ReactGridLayout from "react-grid-layout";
 import AttacksWidget from "./components/AttacksWidget";
 import ExampleWidget from "./components/ExampleWidget";
 
@@ -11,28 +11,22 @@ export default class WidgetRenderer extends Component{
         this.state = {
             widgetList: [ 0, 1, 2, 3, 4, 5],
             0:{component: AttacksWidget,
-                x: 0,
-                y: 0
+                layout: {x: 0, y:0, w:1, h: 1}
             },
             1:{component: AttacksWidget,
-                x: 0,
-                y: 0
+                layout: {x: 0, y:1, w:1, h: 1}
             },
             2:{component: AttacksWidget,
-                x: 0,
-                y: 0
+                layout: {x: 0, y:2, w:1, h: 1}
             },
             3:{component: AttacksWidget,
-                x: 0,
-                y: 0
+                layout: {x: 0, y:3, w:1, h: 1}
             },
             4:{component: ExampleWidget,
-                x: 0,
-                y: 0
+                layout: {x: 0, y:4, w:1, h: 1}
             },
             5:{component: AttacksWidget,
-                x: 0,
-                y: 0
+                layout: {x: 0, y:5, w:1, h: 1}
             }
         };
     }
@@ -43,6 +37,43 @@ export default class WidgetRenderer extends Component{
         console.log(this.state);
     }
 
+    sortWidgets(){
+
+        let newWidgetList = this.state.widgetList.sort((a,b)=>{
+            return this.state[a].x-this.state[b].x;
+        })
+
+        // this.state.widgetList = newWidgetList;
+
+        return newWidgetList;
+    }
+
+    compressWidgets(){
+
+        let newState = {... this.state}
+        for(let i=0; i<newState.widgetList.length; i++){
+            newState[newState.widgetList[i]].x = i;
+        }
+
+        // this.state = newState;
+
+        return newState;
+
+    }
+
+    componentDidUpdate=(prevProps, prevState)=>{
+        let sortedWidgetList = this.sortWidgets();
+        
+        if(this.state.widgetList!=sortedWidgetList){
+            // this.setState({widgetList: sortedWidgetList});
+            
+            let compressedState = this.compressWidgets();
+            
+            this.setState({...compressedState, widgetList: sortedWidgetList});
+            
+        }
+    }
+
     renderWidgets=()=>{
         console.log("RENDERING!");
         return this.state.widgetList.map(widgetId=>{
@@ -50,19 +81,18 @@ export default class WidgetRenderer extends Component{
             // return <AttacksWidget x={0} />
             let widget = this.state[widgetId];
             let ThisWidgetType = widget.component;
-            return <ThisWidgetType  key            = {widgetId}
-                                    id             = {widgetId}
-                                    x              = {widget.x}
-                                    y              = {widget.y}
+            return (<div data-grid = {widget.layout} key={widgetId}>
+                    <ThisWidgetType id             = {widgetId}
                                     globalState    = {this.state}
                                     setGlobalState = {this.handleStateChange}
-                                    widgetState    = {widget}/>;
+                                    widgetState    = {widget}/>
+                                    </div>)
         })
     }
 
     render=()=>{
-        return (<Tiles columns={[1,2,4]}>
+        return (<ReactGridLayout className="layout" cols={2} rowHeight={110} width={1200}>
             {this.renderWidgets()}
-        </Tiles>)
+        </ReactGridLayout>)
     }
 }

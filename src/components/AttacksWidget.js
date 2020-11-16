@@ -49,4 +49,3 @@ export default class AttacksWidget extends Widget {
     );
   }
 }
-
