@@ -5,10 +5,9 @@ import AttackWidget from './components/AttacksWidget';
 import InventoryWidget from './components/InventoryWidget';
 import Widget from './components/Widget';
 import renderWidgets from './WidgetRenderer';
-import DoubleCheckbox from './components/DoubleCheckbox'
 import SkillWidget from "./components/SkillWidget"
 import CombatWidget from "./components/CombatStat"
-
+import SpellbookWidget from "./components/SpellbookWidget"
 import { ThemeProvider } from 'emotion-theming'
 import theme from '@rebass/preset'
 import { Tiles } from '@rebass/layout'
@@ -32,6 +31,7 @@ function App() {
       <Tiles columns={[1, 2, 4]}>
         {renderWidgets(widgets)}
         <ExplorationWidget />
+        <SpellbookWidget userClass="wizard"/>
       </Tiles>
       <Attributes></Attributes>
     </ThemeProvider>
