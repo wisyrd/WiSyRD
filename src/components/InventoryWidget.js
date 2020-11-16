@@ -18,7 +18,7 @@ export default class InventoryWidget extends Widget {
         this.state.rowArray.push(0);
         this.setState(this.state)
     }
-    renderPanel() {
+    renderPanel=()=> {
         return (<>
             <Flex>
                 <Label htmlFor='Inventory'>

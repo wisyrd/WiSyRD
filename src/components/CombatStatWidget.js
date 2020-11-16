@@ -6,15 +6,16 @@ import { Flex } from 'reflexbox'
 
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
-export default class CombatStat extends Widget {
+export default class CombatStatWidget extends Widget {
+    constructor(props){
+        super(props);
+        this.title = "Combat Stats";
+        this.widgetType = "combat-stat-widget"
+    }
 
-    render() {
+    renderPanel=()=> {
         return (
             <Box width={350} {...this.props} className={"widget example-widget"}>
-                <Heading
-                    color="black"
-                    bg='yellow'
-                >Combat Stats</Heading>
 
                 {/* ================================================
                                 HP Header

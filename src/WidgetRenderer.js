@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import ReactGridLayout from "react-grid-layout";
 import AttacksWidget from "./components/AttacksWidget";
 import ExampleWidget from "./components/ExampleWidget";
+import ExplorationWidget from "./components/ExplorationWidget";
+import NotesWidget from "./components/NotesWidget";
+import SkillWidget from "./components/SkillWidget";
+import AttributesWidget from "./components/AttributesWidget";
+import BasicWidget from "./components/BasicWidget";
+import CombatStatWidget from "./components/CombatStatWidget";
+import InventoryWidget from "./components/InventoryWidget";
+import SpellbookWidget from "./components/SpellbookWidget";
 
 export default class WidgetRenderer extends Component{
     // static defaultProps = {
@@ -11,23 +19,35 @@ export default class WidgetRenderer extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            0:{component: AttacksWidget,
-                layout: {x: 0, y:0, w:1, h: 1}
+            0:{component: NotesWidget,
+                layout: {x: 0, y:0, w:1, h: 2}
             },
             1:{component: AttacksWidget,
-                layout: {x: 0, y:1, w:1, h: 1}
+                layout: {x: 0, y:1, w:1, h: 2}
             },
-            2:{component: AttacksWidget,
-                layout: {x: 0, y:2, w:1, h: 1}
+            2:{component: ExplorationWidget,
+                layout: {x: 0, y:2, w:1, h: 4}
             },
-            3:{component: AttacksWidget,
-                layout: {x: 0, y:3, w:1, h: 1}
+            3:{component: SkillWidget,
+                layout: {x: 0, y:3, w:1, h: 17}
             },
             4:{component: ExampleWidget,
-                layout: {x: 0, y:4, w:1, h: 1}
+                layout: {x: 1, y:0, w:1, h: 2}
             },
-            5:{component: AttacksWidget,
-                layout: {x: 0, y:5, w:1, h: 1}
+            5:{component: AttributesWidget,
+                layout: {x: 1, y:1, w:1, h: 9}
+            },
+            6:{component: BasicWidget,
+                layout: {x: 1, y:2, w:1, h: 3}
+            },
+            7:{component: CombatStatWidget,
+                layout: {x: 1, y:3, w:1, h: 9}
+            },
+            8:{component: InventoryWidget,
+                layout: {x: 0, y:4, w:1, h: 3}
+            },
+            9:{component: SpellbookWidget,
+                layout: {x: 1, y:4, w:1, h: 6}
             }
         };
     }
@@ -60,7 +80,7 @@ export default class WidgetRenderer extends Component{
     // }
 
     render=()=>{
-        return (<ReactGridLayout className="layout"  cols={2} rowHeight={110} width={1200}>
+        return (<ReactGridLayout className="layout"  cols={2} rowHeight={55} width={1200}>
             {this.renderWidgets()}
         </ReactGridLayout>)
     }
