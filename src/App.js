@@ -16,8 +16,7 @@ let widgets = [
   new AttackWidget({x: 4, children: "Hello"}),
   new AttackWidget({x: 5, children: "my"}),
   new AttackWidget({x: 3, children: "honey!"}),
-  new SkillWidget({x: 1, children: "Skills"}),
-  new SpellbookWidget({x: 8, children: "Spellbook", userClass: "cleric"})
+  new SkillWidget({x: 1, children: "Skills"})
 ]
 
 function App() {
@@ -25,7 +24,7 @@ function App() {
     <ThemeProvider className="App" theme={theme}>
       <Tiles columns={[1, 2, 4]}>
         {renderWidgets(widgets)}
-        <SpellbookWidget userClass="cleric"/>
+        <SpellbookWidget userClass="wizard"/>
       </Tiles>
     </ThemeProvider>
   );
