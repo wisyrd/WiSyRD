@@ -2,8 +2,7 @@ import React from 'react';
 import { Box, Flex, Button, Heading, Text, } from 'rebass';
 import { Input, Label } from "@rebass/forms"
 import Widget from './Widget';
-import AddInventory from './AddInventoryBtn'
-
+import InventoryRow from './InventoryRow'
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class InventoryWidget extends Widget {
@@ -12,8 +11,13 @@ export default class InventoryWidget extends Widget {
         super(props);
         this.title = "Inventory widget";
         this.widgetType = "Inventory-widget"
+        this.state = {rowArray: [0]}
     }
+    addRow() {
 
+        this.state.rowArray.push(0);
+        this.setState(this.state)
+    }
     renderPanel() {
         return (<>
             <Flex>
@@ -51,14 +55,13 @@ export default class InventoryWidget extends Widget {
             <Flex>
                 <label>"Imported Weight?"//</label><label>// Encumberance Weight</label>
             </Flex>
+            {this.state.rowArray.map(row => {
+                return <InventoryRow />
+            })}
             
-            <Flex className="invBox">
-            <Box width={1/8} p={3} color='background' bg='olive'>QT.</Box>
-                <Box width={5/8} p={3} color='background' bg='burlywood'>Item Name</Box>
-                <Box p={3} color='background' bg='olive'>Location</Box>
-                <Box p={3} color='background' bg='burlywood'>Weight</Box>
-            </Flex>           
-            <AddInventory />
+            <Button onClick = {() => {this.addRow()}}>
+          +         
+    </Button>            
         </>
         )
            
