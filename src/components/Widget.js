@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Flex, Box, Heading, Text } from "rebass";
+import { Flex, Box, Heading, Text, Button } from "rebass";
 
 export default class Widget extends Component {
     
@@ -36,10 +36,20 @@ export default class Widget extends Component {
         )
     }
 
+    handleChangeHeight=()=>{
+        this.setWidgetState({layout: {
+            x: this.props.widgetState.layout.x,
+            y: this.props.widgetState.layout.y,
+            w: 1,
+            h: 2
+        }});
+    }
+
     // OVERRIDE THIS
     renderPanel=()=>{
         return (<>
             <Heading>YOU FORGOT TO OVERRIDE THE renderPanel() METHOD</Heading>
+            <Button onClick={()=>this.handleChangeHeight()}>Biggen</Button>
             <Text>kajsdfpqiwejfpiasdnfpiawefpiasenfpiasejnfpaseijfpaisefias</Text>
             <Text>kajsdfpqiwejfpiasdnfpiawefpiasenfpiasejnfpaseijfpaisefias</Text>
             <Text>kajsdfpqiwejfpiasdnfpiawefpiasenfpiasejnfpaseijfpaisefias</Text>
