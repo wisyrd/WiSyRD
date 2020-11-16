@@ -31,7 +31,8 @@ function App() {
       <Tiles columns={[1, 2, 4]}>
         {renderWidgets(widgets)}
         <ExplorationWidget />
-        <SpellbookWidget userClass="wizard"/>
+        <SpellbookWidget userClass="wizard" />
+        <InventoryWidget />
       </Tiles>
       <Attributes></Attributes>
     </ThemeProvider>
