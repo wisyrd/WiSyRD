@@ -61,10 +61,16 @@ export default class BasicWidget extends Widget {
                         Subclass:
                     </Label> */}
                     <Input
-                            id='charClass'
-                            name="charClass"
+                            id='charSub'
+                            name="charSub"
                             type="text"
                             placeholder='Subclass'
+                    width={1 / 2} />
+                <Input
+                            id='charExp'
+                            name="charExp"
+                            type="text"
+                            placeholder='Exp.'
                         width={1 / 2} />
                 </Flex>
             </>
