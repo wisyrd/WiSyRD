@@ -267,7 +267,7 @@ export default class SkillWidget extends Widget {
                     </Text>
                 </Flex>
                 <Flex>
-                    <TutorialButton tutorial="skill"/>
+                    <TutorialButton tutorialName="skill"/>
                 </Flex>
             </Box>
         )
