@@ -1,17 +1,22 @@
 import React from "react";
-import { Box, Heading, Text, Flex } from "rebass";
+import { Flex } from "rebass";
 import Widget from "./Widget";
-import { Label, Input } from "@rebass/forms";
+import { Input } from "@rebass/forms";
 
 export default class AttacksWidget extends Widget {
-  render() {
+  constructor(props){
+    console.log(props);
+    super(props);
+    this.title = "Attacks Widget";
+    this.widgetType = "attacks-widget"
+  }
+
+  renderPanel=()=>{
     return (
-        <Box {...this.props} className={"widget attacks-widget"}>
-        <Heading>Attack Widget</Heading>
+        <>
           <Flex>
             {/* <Label htmlFor="Attack Name">Attack Name</Label> */}
             <Input
-              id="attackName"
               name="attack"
               type="text"
               placeholder="Attack Name "
@@ -20,7 +25,6 @@ export default class AttacksWidget extends Widget {
           <Flex>
             {/* <Label htmlFor="Hit">Hit</Label> */}
             <Input
-              id="hit"
               name="hit"
               type="text"
               placeholder="Hit Mod"
@@ -28,7 +32,6 @@ export default class AttacksWidget extends Widget {
             />
             {/* <Label htmlFor="Range">Range</Label> */}
             <Input
-              id="range"
               name="range"
               type="text"
               placeholder="Attack Range "
@@ -36,14 +39,13 @@ export default class AttacksWidget extends Widget {
             />
             {/* <Label htmlFor="DamgageType">Damage/Type</Label> */}
             <Input
-              id="damageType"
               name="damageType"
               type="text"
               placeholder="Damage"
               width={1 / 3}
             />
           </Flex>
-        </Box>
+        </>
     );
   }
 }
