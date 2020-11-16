@@ -6,13 +6,14 @@ import renderWidgets from './WidgetRenderer';
 import DoubleCheckbox from './components/DoubleCheckbox'
 import SkillWidget from "./components/SkillWidget"
 
+
 import { ThemeProvider } from 'emotion-theming'
 import theme from '@rebass/preset'
 import { Tiles } from '@rebass/layout'
 import NotesWidget from './components/NotesWidget';
 
 let widgets = [
-  new AttackWidget({x: 7, children: "Hello"}),
+  new InventoryWidget({x: 7, children: "Hello"}),
   new AttackWidget({x: 6, children: "my"}),
   new AttackWidget({x: 2, children: "baby!"}),
   new AttackWidget({x: 4, children: "Hello"}),

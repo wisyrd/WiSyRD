@@ -2,6 +2,8 @@ import React from 'react';
 import { Box, Flex, Button, Heading, Text, } from 'rebass';
 import { Input, Label } from "@rebass/forms"
 import Widget from './Widget';
+import AddInventory from './AddInventoryBtn'
+
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class InventoryWidget extends Widget {
@@ -50,19 +52,15 @@ export default class InventoryWidget extends Widget {
                 <label>"Imported Weight?"//</label><label>// Encumberance Weight</label>
             </Flex>
             
-            <Flex>
-            <Box width={1/8} p={3} color='background' bg='olive'>QT.</Box>
-                <Box width={5/8} p={3} color='background' bg='burlywood'>Item Name</Box>
-                <Box p={3} color='background' bg='olive'>Location</Box>
-                <Box p={3} color='background' bg='burlywood'>Weight</Box>
-            </Flex>
-            <Flex>
+            <Flex className="invBox">
             <Box width={1/8} p={3} color='background' bg='olive'>QT.</Box>
                 <Box width={5/8} p={3} color='background' bg='burlywood'>Item Name</Box>
                 <Box p={3} color='background' bg='olive'>Location</Box>
                 <Box p={3} color='background' bg='burlywood'>Weight</Box>
             </Flex>           
+            <AddInventory />
         </>
         )
+           
     }
 }
