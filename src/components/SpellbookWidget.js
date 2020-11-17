@@ -16,6 +16,8 @@ import SpellCard from "./SpellCard";
 export default class SpellbookWidget extends Widget {
     constructor(props) {
         super(props);
+        // Here is where you write the tutorial!!!
+        this.tutorialText = "",
         this.state = {
             spellList: [{
                 "name": "Acid Arrow",
@@ -220,7 +222,7 @@ export default class SpellbookWidget extends Widget {
                         <option value="audi">Audi</option> */}
                     </select>
                     </Text>
-                    <TutorialButton tutorialName="spellbook"/>
+                    <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
 
                 <Flex>

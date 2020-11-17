@@ -10,25 +10,7 @@ export default function TutorialButton(props) {
     //On click, open the specific tutorial...
 
     function indicateState() {
-        // Expecting to be passed a prop with the key "tutorialName"
-        switch (props.tutorialName) {
-            case "spellbook":
-                // Write the entire tutorial inside the setTutorialState piece here, for each widget. Inside the quotation marks.
-                setTutorialState("HERE'S YOUR SPELL TUTORIAL")
-                break;
-            case "skill":
-                setTutorialState("HERE'S YOUR SKILL TUTORIAL")
-                break;
-            //Define the other tutorials needed here and then their tutorials as well
-            // case "*":
-            //   value = props.num1 * props.num2;
-            //   break;/
-            // case "/":
-            //   value = props.num1 / props.num2;
-            //   break;
-            default:
-                break;
-        }
+        setTutorialState(props.tutorialText);
         setShowModalState(true);
     }
 
