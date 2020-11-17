@@ -13,7 +13,7 @@ export default class SkillWidget extends Widget {
         super(props);
         this.title = "Skill Widget";
         this.widgetType = "skill-widget";
-        this.tutorialText = ""
+        this.tutorialText = <Text>This widget will let you see all current bonuses to each skill as determined by your attributes. Select the box next to intended attribute to indicate proficiency and once more to indicate Expertise. In depth information can be found <a href="https://www.dndbeyond.com/sources/basic-rules/using-ability-scores#UsingEachAbility" target="blank">HERE</a></Text>
     }
 
     state = {

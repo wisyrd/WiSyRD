@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Flex, Button, Heading, Text, } from 'rebass';
 import {Input, Label} from "@rebass/forms"
 import Widget from './Widget';
+import TutorialButton from "./TutorialButton"
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class BasicWidget extends Widget {
@@ -10,6 +11,7 @@ export default class BasicWidget extends Widget {
         super(props);
         this.title = "Basic Info widget";
         this.widgetType = "Basic-widget"
+        this.tutorialText = <Text>This widget controls the display of basic character information. Information may be input and editted freely as necessary. In depth information on selecting a class and race may be found <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#1ChooseaRace"target="blank">HERE</a></Text>
     }
 
     renderPanel=()=> {
@@ -72,6 +74,9 @@ export default class BasicWidget extends Widget {
                             type="text"
                             placeholder='Exp.'
                         width={1 / 2} />
+            </Flex>
+            <Flex>
+                    <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
             </>
         )
