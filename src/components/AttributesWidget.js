@@ -31,38 +31,12 @@ export default class AttributesWidget extends Widget {
             {/* ================================================
                                     STR
             ================================================ */}
-                            <Box
-                                ml='auto'
-                                px={1}
-                                py={1}
-                                bg='orange'
-                                sx={{
-                                    borderWidth: '3px',
-                                    borderStyle: 'solid',
-                                    borderColor: 'white',
-                                    borderRadius: 8
-                           }}>
-                           <Text
-                               bg='grey'
-                               textAlign='center'
-                               htmlFor='initiative'
-                               fontSize={[3]}
-                               fontWeight='bold'
-                               color='black'
-                               py={1}>Str
-                            </Text>
-                            <Text
-                                textAlign='center'
-                                fontSize={[5]}
-                                fontWeight='bold'
-                                color='black'
-                                py={3}>
-                                    +/- 0
-                            </Text>
+                        <Box variant="attributesBox">
+                            <Text variant="attributesHeader">Str</Text>
+                            <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
                                     id='str'
-                                    name='str'
                                     type='str'
                                     placeholder='10'
                                 />
@@ -71,39 +45,13 @@ export default class AttributesWidget extends Widget {
             {/* ================================================
                                     Int
             ================================================ */}
-                            <Box
-                                ml='auto'
-                                px={1}
-                                py={1}
-                                bg='orange'
-                                sx={{
-                                    borderWidth: '3px',
-                                    borderStyle: 'solid',
-                                    borderColor: 'white',
-                                    borderRadius: 8
-                           }}>
-                           <Text
-                               bg='grey'
-                               textAlign='center'
-                               htmlFor='initiative'
-                               fontSize={[3]}
-                               fontWeight='bold'
-                               color='black'
-                               py={1}>Int
-                            </Text>
-                            <Text
-                                textAlign='center'
-                                fontSize={[5]}
-                                fontWeight='bold'
-                                color='black'
-                                py={3}>
-                                    +/- 0
-                            </Text>
+                        <Box variant="attributesBox">
+                           <Text variant="attributesHeader">Int</Text>
+                           <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
-                                    id='str'
-                                    name='str'
-                                    type='str'
+                                    id='Int'
+                                    type='Int'
                                     placeholder='10'
                                 />
                             </Box>
@@ -111,39 +59,13 @@ export default class AttributesWidget extends Widget {
             {/* ================================================
                                     WIS
             ================================================ */}
-                            <Box
-                                ml='auto'
-                                px={1}
-                                py={1}
-                                bg='orange'
-                                sx={{
-                                    borderWidth: '3px',
-                                    borderStyle: 'solid',
-                                    borderColor: 'white',
-                                    borderRadius: 8
-                           }}>
-                           <Text
-                               bg='grey'
-                               textAlign='center'
-                               htmlFor='initiative'
-                               fontSize={[3]}
-                               fontWeight='bold'
-                               color='black'
-                               py={1}>Wis
-                            </Text>
-                            <Text
-                                textAlign='center'
-                                fontSize={[5]}
-                                fontWeight='bold'
-                                color='black'
-                                py={3}>
-                                    +/- 0
-                            </Text>
+                            <Box variant="attributesBox">
+                                <Text variant="attributesHeader">Wis</Text>
+                                <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
-                                    id='str'
-                                    name='str'
-                                    type='str'
+                                    id='Wis'
+                                    type='Wis'
                                     placeholder='10'
                                 />
                             </Box>
@@ -151,39 +73,13 @@ export default class AttributesWidget extends Widget {
             {/* ================================================
                                     DEX
             ================================================ */}
-                            <Box
-                                ml='auto'
-                                px={1}
-                                py={1}
-                                bg='orange'
-                                sx={{
-                                    borderWidth: '3px',
-                                    borderStyle: 'solid',
-                                    borderColor: 'white',
-                                    borderRadius: 8
-                           }}>
-                           <Text
-                               bg='grey'
-                               textAlign='center'
-                               htmlFor='initiative'
-                               fontSize={[3]}
-                               fontWeight='bold'
-                               color='black'
-                               py={1}>Dex
-                            </Text>
-                            <Text
-                                textAlign='center'
-                                fontSize={[5]}
-                                fontWeight='bold'
-                                color='black'
-                                py={3}>
-                                    +/- 0
-                            </Text>
+                            <Box variant="attributesBox">
+                                <Text variant="attributesHeader">Dex</Text>
+                                <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
-                                    id='str'
-                                    name='str'
-                                    type='str'
+                                    id='Dex'
+                                    type='Dex'
                                     placeholder='10'
                                 />
                             </Box>
@@ -191,39 +87,13 @@ export default class AttributesWidget extends Widget {
             {/* ================================================
                                     CHA
             ================================================ */}
-                            <Box
-                                ml='auto'
-                                px={1}
-                                py={1}
-                                bg='orange'
-                                sx={{
-                                    borderWidth: '3px',
-                                    borderStyle: 'solid',
-                                    borderColor: 'white',
-                                    borderRadius: 8
-                           }}>
-                           <Text
-                               bg='grey'
-                               textAlign='center'
-                               htmlFor='initiative'
-                               fontSize={[3]}
-                               fontWeight='bold'
-                               color='black'
-                               py={1}>Cha
-                            </Text>
-                            <Text
-                                textAlign='center'
-                                fontSize={[5]}
-                                fontWeight='bold'
-                                color='black'
-                                py={3}>
-                                    +/- 0
-                            </Text>
+                            <Box variant="attributesBox">
+                                <Text variant="attributesHeader">Cha</Text>
+                                <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
-                                    id='str'
-                                    name='str'
-                                    type='str'
+                                    id='Cha'
+                                    type='Cha'
                                     placeholder='10'
                                 />
                             </Box>
@@ -231,39 +101,13 @@ export default class AttributesWidget extends Widget {
             {/* ================================================
                                     CON
             ================================================ */}
-                            <Box
-                                ml='auto'
-                                px={1}
-                                py={1}
-                                bg='orange'
-                                sx={{
-                                    borderWidth: '3px',
-                                    borderStyle: 'solid',
-                                    borderColor: 'white',
-                                    borderRadius: 8
-                           }}>
-                           <Text
-                               bg='grey'
-                               textAlign='center'
-                               htmlFor='initiative'
-                               fontSize={[3]}
-                               fontWeight='bold'
-                               color='black'
-                               py={1}>Con
-                            </Text>
-                            <Text
-                                textAlign='center'
-                                fontSize={[5]}
-                                fontWeight='bold'
-                                color='black'
-                                py={3}>
-                                    +/- 0
-                            </Text>
+                            <Box variant="attributesBox">
+                                <Text variant="attributesHeader">Con</Text>
+                                <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
-                                    id='str'
-                                    name='str'
-                                    type='str'
+                                    id='Con'
+                                    type='Con'
                                     placeholder='10'
                                 />
                             </Box>

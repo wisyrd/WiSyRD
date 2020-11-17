@@ -80,161 +80,109 @@ export default class SkillWidget extends Widget {
                 </Flex>
                 <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Arcana
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Arcana</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Athletics
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Athletics</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Deception
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Deception</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    History
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>History</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Insight
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Insight</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Intimidation
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Intimidation</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Investigation
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Investigation</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;    
-                    10 
-                    &#8287;
-                    Medicine
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Medicine</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Nature
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Nature</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Perception
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Perception</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Performance
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Performance</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Persuasion
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Persuasion</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Religion
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Religion</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
                     <Text
                     fontSize={[3, 4, 5]}
@@ -248,17 +196,13 @@ export default class SkillWidget extends Widget {
                 </Flex>
                 <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Stealth
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Stealth</Text>
+                    </Flex>
+                </Box>
+
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
                     <Text
                     fontSize={[3, 4, 5]}

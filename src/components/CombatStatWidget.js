@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Card, Heading, Text } from 'rebass';
+import { Box, Heading, Text } from 'rebass';
 import { Input, Label, Checkbox } from '@rebass/forms'
 import Widget from './Widget';
 import { Flex } from 'reflexbox'
@@ -18,125 +18,66 @@ export default class CombatStatWidget extends Widget {
         return (
             <Box width={350} {...this.props} className={"widget example-widget"}>
 
-                {/* ================================================
-                                HP Header
-                ================================================ */}
+            {/* ================================================
+                                Primary box styling
+            ================================================ */}
                 <Box
                     p={3}
                     width={1}
                     bg='purple'>
-                    HP
-                </Box>
-                <Flex>
-
-
-                    {/* ================================================
+               
+                {/* ================================================
                                 Current HP Box
                 ================================================ */}
-                    <Box
-                        width={1}
-                        bg='green'
-                        sx={{
-                            borderWidth: '3px',
-                            borderStyle: 'solid',
-                            borderColor: 'white',
-                            borderRadius: 8
-                        }}>
-                        <Label
-                            htmlFor='currentHP'
-                            fontSize={[3]}
-                            fontWeight='bold'
-                            color='black'>Current HP</Label>
+                    <Box variant="fullWidthBox">
+                        <Text variant='cardHeader'>Current HP</Text>
                         <Input
                             id='currentHP'
-                            name='currentHP'
                             type='integer'
+                            textAlign='center'
                             placeholder='CurrentHP' />
                     </Box>
-
-
+                
                     {/* ================================================
                                         Max HP Box
                     ================================================ */}
-                    <Box>
-                        <Box
-                            width={1}
-                            px={3}
-                            py={3}
-                            bg='orange'
-                            sx={{
-                                borderWidth: '3px',
-                                borderStyle: 'solid',
-                                borderColor: 'white',
-                                borderRadius: 8
-                            }}>
-                            <Label
-                                htmlFor='maxHP'
-                                fontSize={[3]}
-                                fontWeight='bold'
-                                color='black'>Max HP</Label>
+                         <Box>
+                             <Flex>
+                        <Box variant="statsBox">
+                            <Text variant='cardHeader'>Max HP</Text>
                             <Input
                                 id='maxHP'
-                                name='maxHP'
                                 type='integer'
+                                textAlign='center'
                                 placeholder='#' />
                         </Box>
 
                         {/* ================================================
                                                 Temp HP Box
                             ================================================ */}
-                        <Box
-                            width={1}
-                            px={3}
-                            py={3}
-                            bg='orange'
-                            sx={{
-                                borderWidth: '3px',
-                                borderStyle: 'solid',
-                                borderColor: 'white',
-                                borderRadius: 8
-                            }}>
-                            <Label
-                                htmlFor='tempHP'
-                                fontSize={[3]}
-                                fontWeight='bold'
-                                color='black'>Temp HP</Label>
+                        <Box variant="statsBox">
+                            <Text variant='cardHeader'>Temp HP</Text>
                             <Input
                                 id='tempHP'
-                                name='tempHP'
                                 type='integer'
+                                textAlign='center'
                                 placeholder='#' />
                         </Box>
 
                         {/* ================================================
                                                 AC Box
                             ================================================ */}
-                        <Box
-                            width={1}
-                            px={3}
-                            py={3}
-                            bg='orange'
-                            sx={{
-                                borderWidth: '3px',
-                                borderStyle: 'solid',
-                                borderColor: 'white',
-                                borderRadius: 8
-                            }}>
-                            <Label
-                                htmlFor='AC'
-                                fontSize={[3]}
-                                fontWeight='bold'
-                                color='black'>AC</Label>
+                        <Box variant="statsBox">
+                            <Text variant='cardHeader'>AC</Text>
                             <Input
                                 id='AC'
-                                name='AC'
                                 type='integer'
+                                textAlign='center'
                                 placeholder='#' />
                         </Box>
-                    </Box>
-                </Flex>
-
-
+                    </Flex>
+                </Box>
+               
                 {/* ================================================
                                 Lower Bar Box
                 ================================================ */}
@@ -146,50 +87,20 @@ export default class CombatStatWidget extends Widget {
                         {/* ================================================
                                                 Initiative Box
                         ================================================ */}
-                        <Box
-                            width={1 / 3}
-                            px={3}
-                            py={3}
-                            bg='orange'
-                            sx={{
-                                borderWidth: '3px',
-                                borderStyle: 'solid',
-                                borderColor: 'white',
-                                borderRadius: 8
-                            }}>
-                            <Label
-                                htmlFor='initiative'
-                                fontSize={[3]}
-                                fontWeight='bold'
-                                color='black'
-                                py={1}>Initiative</Label>
+                        <Box variant="statsBox">
+                            <Text variant='cardHeader'>Initiative</Text>
                             <Input
                                 id='initiative'
-                                name='initiative'
                                 type='integer'
+                                textAlign='center'
                                 placeholder='#' />
                         </Box>
 
                         {/* ================================================
                                         Death Saves Box
                         ================================================ */}
-                        <Box
-                            width={1 / 3}
-                            px={3}
-                            py={3}
-                            bg='orange'
-                            sx={{
-                                borderWidth: '3px',
-                                borderStyle: 'solid',
-                                borderColor: 'white',
-                                borderRadius: 8
-                            }}>
-                            <Label
-                                htmlFor='initiative'
-                                fontSize={[3]}
-                                fontWeight='bold'
-                                color='black'
-                                py={1}>Death Saves</Label>
+                        <Box variant="statsBox">
+                            <Text variant='cardHeader'>Death Saves</Text>
                             <Box>
                                 <Label
                                     htmlFor='deathSuccess'
@@ -197,22 +108,9 @@ export default class CombatStatWidget extends Widget {
                                     fontWeight='bold'
                                     color='black'>Successes</Label>
                                 <Flex>
-                                    <Label>
-                                        <Checkbox
-                                            id='deathSaveOne'
-                                            name='deathSaveOne' />
-                                    </Label>
-                                    <Label>
-                                        <Checkbox
-                                            id='deathSaveTwo'
-                                            name='deathSaveTwo' />
-                                    </Label>
-                                    <Label>
-                                        <Checkbox
-                                            id='deathSaveThree'
-                                            name='deathSaveThree' />
-                                    </Label>
-
+                                    <Label><Checkbox id='deathSaveOne' name='deathSaveOne' /></Label>
+                                    <Label><Checkbox id='deathSaveTwo' name='deathSaveTwo' /></Label>
+                                    <Label><Checkbox id='deathSaveThree' name='deathSaveThree' /></Label>
                                 </Flex>
                             </Box>
 
@@ -223,61 +121,33 @@ export default class CombatStatWidget extends Widget {
                                     fontWeight='bold'
                                     color='black'>Failures</Label>
                                 <Flex>
-                                    <Label>
-                                        <Checkbox
-                                            id='deathSaveOne'
-                                            name='deathSaveOne' />
-                                    </Label>
-                                    <Label>
-                                        <Checkbox
-                                            id='deathSaveTwo'
-                                            name='deathSaveTwo' />
-                                    </Label>
-                                    <Label>
-                                        <Checkbox
-                                            id='deathSaveThree'
-                                            name='deathSaveThree' />
-                                    </Label>
-
+                                    <Label><Checkbox id='deathSaveOne' name='deathSaveOne' /></Label>
+                                    <Label><Checkbox id='deathSaveTwo' name='deathSaveTwo' /></Label>
+                                    <Label><Checkbox id='deathSaveThree' name='deathSaveThree' /></Label>
                                 </Flex>
                             </Box>
-
                         </Box>
 
                         {/* ================================================
                                         Speed Box
                         ================================================ */}
-                        <Box
-                            width={1 / 3}
-                            px={3}
-                            py={3}
-                            bg='orange'
-                            sx={{
-                                borderWidth: '3px',
-                                borderStyle: 'solid',
-                                borderColor: 'white',
-                                borderRadius: 8
-                            }}>
-                            <Label
-                                htmlFor='speed'
-                                fontSize={[3]}
-                                fontWeight='bold'
-                                color='black'
-                                py={1}>Speed</Label>
+                        <Box variant="statsBox">
+                            <Text variant='cardHeader'>Speed</Text>
                             <Input
                                 id='speed'
-                                name='speed'
                                 type='integer'
+                                textAlign='center'
                                 placeholder='#' />
                         </Box>
                     </Flex>
                 </Box>
+            </Box>
 
                 <Text>{this.props.children}</Text>
                 <Flex>
                     <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
             </Box>
-        )
+        </>)
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Button, Heading, Text, Flex } from 'rebass';
+import { Label, Textarea } from '@rebass/forms'
 import Widget from './Widget';
 import TutorialButton from "./TutorialButton"
 
