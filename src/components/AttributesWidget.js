@@ -12,12 +12,8 @@ export default class AttributesWidget extends Widget {
     constructor(props){
         super(props);
         this.title = "Attributes Widget";
-<<<<<<< HEAD:src/components/Attributes.js
-        this.widgetType = "Attributes-widget"
-=======
         this.widgetType = "example-widget"
         this.tutorialText = <Text>Attributes can be inserted and editted here. The smaller number indicates the base number, and the larger number represents the modifier. You need only enter the base number and the modifier will be calculated. These attributes will directly effect other widget components and calculations. In depth information about character attributes may be found <a href="https://www.dndbeyond.com/sources/basic-rules/using-ability-scores#AbilityScoresandModifiers" target="blank">HERE</a></Text>
->>>>>>> dev:src/components/AttributesWidget.js
     }
 
     renderPanel=()=> {
