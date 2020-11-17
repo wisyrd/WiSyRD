@@ -99,21 +99,6 @@ export default class InventoryWidget extends Widget {
 
             <Box>
             <Flex>
-<<<<<<< HEAD
-                <Box width={1 / 8} p={3} color='background' bg='olive'>QT.</Box>
-                <Box width={5 / 8} p={3} color='background' bg='burlywood'>Item Name</Box>
-                <Box p={3} color='background' bg='olive'>Location</Box>
-                <Box p={3} color='background' bg='burlywood'>Weight</Box>
-            </Flex>
-            <Flex>
-                <Box width={1 / 8} p={3} color='background' bg='olive'>QT.</Box>
-                <Box width={5 / 8} p={3} color='background' bg='burlywood'>Item Name</Box>
-                <Box p={3} color='background' bg='olive'>Location</Box>
-                <Box p={3} color='background' bg='burlywood'>Weight</Box>
-            </Flex>
-            </Box>
-        </Box>
-=======
                 <Label htmlFor='Inventory'>
                     Currency:
                             </Label>
@@ -158,7 +143,6 @@ export default class InventoryWidget extends Widget {
     <Flex>
                     <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>        
->>>>>>> dev
         </>
         )
            
