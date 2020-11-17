@@ -10,7 +10,7 @@ export default class NotesWidget extends Widget {
         super(props);
         this.title = "Notes Widget";
         this.widgetType = "notes-widget"
-        this.tutorialText = <Text>This is a basic widget for inputting and storing notes. The input field my be editted to add and delete text as desired.</Text>
+        this.tutorialText = <Text>This is a basic widget for storing any information needed in text format. It may be editted at will and is there for refernce.</Text>
     }
 
     renderPanel=()=> {
