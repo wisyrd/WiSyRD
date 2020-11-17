@@ -87,49 +87,6 @@ export default class BasicWidget extends Widget {
                             htmlFor='Race'>
                             Level:
                             </Label> */}
-<<<<<<< HEAD
-                            <Box variant='statsBox'>
-                                <Text variant='cardHeader'>Class</Text>
-                                <Input
-                                    id='charlvl'
-                                    name='level'
-                                    type='text'
-                                    placeholder='level' />
-                            </Box>
-
-                            {/* ================================================
-                                        Level Box
-                    ================================================ */}
-                            {/* <Label htmlFor='Character Subclass'>
-                            Subclass:
-                            </Label> */}
-                            <Box variant='statsBox'>
-                                <Text variant="cardHeader">Level</Text>
-                                <Input
-                                    id='charSub'
-                                    name='charSub'
-                                    type='text'
-                                    placeholder='Subclass' />
-                            </Box>
-
-                            {/* ================================================
-                                        Experience Box
-                    ================================================ */}
-                            <Box variant='statsBox'>
-                                <Text variant='cardHeader'>Experience</Text>
-                                <Input
-                                    id='charExp'
-                                    name='charExp'
-                                    type='text'
-                                    placeholder='Exp.' />
-                            </Box>
-                        </Flex>
-                    </Box>
-
-                </Box>
-            </Box>
-        </>
-=======
                         <Input
                             id='charlvl'
                             name="level"
@@ -158,7 +115,6 @@ export default class BasicWidget extends Widget {
                     <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
             </>
->>>>>>> dev
         )
     }
 }
