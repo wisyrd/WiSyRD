@@ -11,7 +11,7 @@ export default class ExampleWidget extends Widget {
         this.widgetType = "example-widget"
     }
 
-    renderPanel() {
+    renderPanel=()=> {
         return (<>
                 <Button>Beep</Button>
                 <Text>{this.props.children}</Text>

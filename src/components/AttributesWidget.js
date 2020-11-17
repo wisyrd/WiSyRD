@@ -2,25 +2,27 @@ import React from 'react';
 import { Box, Button, Card, Heading, Text } from 'rebass';
 import { Tiles } from '@rebass/layout';
 import { Input, Label, Checkbox } from '@rebass/forms'
-import Widget from './Widget';
 import { Flex } from 'reflexbox'
+import Widget from './Widget';
+import TutorialButton from "./TutorialButton"
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
-export default class ExampleWidget extends Widget {
+export default class AttributesWidget extends Widget {
 
     constructor(props){
         super(props);
         this.title = "Attributes Widget";
+<<<<<<< HEAD:src/components/Attributes.js
         this.widgetType = "Attributes-widget"
+=======
+        this.widgetType = "example-widget"
+        this.tutorialText = <Text>Attributes can be inserted and editted here. The smaller number indicates the base number, and the larger number represents the modifier. You need only enter the base number and the modifier will be calculated. These attributes will directly effect other widget components and calculations. In depth information about character attributes may be found <a href="https://www.dndbeyond.com/sources/basic-rules/using-ability-scores#AbilityScoresandModifiers" target="blank">HERE</a></Text>
+>>>>>>> dev:src/components/AttributesWidget.js
     }
 
-    renderPanel() {
+    renderPanel=()=> {
         return (<>
         <Box width={350}>
-            <Heading
-            color="black"
-            bg='yellow'
-            >Attributes</Heading>
 
             {/* ================================================
                                 Primary box styling
@@ -119,7 +121,9 @@ export default class ExampleWidget extends Widget {
 
                 <Text>{this.props.children}</Text>
         </Box>
-                
+        <Flex>
+                    <TutorialButton tutorialText={this.tutorialText}/>
+                </Flex>
             </>
         )
     }

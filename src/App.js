@@ -1,15 +1,7 @@
-import BasicWidget from './components/BasicWidget';
-import ExampleWidget from './components/ExampleWidget'
-import Attributes from './components/Attributes'
-import AttackWidget from './components/AttacksWidget';
-import InventoryWidget from './components/InventoryWidget';
-import Widget from './components/Widget';
-import renderWidgets from './WidgetRenderer';
-import DoubleCheckbox from './components/DoubleCheckbox'
-import SkillWidget from "./components/SkillWidget"
-import CombatWidget from "./components/CombatStat"
+import WidgetRenderer from './WidgetRenderer';
 
 import { ThemeProvider } from 'emotion-theming'
+<<<<<<< HEAD
 import { Tiles } from '@rebass/layout'
 import NotesWidget from './components/NotesWidget';
 
@@ -24,14 +16,22 @@ let widgets = [
   new AttackWidget({x: 3, children: "honey!"}),
   new SkillWidget({x: 1, children: "Skills"})
 ]
+=======
+import theme from '@rebass/preset'
+>>>>>>> dev
 
 function App() {
+
   return (
     <ThemeProvider className="App" theme={theme}>
+<<<<<<< HEAD
       <Tiles columns={[1, 2, 4]}>
         {renderWidgets(widgets)}
       </Tiles>
       <Attributes></Attributes>
+=======
+      <WidgetRenderer />
+>>>>>>> dev
     </ThemeProvider>
   );
 }

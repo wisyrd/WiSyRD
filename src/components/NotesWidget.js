@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Button, Heading, Text, Flex } from 'rebass';
 import { Label, Textarea } from '@rebass/forms'
 import Widget from './Widget';
-
+import TutorialButton from "./TutorialButton"
 
 
 export default class NotesWidget extends Widget {
@@ -11,9 +11,10 @@ export default class NotesWidget extends Widget {
         super(props);
         this.title = "Notes Widget";
         this.widgetType = "notes-widget"
+        this.tutorialText = <Text>This is a basic widget for storing any information needed in text format. It may be editted at will and is there for refernce.</Text>
     }
 
-    renderPanel() {
+    renderPanel=()=> {
         return (<>
         <Flex>
             <Text>{this.props.children}</Text>
@@ -24,7 +25,10 @@ export default class NotesWidget extends Widget {
             color='primary'>
             Text
         </Text>
-        </Flex>
+            </Flex>
+            <Flex>
+                    <TutorialButton tutorialText={this.tutorialText}/>
+                </Flex>
         </>
         )
     }

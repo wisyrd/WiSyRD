@@ -9,6 +9,13 @@ import TutorialButton from "./TutorialButton"
 // I've kept this long list of state in to remind us what obscure stats will be needed to be kept track of, but will be deleted later.
 
 export default class SkillWidget extends Widget {
+    constructor(props){
+        super(props);
+        this.title = "Skill Widget";
+        this.widgetType = "skill-widget";
+        this.tutorialText = <Text>This widget will let you see all current bonuses to each skill as determined by your attributes. Select the box next to intended attribute to indicate proficiency and once more to indicate Expertise. In depth information can be found <a href="https://www.dndbeyond.com/sources/basic-rules/using-ability-scores#UsingEachAbility" target="blank">HERE</a></Text>
+    }
+
     state = {
         acProficiency: 0,
         ahProficiency: 0,
@@ -39,8 +46,9 @@ export default class SkillWidget extends Widget {
 
     // Lower right will have a ? that, when clicked, will open a modal explaining each skill, how the number is calculated, and what proficiency/expertise means.
 
-    render() {
+    renderPanel =()=> {
         return (
+<<<<<<< HEAD
             <Box width={350} {...this.props} className={"widget example-widget"}>
             <Heading variant="heading">Skills</Heading>
                 
@@ -62,6 +70,39 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
+=======
+            <>
+                <Flex>
+                    <DoubleCheckbox />
+                    <Text
+                    fontSize={[3, 4, 5]}
+                    fontWeight='bold'
+                    color='primary'>
+                    &#8287;
+                    10 
+                    &#8287;
+                    Acrobatics</Text>
+                </Flex>
+                <Flex>
+                    <DoubleCheckbox />
+                    <Text
+                    fontSize={[3, 4, 5]}
+                    fontWeight='bold'
+                    color='primary'>
+                    &#8287;
+                    10
+                    </Text> 
+                    &#8287;
+                    <Text
+                    fontSize={[3, 4, 5]}
+                    fontWeight='bold'
+                    color='primary'>
+                    &#8287;
+                    Animal Handling
+                    </Text>
+                </Flex>
+                <Flex>
+>>>>>>> dev
                     <DoubleCheckbox />
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Arcana</Text>
@@ -167,6 +208,7 @@ export default class SkillWidget extends Widget {
                 <Box variant='skillsBox'>
                     <Flex>
                     <DoubleCheckbox />
+<<<<<<< HEAD
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Sleight of Hand</Text>
                     </Flex>
@@ -174,6 +216,19 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
+=======
+                    <Text
+                    fontSize={[3, 4, 5]}
+                    fontWeight='bold'
+                    color='primary'>
+                    &#8287;
+                    10
+                    &#8287;
+                    Sleight of Hand
+                    </Text>
+                </Flex>
+                <Flex>
+>>>>>>> dev
                     <DoubleCheckbox />
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Stealth</Text>
@@ -183,12 +238,29 @@ export default class SkillWidget extends Widget {
                 <Box variant='skillsBox'>
                     <Flex>
                     <DoubleCheckbox />
+<<<<<<< HEAD
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Survival</Text>
                     </Flex>
                 </Box>
 
             </Box>
+=======
+                    <Text
+                    fontSize={[3, 4, 5]}
+                    fontWeight='bold'
+                    color='primary'>
+                    &#8287;
+                    10 
+                    &#8287;
+                    Survival
+                    </Text>
+                </Flex>
+                <Flex>
+                    <TutorialButton tutorialText={this.tutorialText}/>
+                </Flex>
+            </>
+>>>>>>> dev
         )
     }
 }
