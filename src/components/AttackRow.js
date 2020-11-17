@@ -2,6 +2,8 @@ import React from 'react'
 import { Box, Flex, Button, Heading, Text } from 'rebass';
 import { Input } from "@rebass/forms";
 
+// add row component
+
 export default function AttackRow() {
     return (
         <Flex>
