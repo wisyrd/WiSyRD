@@ -15,6 +15,8 @@ import SpellCard from "./SpellCard";
 export default class SpellbookWidget extends Widget {
     constructor(props) {
         super(props);
+        // Here is where you write the tutorial!!!
+        this.tutorialText = "";
         this.state = {
             spellList: [{
                 "name": "Acid Arrow",

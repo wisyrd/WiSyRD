@@ -3,6 +3,7 @@ import { Box, Flex, Button, Heading, Text, } from 'rebass';
 import { Input, Label } from "@rebass/forms"
 import Widget from './Widget';
 import InventoryRow from './InventoryRow'
+import TutorialButton from "./TutorialButton"
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class InventoryWidget extends Widget {
@@ -11,7 +12,8 @@ export default class InventoryWidget extends Widget {
         super(props);
         this.title = "Inventory widget";
         this.widgetType = "Inventory-widget"
-        this.state = {rowArray: [0]}
+        this.state = { rowArray: [0] }
+        this.tutorialText= <Text>Items and equipment held on person may be tracked here. Click the "+" in order to add a new row to insert a new item. Weight and incumberence may be tracked via this widget as well if desired. Amount of currency on hand and what denominations of it possessed may also be tracked using the inputs in the top portion of the widget. More in depth information about inventory may be found <a href="https://www.dndbeyond.com/sources/basic-rules/equipment"target="blank">HERE</a></Text>
     }
     addRow() {
 
@@ -60,8 +62,11 @@ export default class InventoryWidget extends Widget {
             })}
             
             <Button onClick = {() => {this.addRow()}}>
-          +         
-    </Button>            
+                +         
+    </Button>   
+    <Flex>
+                    <TutorialButton tutorialText={this.tutorialText}/>
+                </Flex>        
         </>
         )
            
