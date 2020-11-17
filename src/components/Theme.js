@@ -47,6 +47,18 @@ export default {
             fontWeight:'bold',
             color:'black',
             textAlign:'center'
+        },
+        skillsText: {
+            fontSize: 3,
+            fontWeight:'bold',
+            color:'black',
+            p: '5%'
+        },
+        skillsNumber: {
+            fontSize: 5,
+            fontWeight: 'bold',
+            color: 'black',
+            p: '2%' 
         }
     },
     variants: {
@@ -65,7 +77,6 @@ export default {
             borderStyle: 'solid',
             borderColor: 'white',
             borderRadius: 8,
-
         },
         halfWidthBox: {
             bg:'yellow',
@@ -102,6 +113,15 @@ export default {
             textAlign: 'center',
             p: '4%',
             width: '20%'
+        },
+        skillsBox: {
+            ml: 'auto',
+            p: '1%',
+            bg: 'orange',
+            borderWidth: '3px',
+            borderStyle: 'solid',
+            borderColor: 'white',
+            borderRadius: 8
         }
 
     }
