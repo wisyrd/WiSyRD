@@ -13,7 +13,7 @@ export default function TutorialButton(props) {
         // Expecting to be passed a prop with the key "tutorialName"
         switch (props.tutorialName) {
             case "spellbook":
-                // Write the entire tutorial inside the setTutorialState piece here, for each widget.
+                // Write the entire tutorial inside the setTutorialState piece here, for each widget. Inside the quotation marks.
                 setTutorialState("HERE'S YOUR SPELL TUTORIAL")
                 break;
             case "skill":
