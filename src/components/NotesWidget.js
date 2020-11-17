@@ -12,7 +12,7 @@ export default class NotesWidget extends Widget {
         this.widgetType = "notes-widget"
     }
 
-    renderPanel() {
+    renderPanel=()=> {
         return (<>
         <Flex>
             <Text>{this.props.children}</Text>
