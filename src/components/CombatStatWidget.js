@@ -5,14 +5,6 @@ import Widget from './Widget';
 import { Flex } from 'reflexbox'
 import TutorialButton from "./TutorialButton"
 
-<<<<<<< HEAD:src/components/CombatStat.js
-export default class CombatStat extends Widget {
-
-    renderPanel() {
-        return (<>
-            <Box width={350} {...this.props} className={"widget example-widget"}>
-                <Heading variant="heading">Combat Stats</Heading>
-=======
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class CombatStatWidget extends Widget {
     constructor(props){
@@ -25,7 +17,6 @@ export default class CombatStatWidget extends Widget {
     renderPanel=()=> {
         return (
             <Box width={350} {...this.props} className={"widget example-widget"}>
->>>>>>> dev:src/components/CombatStatWidget.js
 
             {/* ================================================
                                 Primary box styling
