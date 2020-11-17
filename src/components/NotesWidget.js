@@ -17,14 +17,12 @@ export default class NotesWidget extends Widget {
     renderPanel=()=> {
         return (<>
         <Flex>
-            <Text>{this.props.children}</Text>
 
-        <Text
-            fontSize={[ 3, 4, 5 ]}
+        <Textarea
             fontWeight=''
-            color='primary'>
-            Text
-        </Text>
+            color='primary'
+            placeholder='Write here!'>
+        </Textarea>
             </Flex>
             <Flex>
                     <TutorialButton tutorialText={this.tutorialText}/>
