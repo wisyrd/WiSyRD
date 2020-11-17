@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button, Heading, Text, Flex } from 'rebass';
 import Widget from './Widget';
-
+import TutorialButton from "./TutorialButton"
 
 
 export default class NotesWidget extends Widget {
@@ -10,6 +10,7 @@ export default class NotesWidget extends Widget {
         super(props);
         this.title = "Notes Widget";
         this.widgetType = "notes-widget"
+        this.tutorialText = <Text>This is a basic widget for inputting and storing notes. The input field my be editted to add and delete text as desired.</Text>
     }
 
     renderPanel=()=> {
@@ -23,7 +24,10 @@ export default class NotesWidget extends Widget {
             color='primary'>
             Text
         </Text>
-        </Flex>
+            </Flex>
+            <Flex>
+                    <TutorialButton tutorialText={this.tutorialText}/>
+                </Flex>
         </>
         )
     }
