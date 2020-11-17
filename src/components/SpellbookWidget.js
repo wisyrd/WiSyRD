@@ -7,7 +7,6 @@ import ResetButton from "./ResetButton"
 import SingleCheckbox from "./SingleCheckbox"
 import { Checkbox, Label } from "@rebass/forms";
 import RitualButton from "./RitualButton";
-import spells from "./spells.json";
 import axios from "axios";
 import SpellCard from "./SpellCard";
 
@@ -16,6 +15,8 @@ import SpellCard from "./SpellCard";
 export default class SpellbookWidget extends Widget {
     constructor(props) {
         super(props);
+        // Here is where you write the tutorial!!!
+        this.tutorialText = "";
         this.state = {
             spellList: [{
                 "name": "Acid Arrow",
@@ -166,38 +167,38 @@ export default class SpellbookWidget extends Widget {
             isAPICalling: false
         }
     }
-    //Literally have to loop through every spell in the API
+
     //userClass/this.props.userClass MUST BE THE CLASS NAME IN ALL LOWERCASE OR THIS DOES NOT WORK
-//     componentDidMount() {
-//         this.spellRender(this.props.userClass)
-//     }
-//     spellRender = (userClass) => {
-//         console.log("Firing the spell fetcher")
-//         if (this.state.isAPICalling)
-//         {
-//             console.log("going in true")
-//             return null;
-//         }
-//         else {
-//             {this.state.spellList.map(spell => (
-//                 <SpellCard 
-//                 name = {spell.name}
-//                 />
-//             ))}
-//             // Call API of spells.json here
-//             // let spellURL = "/api/spells/" + userClass
-//             // axios.get("/api/spells/")
-//             // for (let index = 0; index < spells.length; index++) {
-//             //     for (let i = 0; i< spells[index].classNames.classes.length; i++)
-//             //     {
-//             //         if (spells[index].classNames.classes[i].index == userClass)
-//             //         {
-//             //             this.setState({ spellList: this.state.spellList.push(spells[index]) });
-//             //         }
-//             //     }
-//             // }
-//             // console.log("spellList: ", this.state.spellList)
-//     }
+    // componentDidMount() {
+    //     this.spellRender(this.props.userClass)
+    // }
+    // spellRender = (userClass) => {
+    //     console.log("Firing the spell fetcher")
+    //     if (this.state.isAPICalling)
+    //     {
+    //         console.log("going in true")
+    //         return null;
+    //     }
+    //     else {
+    //         // {this.state.spellList.map(spell => (
+    //         //     <SpellCard 
+    //         //     name = {spell.name}
+    //         //     />
+    //         // ))}
+    //         //Call API of spells.json here
+    //         let spellURL = "localhost:8080/api/spells/" + userClass
+    //         axios.get(spellURL)
+    //         for (let index = 0; index < spells.length; index++) {
+    //             for (let i = 0; i< spells[index].classNames.classes.length; i++)
+    //             {
+    //                 if (spells[index].classNames.classes[i].index == userClass)
+    //                 {
+    //                     this.setState({ spellList: this.state.spellList.push(spells[index]) });
+    //                 }
+    //             }
+    //         }
+    //         console.log("spellList: ", this.state.spellList)
+    // }
 // }
 
     renderPanel=()=> {
@@ -211,8 +212,10 @@ export default class SpellbookWidget extends Widget {
                     fontSize={[2, 3, 4]}
                     fontWeight='bold'
                     color='primary'>
-                        {/* Eventually, I'll allow users to group their spells */}
-                    <label for="group">Group spells by:</label>
+                        {/* Eventually, I'll allow users to group their spells... maybe lol */}
+                    <label for="group">Group Spells by:</label>
+                    &#8287;
+                    &#8287;
                     <select name="group">
                         <option value="By Level">Level</option>
                         {/* <option value="saab">Saab</option>
@@ -220,7 +223,9 @@ export default class SpellbookWidget extends Widget {
                         <option value="audi">Audi</option> */}
                     </select>
                     </Text>
-                    <TutorialButton tutorialName="spellbook"/>
+                    &#8287;
+                    &#8287;
+                    <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
 
                 <Flex>
@@ -229,24 +234,34 @@ export default class SpellbookWidget extends Widget {
                     fontWeight='bold'
                     color='primary'>
                         Spell Slots for Level 1:
-                        <Flex><Label><Checkbox/></Label>
-                        <Label><Checkbox/></Label>
-                        <Label><Checkbox/></Label>
-                        <Label><Checkbox/></Label>
-                        <Label><Checkbox/></Label>
-                        <Label><Checkbox/></Label></Flex> {/*Will put in Alex's cool-looking death save circles here*/}
+                        <Flex><Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label></Flex> {/*Will put in Alex's cool-looking death save circles here*/}
                     </Text>
-                </Flex>
-                <Flex>
                     <ResetButton />
                 </Flex>
-
+                <hr/>
                 {/* Below here will be a for loop with a call to the API for all spells, then render only the ones for the class passed in as {this.props.userClass} that'll then populate this entire list of spells */}
+                <Flex>
+                    <Text width={1 / 4}>Prep Spell</Text>
+                    <Text width={1 / 4}>Name</Text>
+                    <Text width={1 / 4}>Casting Time</Text>
+                   <Text width={1 / 4}>Ritual</Text>              
+                </Flex>
                 {this.state.spellList.map(spell => (
                 <SpellCard 
                 name = {spell.name}
                 castTime = {spell.castTime}
                 ritual = {spell.ritual}
+                duration = {spell.duration}
+                level = {spell.level}
+                material = {spell.material}
+                vComponent = {spell.components.V ? ("V") : ""}
+                sComponent = {spell.components.S ? ("S") : ""}
+                // description = {spell.desc}
                 />
                 ))}
             </>
