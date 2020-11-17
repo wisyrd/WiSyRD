@@ -13,7 +13,7 @@ export default function TutorialButton() {
 
         return (
             <Box className="reset-button">
-                <img src={resetState} alt="reset-button" width="100" height="50" onClick={resetButtonState} />
+                <img src={resetState} alt="reset-button" width="50" height="50" onClick={resetButtonState} />
             </Box>
         )
 }
