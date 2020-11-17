@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Button, Heading, Text, Flex } from 'rebass';
+import {Input, Label} from "@rebass/forms"
 import Widget from './Widget';
 
 
@@ -15,14 +16,14 @@ export default class NotesWidget extends Widget {
     renderPanel=()=> {
         return (<>
         <Flex>
-            <Text>{this.props.children}</Text>
-
-        <Text
-            fontSize={[ 3, 4, 5 ]}
-            fontWeight=''
-            color='primary'>
-            Text
-        </Text>
+            <Box>
+            <Label htmlFor='email'></Label>
+            <Input
+                name='notes'
+                type='notes'
+                placeholder='Note'
+            />
+            </Box>
         </Flex>
         </>
         )
