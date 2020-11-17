@@ -13,7 +13,7 @@ export default class ExplorationWidget extends Widget {
     super(props);
     this.title = "Exploration Widget";
     this.widgetType = "exploration-widget";
-    this.tutuorialText =<Text>travel based statistics may be stored and tracked here. Different speeds for various methods of transportation may be tracked simultaneously. Use the slider to track levels of exhaustion as given. Each stage of the slider will provide a describe of the newly acquired penalty of exhaustion. In depth descriptions of travel and exhaustion may be found <a href="https://www.dndbeyond.com/sources/basic-rules/adventuring#Movement"target="blank">HERE</a></Text>
+    this.tutorialText = <Text>travel based statistics may be stored and tracked here. Different speeds for various methods of transportation may be tracked simultaneously. Use the slider to track levels of exhaustion as given. Each stage of the slider will provide a describe of the newly acquired penalty of exhaustion. In depth descriptions of travel and exhaustion may be found <a href="https://www.dndbeyond.com/sources/basic-rules/adventuring#Movement"target="blank">HERE</a></Text>
 
     this.state = {
       value: 0,
