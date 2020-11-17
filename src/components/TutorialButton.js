@@ -10,25 +10,7 @@ export default function TutorialButton(props) {
     //On click, open the specific tutorial...
 
     function indicateState() {
-        // Expecting to be passed a prop with the key "tutorialName"
-        switch (props.tutorialName) {
-            case "spellbook":
-                // Write the entire tutorial inside the setTutorialState piece here, for each widget.
-                setTutorialState("HERE'S YOUR SPELL TUTORIAL")
-                break;
-            case "skill":
-                setTutorialState("HERE'S YOUR SKILL TUTORIAL")
-                break;
-            //Define the other tutorials needed here and then their tutorials as well
-            // case "*":
-            //   value = props.num1 * props.num2;
-            //   break;/
-            // case "/":
-            //   value = props.num1 / props.num2;
-            //   break;
-            default:
-                break;
-        }
+        setTutorialState(props.tutorialText);
         setShowModalState(true);
     }
 
@@ -44,9 +26,9 @@ export default function TutorialButton(props) {
             <Box>
                 {/* Haven't fully stylized the modal but I've got it working!!! */}
                 {showModalState ? (
-                    <div className="modal" id="tutorial-box" style={{ position: "fixed", left: 0, top: 0, overflow: "auto" }}>
+                    <div className="modal" id="tutorial-box" style={{ position: "fixed", left: "25vh", top: "15vh", overflow: "auto", backgroundColor: "white", opacity: "0.8", height: "25vh", width: "25vw" }}>
                         <div className="modal-content">
-                            <span className="close" style={{ float: "right", fontWeight: "bold" }} onClick={hideState}>&times;</span>
+                            <span className="close" style={{ float: "right", fontWeight: "bold", textSize: "12", color: "black" }} onClick={hideState}>&times;</span>
                             <Text>{tutorialState}</Text>
                         </div>
                     </div>) : ""

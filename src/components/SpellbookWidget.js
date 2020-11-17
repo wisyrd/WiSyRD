@@ -16,6 +16,8 @@ import SpellCard from "./SpellCard";
 export default class SpellbookWidget extends Widget {
     constructor(props) {
         super(props);
+        // Here is where you write the tutorial!!!
+        this.tutorialText = "",
         this.state = {
             spellList: [{
                 "name": "Acid Arrow",
@@ -168,36 +170,36 @@ export default class SpellbookWidget extends Widget {
     }
     //Literally have to loop through every spell in the API
     //userClass/this.props.userClass MUST BE THE CLASS NAME IN ALL LOWERCASE OR THIS DOES NOT WORK
-//     componentDidMount() {
-//         this.spellRender(this.props.userClass)
-//     }
-//     spellRender = (userClass) => {
-//         console.log("Firing the spell fetcher")
-//         if (this.state.isAPICalling)
-//         {
-//             console.log("going in true")
-//             return null;
-//         }
-//         else {
-//             {this.state.spellList.map(spell => (
-//                 <SpellCard 
-//                 name = {spell.name}
-//                 />
-//             ))}
-//             // Call API of spells.json here
-//             // let spellURL = "/api/spells/" + userClass
-//             // axios.get("/api/spells/")
-//             // for (let index = 0; index < spells.length; index++) {
-//             //     for (let i = 0; i< spells[index].classNames.classes.length; i++)
-//             //     {
-//             //         if (spells[index].classNames.classes[i].index == userClass)
-//             //         {
-//             //             this.setState({ spellList: this.state.spellList.push(spells[index]) });
-//             //         }
-//             //     }
-//             // }
-//             // console.log("spellList: ", this.state.spellList)
-//     }
+    // componentDidMount() {
+    //     this.spellRender(this.props.userClass)
+    // }
+    // spellRender = (userClass) => {
+    //     console.log("Firing the spell fetcher")
+    //     if (this.state.isAPICalling)
+    //     {
+    //         console.log("going in true")
+    //         return null;
+    //     }
+    //     else {
+    //         // {this.state.spellList.map(spell => (
+    //         //     <SpellCard 
+    //         //     name = {spell.name}
+    //         //     />
+    //         // ))}
+    //         //Call API of spells.json here
+    //         let spellURL = "localhost:8080/api/spells/" + userClass
+    //         axios.get(spellURL)
+    //         for (let index = 0; index < spells.length; index++) {
+    //             for (let i = 0; i< spells[index].classNames.classes.length; i++)
+    //             {
+    //                 if (spells[index].classNames.classes[i].index == userClass)
+    //                 {
+    //                     this.setState({ spellList: this.state.spellList.push(spells[index]) });
+    //                 }
+    //             }
+    //         }
+    //         console.log("spellList: ", this.state.spellList)
+    // }
 // }
 
     renderPanel=()=> {
@@ -220,7 +222,7 @@ export default class SpellbookWidget extends Widget {
                         <option value="audi">Audi</option> */}
                     </select>
                     </Text>
-                    <TutorialButton tutorialName="spellbook"/>
+                    <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
 
                 <Flex>
