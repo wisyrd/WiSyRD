@@ -12,7 +12,7 @@ export default class SkillWidget extends Widget {
     constructor(props){
         super(props);
         this.title = "Skill Widget";
-        this.widgetType = "skill-widget",
+        this.widgetType = "skill-widget";
         this.tutorialText = ""
     }
 
