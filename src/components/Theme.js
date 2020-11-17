@@ -67,6 +67,17 @@ export default {
             borderRadius: 8,
 
         },
+        halfWidthBox: {
+            bg:'yellow',
+            textAlign: 'center',
+            width: '50%',
+            p: '2%', 
+            borderWidth: '3px',
+            borderStyle: 'solid',
+            borderColor: 'white',
+            borderRadius: 8,
+
+        },
         statsBox: {
             bg:'yellow',
             textAlign: 'center',

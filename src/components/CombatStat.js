@@ -12,7 +12,7 @@ export default class CombatStat extends Widget {
             <Box width={350} {...this.props} className={"widget example-widget"}>
                 <Heading variant="heading">Combat Stats</Heading>
 
-                {/* ================================================
+            {/* ================================================
                                 Primary box styling
             ================================================ */}
                 <Box
