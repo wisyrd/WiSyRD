@@ -2,7 +2,8 @@ import WidgetRenderer from './WidgetRenderer';
 
 import { ThemeProvider } from 'emotion-theming'
 
-import theme from '@rebass/preset'
+// import theme from '@rebass/preset'
+import theme from './components/Theme'
 
 
 function App() {

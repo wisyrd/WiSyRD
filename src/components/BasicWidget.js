@@ -16,7 +16,6 @@ export default class BasicWidget extends Widget {
 
     renderPanel=()=> {
         return (<>
-            <Box width={350} {...this.props} className={"widget example-widget"}>
                 <Heading variant="heading">Basic Info</Heading>
 
                 {/* ================================================
@@ -93,27 +92,29 @@ export default class BasicWidget extends Widget {
                             type="text"
                             placeholder='level'
                             width={1 / 4}/>            
-                </Flex>
-                <Flex>
-                    {/* <Label htmlFor='Character Subclass'>
-                        Subclass:
-                    </Label> */}
-                    <Input
-                            id='charSub'
-                            name="charSub"
-                            type="text"
-                            placeholder='Subclass'
-                    width={1 / 2} />
-                <Input
-                            id='charExp'
-                            name="charExp"
-                            type="text"
-                            placeholder='Exp.'
-                        width={1 / 2} />
-            </Flex>
-            <Flex>
-                    <TutorialButton tutorialText={this.tutorialText}/>
-                </Flex>
+                        </Flex>
+                        <Flex>
+                            {/* <Label htmlFor='Character Subclass'>
+                                Subclass:
+                            </Label> */}
+                            <Input
+                                    id='charSub'
+                                    name="charSub"
+                                    type="text"
+                                    placeholder='Subclass'
+                            width={1 / 2} />
+                            <Input
+                                    id='charExp'
+                                    name="charExp"
+                                    type="text"
+                                    placeholder='Exp.'
+                                width={1 / 2} />
+                        </Flex>
+                    </Box>
+                    <Flex>
+                        <TutorialButton tutorialText={this.tutorialText}/>
+                    </Flex>
+                </Box>
             </>
         )
     }
