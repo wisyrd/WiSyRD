@@ -48,29 +48,6 @@ export default class SkillWidget extends Widget {
 
     renderPanel =()=> {
         return (
-<<<<<<< HEAD
-            <Box width={350} {...this.props} className={"widget example-widget"}>
-            <Heading variant="heading">Skills</Heading>
-                
-                <Box variant='skillsBox'>
-                    <Flex>
-                    <DoubleCheckbox />
-                    <Text variant='skillsNumber'>10</Text>
-                    <Text variant='skillsText'>Acrobatics</Text>
-                    </Flex>
-                </Box>
-
-                <Box variant='skillsBox'>
-                    <Flex>
-                    <DoubleCheckbox />
-                    <Text variant='skillsNumber'>10</Text>
-                    <Text variant='skillsText'>Animal Handling</Text>
-                    </Flex>
-                </Box>
-
-                <Box variant='skillsBox'>
-                    <Flex>
-=======
             <>
                 <Flex>
                     <DoubleCheckbox />
@@ -102,7 +79,6 @@ export default class SkillWidget extends Widget {
                     </Text>
                 </Flex>
                 <Flex>
->>>>>>> dev
                     <DoubleCheckbox />
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Arcana</Text>
@@ -208,15 +184,6 @@ export default class SkillWidget extends Widget {
                 <Box variant='skillsBox'>
                     <Flex>
                     <DoubleCheckbox />
-<<<<<<< HEAD
-                    <Text variant='skillsNumber'>10</Text>
-                    <Text variant='skillsText'>Sleight of Hand</Text>
-                    </Flex>
-                </Box>
-
-                <Box variant='skillsBox'>
-                    <Flex>
-=======
                     <Text
                     fontSize={[3, 4, 5]}
                     fontWeight='bold'
@@ -228,7 +195,6 @@ export default class SkillWidget extends Widget {
                     </Text>
                 </Flex>
                 <Flex>
->>>>>>> dev
                     <DoubleCheckbox />
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Stealth</Text>
@@ -238,14 +204,6 @@ export default class SkillWidget extends Widget {
                 <Box variant='skillsBox'>
                     <Flex>
                     <DoubleCheckbox />
-<<<<<<< HEAD
-                    <Text variant='skillsNumber'>10</Text>
-                    <Text variant='skillsText'>Survival</Text>
-                    </Flex>
-                </Box>
-
-            </Box>
-=======
                     <Text
                     fontSize={[3, 4, 5]}
                     fontWeight='bold'
@@ -260,7 +218,6 @@ export default class SkillWidget extends Widget {
                     <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
             </>
->>>>>>> dev
         )
     }
 }
