@@ -9,6 +9,12 @@ import TutorialButton from "./TutorialButton"
 // I've kept this long list of state in to remind us what obscure stats will be needed to be kept track of, but will be deleted later.
 
 export default class SkillWidget extends Widget {
+    constructor(props){
+        super(props);
+        this.title = "Skill Widget";
+        this.widgetType = "skill-widget"
+    }
+
     state = {
         acProficiency: 0,
         ahProficiency: 0,
@@ -39,14 +45,9 @@ export default class SkillWidget extends Widget {
 
     // Lower right will have a ? that, when clicked, will open a modal explaining each skill, how the number is calculated, and what proficiency/expertise means.
 
-    render() {
+    renderPanel =()=> {
         return (
-            <Box>
-                <Heading 
-                fontSize={[ 5, 6, 7 ]}
-                color='secondary'>
-                    {this.props.children}
-                </Heading>
+            <>
                 <Flex>
                     <DoubleCheckbox />
                     <Text
@@ -269,7 +270,7 @@ export default class SkillWidget extends Widget {
                 <Flex>
                     <TutorialButton tutorialName="skill"/>
                 </Flex>
-            </Box>
+            </>
         )
     }
 }

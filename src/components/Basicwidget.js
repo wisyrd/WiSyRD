@@ -12,7 +12,7 @@ export default class BasicWidget extends Widget {
         this.widgetType = "Basic-widget"
     }
 
-    renderPanel() {
+    renderPanel=()=> {
         return (<>
                  <Flex>
                     {/* <Label htmlFor='Character Name'>

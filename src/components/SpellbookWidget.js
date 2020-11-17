@@ -200,9 +200,9 @@ export default class SpellbookWidget extends Widget {
     // }
 // }
 
-    render() {
+    renderPanel=()=> {
         return (
-            <Box>
+            <>
                 <Heading>
                     {this.props.children}
                 </Heading>
@@ -249,7 +249,7 @@ export default class SpellbookWidget extends Widget {
                 ritual = {spell.ritual}
                 />
                 ))}
-            </Box>
+            </>
         )
     }
 }

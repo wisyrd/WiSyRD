@@ -24,7 +24,7 @@ export default class ExplorationWidget extends Widget {
     };
   }
 
-  renderPanel() {
+  renderPanel=()=> {
     return (
       <>
         <Text>{this.props.children}</Text>

@@ -3,24 +3,19 @@ import { Box, Button, Card, Heading, Text } from 'rebass';
 import { Tiles } from '@rebass/layout';
 import { Input, Label, Checkbox } from '@rebass/forms'
 import Widget from './Widget';
-import { Flex } from 'reflexbox'
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
-export default class ExampleWidget extends Widget {
+export default class AttributesWidget extends Widget {
 
     constructor(props){
         super(props);
-        this.title = "My amazing widget";
+        this.title = "Attributes Widget";
         this.widgetType = "example-widget"
     }
 
-    renderPanel() {
+    renderPanel=()=> {
         return (<>
         <Box width={350}>
-            <Heading
-            color="black"
-            bg='yellow'
-            >Attributes</Heading>
 
             {/* ================================================
                                 Primary box styling
