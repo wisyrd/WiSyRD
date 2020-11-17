@@ -68,8 +68,9 @@ export default class SkillWidget extends Widget {
                     &#8287;
                     10
                     </Text> 
+                    &#8287;
                     <Text
-                    fontSize={[2, 3, 4]}
+                    fontSize={[3, 4, 5]}
                     fontWeight='bold'
                     color='primary'>
                     &#8287;
@@ -240,6 +241,7 @@ export default class SkillWidget extends Widget {
                     color='primary'>
                     &#8287;
                     10
+                    &#8287;
                     Sleight of Hand
                     </Text>
                 </Flex>
