@@ -1,11 +1,8 @@
 import React from "react";
-import { Flex, Text } from "rebass";
+import { Flex, Text, Button } from "rebass";
 import Widget from "./Widget";
 import { Input } from "@rebass/forms";
 import TutorialButton from "./TutorialButton"
-import { Box, Flex, Button, Heading, Text, } from 'rebass';
-import { Input, Label } from "@rebass/forms"
-import Widget from "./Widget";
 import AttackRow from './AttackRow'
 
 export default class AttacksWidget extends Widget {
@@ -109,7 +106,10 @@ export default class AttacksWidget extends Widget {
             
             <Button onClick = {() => {this.addRow()}}>
           +         
-    </Button>   
+    </Button> 
+    <Flex>
+                    <TutorialButton tutorialText={this.tutorialText}/>
+                </Flex>    
         </>
     );
   }
