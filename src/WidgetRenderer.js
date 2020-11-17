@@ -80,7 +80,7 @@ export default class WidgetRenderer extends Component{
     // }
 
     render=()=>{
-        return (<ReactGridLayout className="layout"  cols={2} rowHeight={55} width={1200}>
+        return (<ReactGridLayout className="layout"  cols={2} rowHeight={55} width={750}>
             {this.renderWidgets()}
         </ReactGridLayout>)
     }

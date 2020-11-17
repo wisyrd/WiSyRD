@@ -47,38 +47,24 @@ export default class SkillWidget extends Widget {
     // Lower right will have a ? that, when clicked, will open a modal explaining each skill, how the number is calculated, and what proficiency/expertise means.
 
     renderPanel =()=> {
-        return (
-            <>
-                <Flex>
+        return (<>
+            <Box>
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Acrobatics</Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Acrobatics</Text>
+                    </Flex>
+                </Box>
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10
-                    </Text> 
-                    &#8287;
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    Animal Handling
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Animal Handling</Text>
+                    </Flex>
+                </Box>
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Arcana</Text>
@@ -184,17 +170,12 @@ export default class SkillWidget extends Widget {
                 <Box variant='skillsBox'>
                     <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10
-                    &#8287;
-                    Sleight of Hand
-                    </Text>
-                </Flex>
-                <Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Sleight of Hand</Text>
+                    </Flex>
+                </Box>
+                <Box variant='skillsBox'>
+                    <Flex>
                     <DoubleCheckbox />
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Stealth</Text>
@@ -204,19 +185,14 @@ export default class SkillWidget extends Widget {
                 <Box variant='skillsBox'>
                     <Flex>
                     <DoubleCheckbox />
-                    <Text
-                    fontSize={[3, 4, 5]}
-                    fontWeight='bold'
-                    color='primary'>
-                    &#8287;
-                    10 
-                    &#8287;
-                    Survival
-                    </Text>
-                </Flex>
+                    <Text variant='skillsNumber'>10</Text>
+                    <Text variant='skillsText'>Survival</Text>
+                    </Flex>
+                </Box>
                 <Flex>
                     <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
+                </Box>
             </>
         )
     }

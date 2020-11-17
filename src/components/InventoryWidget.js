@@ -23,8 +23,6 @@ export default class InventoryWidget extends Widget {
     }
     renderPanel=()=> {
         return (<>
-            <Box width={350} {...this.props} className={"widget example-widget"}>
-
                 <Box>
                 <Text variant="cardHeader" htmlFor='Inventory'>Currency:</Text>
                 <Box>
@@ -98,41 +96,6 @@ export default class InventoryWidget extends Widget {
 
 
             <Box>
-            <Flex>
-                <Label htmlFor='Inventory'>
-                    Currency:
-                            </Label>
-                <Input
-                    id='platinum'
-                    name="pp"
-                    type="text"
-                    placeholder='Pp'
-                    width={1 / 6} />
-                <Input
-                    id='gold'
-                    name="gp"
-                    type="text"
-                    placeholder='Gp'
-                    width={1 / 6} /> <Input
-                    id='silver'
-                    name="sp"
-                    type="text"
-                    placeholder='Sp'
-                    width={1 / 6} /> <Input
-                    id='copper'
-                    name="cp"
-                    type="text"
-                    placeholder='Cp'
-                    width={1 / 6} /> <Input
-                    id='electrum'
-                    name="ep"
-                    type="text"
-                    placeholder='Ep'
-                    width={1 / 6} />
-            </Flex>
-            <Flex>
-                <label>"Imported Weight?"//</label><label>// Encumberance Weight</label>
-            </Flex>
             {this.state.rowArray.map(row => {
                 return <InventoryRow />
             })}
@@ -143,6 +106,7 @@ export default class InventoryWidget extends Widget {
     <Flex>
                     <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>        
+                </Box>
         </>
         )
            
