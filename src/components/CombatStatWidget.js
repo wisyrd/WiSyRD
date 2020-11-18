@@ -102,11 +102,7 @@ export default class CombatStatWidget extends Widget {
                             <Box variant="statsBox">
                                 <Text variant='cardHeader'>Death Saves</Text>
                                 <Box>
-                                    <Label
-                                        htmlFor='deathSuccess'
-                                        fontSize={[1]}
-                                        fontWeight='bold'
-                                        color='black'>Successes</Label>
+                                    <Text variant='infoText'>Sucesses</Text>
                                     <Flex>
                                         <Label><Checkbox id='deathSaveOne' name='deathSaveOne' /></Label>
                                         <Label><Checkbox id='deathSaveTwo' name='deathSaveTwo' /></Label>
@@ -115,11 +111,7 @@ export default class CombatStatWidget extends Widget {
                                 </Box>
 
                                 <Box>
-                                    <Label
-                                        htmlFor='deathFail'
-                                        fontSize={[1]}
-                                        fontWeight='bold'
-                                        color='black'>Failures</Label>
+                                <Text variant='infoText'>Failures</Text>
                                     <Flex>
                                         <Label><Checkbox id='deathSaveOne' name='deathSaveOne' /></Label>
                                         <Label><Checkbox id='deathSaveTwo' name='deathSaveTwo' /></Label>
