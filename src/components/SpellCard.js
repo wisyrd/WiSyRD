@@ -19,15 +19,13 @@ export default function SpellCard(props) {
         setVComponentState(props.vComponent);
         setSComponentState(props.sComponent);
         setMaterialState(props.material);
-        setDescriptionState(props.desc)
+        setDescriptionState(props.desc);
         setShowModalState(true);
     }
 
     function hideState() {
         setShowModalState(false);
     }
-
-    //I want to also accept props for the modal here that'll change state based on what name is clicked
 
     return (
         <Box>
@@ -42,17 +40,17 @@ export default function SpellCard(props) {
                 </Flex>
             </Box>
             <Box>
-                {/* Haven't fully stylized the modal but I've got it working!!! */}
                 {showModalState ? (
                     <div className="modal" style={{ position: "fixed", left: "25vh", top: "15vh", overflow: "auto", backgroundColor: "white", height: "25vh", width: "25vw" }}>
                         <div className="modal-content">
                             <span className="close" style={{ float: "right", fontWeight: "bold", textSize: "12", color: "black" }} onClick={hideState}>&times;</span>
+                            <Heading>{props.name}</Heading>
                             <Text>Description: {descriptionState}</Text>
                             <Text>Spell Duration: {durationState}</Text>
                             <Text>Level: {levelState}</Text>
                             {vComponentState ? (<Text>V Component: True</Text>) : ""}
                             {sComponentState ? (<Text>S Component: True</Text>) : ""}
-                            {materialState ? (<Text>Material: {materialState}</Text>) : ""}
+                            {materialState ? (<Text>Material: {materialState}</Text>) : "None"}
                         </div>
                     </div>) : ""
                 }

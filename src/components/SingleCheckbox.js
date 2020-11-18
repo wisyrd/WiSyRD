@@ -14,7 +14,7 @@ export default function SingleCheckbox() {
 
         return (
             <Box className="single-checkbox">
-                <img src={checkboxState} alt="unchecked-checkbox" width="50" height="50" onClick={indicateState} />
+                <img src={checkboxState} alt="unchecked-checkbox" width="25" height="25" onClick={indicateState} />
             </Box>
         )
 }

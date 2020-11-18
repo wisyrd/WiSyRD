@@ -26,7 +26,8 @@ export default function TutorialButton(props) {
             <Box>
                 {/* Haven't fully stylized the modal but I've got it working!!! */}
                 {showModalState ? (
-                    <div className="modal" id="tutorial-box" style={{ position: "fixed", left: "25vh", top: "15vh", overflow: "auto", backgroundColor: "white", opacity: "0.8", height: "25vh", width: "25vw" }}>
+                    <div className="modal" id="tutorial-box" style={{ position: "absolute", overflow: "auto", backgroundColor: "white",  height: "50vh", width: "50vw", top: "50%",
+                    left: "50%", transform: "translate(-50%, -50%)" }}>
                         <div className="modal-content">
                             <span className="close" style={{ float: "right", fontWeight: "bold", textSize: "12", color: "black" }} onClick={hideState}>&times;</span>
                             <Text>{tutorialState}</Text>
