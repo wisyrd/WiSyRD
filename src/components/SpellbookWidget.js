@@ -10,6 +10,8 @@ import RitualButton from "./RitualButton";
 import axios from "axios";
 import SpellCard from "./SpellCard";
 
+const APIURL = process.env.API_URL || "http://lvh.me:8080/api/spells/"// "localhost:8080/api/spells/";
+
 // Eventually, render each blank space with all the spells depending on the user's class through an AJAX call to the 5e API.
 
 export default class SpellbookWidget extends Widget {
@@ -166,40 +168,34 @@ export default class SpellbookWidget extends Widget {
             }],
             isAPICalling: false
         }
+
+        this.spellRender("wizard");
     }
 
     //userClass/this.props.userClass MUST BE THE CLASS NAME IN ALL LOWERCASE OR THIS DOES NOT WORK
     // componentDidMount() {
-    //     this.spellRender(this.props.userClass)
+    //     // this.spellRender(this.props.userClass)
+    //     this.spellRender("wizard");
     // }
-    // spellRender = (userClass) => {
-    //     console.log("Firing the spell fetcher")
-    //     if (this.state.isAPICalling)
-    //     {
-    //         console.log("going in true")
-    //         return null;
-    //     }
-    //     else {
-    //         // {this.state.spellList.map(spell => (
-    //         //     <SpellCard 
-    //         //     name = {spell.name}
-    //         //     />
-    //         // ))}
-    //         //Call API of spells.json here
-    //         let spellURL = "localhost:8080/api/spells/" + userClass
-    //         axios.get(spellURL)
-    //         for (let index = 0; index < spells.length; index++) {
-    //             for (let i = 0; i< spells[index].classNames.classes.length; i++)
-    //             {
-    //                 if (spells[index].classNames.classes[i].index == userClass)
-    //                 {
-    //                     this.setState({ spellList: this.state.spellList.push(spells[index]) });
-    //                 }
-    //             }
-    //         }
-    //         console.log("spellList: ", this.state.spellList)
-    // }
-// }
+    spellRender = (userClass) => {
+        console.log("Firing the spell fetcher")
+        if (this.state.isAPICalling)
+        {
+            console.log("going in true")
+            return null;
+        }
+        else {
+            let spellURL = APIURL + userClass
+            axios.get(spellURL).then((spellList)=>{
+                console.log("Spells found!");
+                this.state.spellList = spellList.data;
+            }).catch(err=>{
+                console.error(err);
+            })
+            
+            console.log("spellList: ", this.state.spellList)
+    }
+}
 
     renderPanel=()=> {
         return (
