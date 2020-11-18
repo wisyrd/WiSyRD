@@ -30,81 +30,40 @@ export default class ExplorationWidget extends Widget {
     return (
       <>
         <Text>{this.props.children}</Text>
-        <Flex>
-          <Box
-            width={1 / 3}
-            px={3}
-            py={3}
-            sx={{
-              borderWidth: "3px",
-              borderStyle: "solid",
-              borderColor: "white",
-              borderRadius: 8,
-            }}
-          >
-            <Label
-              htmlFor="speed"
-              fontSize={[3]}
-              fontWeight="bold"
-              color="black"
-              py={1}
-            >
-              Speed
-            </Label>
-            <Input id="speed" name="speed" type="integer" placeholder="" />
-          </Box>
-          <Box
-            width={1 / 3}
-            px={3}
-            py={3}
-            sx={{
-              borderWidth: "3px",
-              borderStyle: "solid",
-              borderColor: "white",
-              borderRadius: 8,
-            }}
-          >
-            <Label
-              htmlFor="mount speed"
-              fontSize={[3]}
-              fontWeight="bold"
-              color="black"
-              py={1}
-            >
-              Mount Speed
-            </Label>
-            <Input
-              id="mound speed"
-              name="mound speed"
-              type="integer"
-              placeholder=""
-            />
-          </Box>
-          <Box
-            width={1 / 3}
-            px={3}
-            py={3}
-            sx={{
-              borderWidth: "3px",
-              borderStyle: "solid",
-              borderColor: "white",
-              borderRadius: 8,
-            }}
-          >
-            <Label
-              htmlFor="vehicle"
-              fontSize={[3]}
-              fontWeight="bold"
-              color="black"
-              py={1}
-            >
-              Vehicle
-            </Label>
-            <Input id="vehicle" name="vehicle" type="integer" placeholder="" />
-          </Box>
-        </Flex>
         <Box>
-          <Label htmlFor="exhaustion">Exhaustion: {this.state.value}</Label>
+          <Flex>
+            <Box variant='statsBox'>
+              <Text variant='cardHeader'>Speed</Text>
+              <Input 
+                id="speed" 
+                name="speed" 
+                type="integer" 
+                placeholder="" />
+            </Box>
+
+            <Box variant='statsBox'>
+              <Text variant='cardHeader'>Mount Speed</Text>
+              <Input
+                id="mound speed"
+                name="mound speed"
+                type="integer"
+                placeholder=""/>
+            </Box>
+
+            <Box variant='statsBox'>
+              <Text variant='cardHeader'>Vehicle</Text>
+              <Input 
+                id="vehicle" 
+                name="vehicle" 
+                type="integer" 
+                placeholder="" />
+            </Box>
+          </Flex>
+        </Box>
+        
+        <Box variant='fullWidthBox'>
+          <Text variant='cardHeader' htmlFor="exhaustion">Exhaustion:</Text>
+          <Text variant='attributesDetails'>{this.state.value}</Text>
           <Slider
             onChange={this.handleIncrement}
             id="exhaustion"
@@ -114,15 +73,8 @@ export default class ExplorationWidget extends Widget {
             max="6"
             bg="primary"
           />
-          <Text>
-            {this.state.description}
-          </Text>
+          <Text variant='infoText'>{this.state.description}</Text>
         </Box>
-        {/* <Box>
-           <Text>
-            Test       
-           </Text> 
-        </Box> */}
         <Flex>
                     <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
