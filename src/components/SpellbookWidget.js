@@ -3,14 +3,12 @@ import Widget from './Widget';
 import { Box, Heading, Text } from 'rebass'
 import { Flex } from 'reflexbox'
 import TutorialButton from "./TutorialButton"
-import ResetButton from "./ResetButton"
 import SingleCheckbox from "./SingleCheckbox"
 import { Checkbox, Label } from "@rebass/forms";
-import RitualButton from "./RitualButton";
 import axios from "axios";
 import SpellCard from "./SpellCard";
 
-const APIURL = process.env.API_URL || "http://lvh.me:8080/api/spells/"// "localhost:8080/api/spells/";
+const APIURL = process.env.API_URL? process.env.API_URL: "http://lvh.me:8080/api/spells/"// "localhost:8080/api/spells/";
 
 // Eventually, render each blank space with all the spells depending on the user's class through an AJAX call to the 5e API.
 
@@ -19,6 +17,7 @@ export default class SpellbookWidget extends Widget {
         super(props);
         // Here is where you write the tutorial!!!
         this.tutorialText = "";
+        this.title = "Spellbook Widget";
         this.state = {
             spellList: [{
                 "name": "Acid Arrow",
@@ -223,23 +222,6 @@ export default class SpellbookWidget extends Widget {
                     &#8287;
                     <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
-
-                <Flex>
-                    <Text
-                    fontSize={[2, 3, 4]}
-                    fontWeight='bold'
-                    color='primary'>
-                        Spell Slots for Level 1:
-                        <Flex><Label><SingleCheckbox/></Label>
-                        <Label><SingleCheckbox/></Label>
-                        <Label><SingleCheckbox/></Label>
-                        <Label><SingleCheckbox/></Label>
-                        <Label><SingleCheckbox/></Label>
-                        <Label><SingleCheckbox/></Label></Flex> {/*Will put in Alex's cool-looking death save circles here*/}
-                    </Text>
-                    <ResetButton />
-                </Flex>
-                <hr/>
                 {/* Below here will be a for loop with a call to the API for all spells, then render only the ones for the class passed in as {this.props.userClass} that'll then populate this entire list of spells */}
                 <Flex>
                     <Text width={1 / 4}>Prep Spell</Text>
