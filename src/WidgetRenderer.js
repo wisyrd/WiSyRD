@@ -10,6 +10,7 @@ import BasicWidget from "./components/BasicWidget";
 import CombatStatWidget from "./components/CombatStatWidget";
 import InventoryWidget from "./components/InventoryWidget";
 import SpellbookWidget from "./components/SpellbookWidget";
+import SpellSlotWidget from "./components/SpellSlotWidget";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -44,7 +45,9 @@ export default class WidgetRenderer extends Component{
             },
             8:{component: InventoryWidget,
                 layout: {x: 0, y:4, w:1, h: 5}
-            }
+            },
+            9:{component: SpellSlotWidget,
+                layout: {x: 0, y:5, w:1, h:5}}
             // 9:{component: SpellbookWidget,
             //     layout: {x: 1, y:4, w:1, h: 8}
             // }
