@@ -8,7 +8,7 @@ import { Checkbox, Label } from "@rebass/forms";
 import axios from "axios";
 import SpellCard from "./SpellCard";
 
-const APIURL = process.env.API_URL || "http://lvh.me:8080/api/spells/"// "localhost:8080/api/spells/";
+const APIURL = process.env.API_URL? process.env.API_URL: "http://lvh.me:8080/api/spells/"// "localhost:8080/api/spells/";
 
 // Eventually, render each blank space with all the spells depending on the user's class through an AJAX call to the 5e API.
 

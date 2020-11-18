@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactGridLayout from "react-grid-layout";
+import {Responsive, WidthProvider} from "react-grid-layout";
 import AttacksWidget from "./components/AttacksWidget";
 import ExampleWidget from "./components/ExampleWidget";
 import ExplorationWidget from "./components/ExplorationWidget";
@@ -11,6 +11,8 @@ import CombatStatWidget from "./components/CombatStatWidget";
 import InventoryWidget from "./components/InventoryWidget";
 import SpellbookWidget from "./components/SpellbookWidget";
 import SpellSlotWidget from "./components/SpellSlotWidget";
+
+const ResponsiveGridLayout = WidthProvider(Responsive);
 
 export default class WidgetRenderer extends Component{
 
@@ -44,12 +46,11 @@ export default class WidgetRenderer extends Component{
             8:{component: InventoryWidget,
                 layout: {x: 0, y:4, w:1, h: 5}
             },
-            9:{component: SpellbookWidget,
-                layout: {x: 1, y:4, w:1, h: 8}
-            },
-            10:{component: SpellSlotWidget,
-                layout: {x: 0, y:5, w:1, h: 4}
-            },
+            9:{component: SpellSlotWidget,
+                layout: {x: 0, y:5, w:1, h:5}}
+            // 9:{component: SpellbookWidget,
+            //     layout: {x: 1, y:4, w:1, h: 8}
+            // }
         };
     }
 
@@ -65,7 +66,8 @@ export default class WidgetRenderer extends Component{
             let widgetId = widgetPair[0];
             let widget = widgetPair[1];
             let ThisWidgetType = widget.component;
-            return (<div data-grid = {widget.layout} key={widgetId}>
+            return (<div data-grid = {widget.layout}
+                                        key={widgetId}>
                     <ThisWidgetType id             = {widgetId}
                                     globalState    = {this.state}
                                     setGlobalState = {this.handleStateChange}
@@ -75,8 +77,13 @@ export default class WidgetRenderer extends Component{
     }
 
     render=()=>{
-        return (<ReactGridLayout className="layout"  cols={2} rowHeight={36} width={750}>
+        return (<ResponsiveGridLayout className="layout"
+                                 cols={{lg:2, md:2, sm:1, xs:1, xxs:1}}
+                                 breakpoints={{lg:1200, md:996, sm: 720}}
+                                 rowHeight={36}
+                                 width={{lg:750, md:750, sm:350, xs:350, xxs:350}}
+                                 draggableHandle=".dragHandle">
             {this.renderWidgets()}
-        </ReactGridLayout>)
+        </ResponsiveGridLayout>)
     }
 }

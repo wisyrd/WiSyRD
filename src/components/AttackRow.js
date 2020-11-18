@@ -6,28 +6,38 @@ import { Input } from "@rebass/forms";
 
 export default function AttackRow() {
     return (
-        <Flex>
-            {/* <Label htmlFor="Hit">Hit</Label> */}
-            <Input
-              name="hit"
-              type="text"
-              placeholder="Hit Mod"
-              width={1 / 3}
-            />
-            {/* <Label htmlFor="Range">Range</Label> */}
-            <Input
-              name="range"
-              type="text"
-              placeholder="Attack Range "
-              width={1 / 3}
-            />
-            {/* <Label htmlFor="DamgageType">Damage/Type</Label> */}
-            <Input
-              name="damageType"
-              type="text"
-              placeholder="Damage"
-              width={1 / 3}
-            />
-          </Flex>
+    <Box>
+      <Flex>
+      {/* <Label htmlFor="Attack Name">Attack Name</Label> */}
+      <Input
+        name="attack"
+        type="text"
+        placeholder="Attack Name "
+      />
+      </Flex>
+          <Flex>
+              {/* <Label htmlFor="Hit">Hit</Label> */}
+              <Input
+                name="hit"
+                type="text"
+                placeholder="Hit Mod"
+                width={1 / 3}
+              />
+              {/* <Label htmlFor="Range">Range</Label> */}
+              <Input
+                name="range"
+                type="text"
+                placeholder="Attack Range "
+                width={1 / 3}
+              />
+              {/* <Label htmlFor="DamgageType">Damage/Type</Label> */}
+              <Input
+                name="damageType"
+                type="text"
+                placeholder="Damage"
+                width={1 / 3}
+              />
+            </Flex>
+      </Box>  
     )
 }
