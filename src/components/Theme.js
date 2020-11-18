@@ -59,6 +59,13 @@ export default {
             fontWeight: 'bold',
             color: 'black',
             p: '2%' 
+        },
+        infoText: {
+            fontSize: 1,
+            fontWeight: 'bold',
+            color: 'black',
+            textAlign: 'center',
+            p: '2%'
         }
     },
     variants: {
