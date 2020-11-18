@@ -55,6 +55,14 @@ export default class AttacksWidget extends Widget {
             />
           </Flex>
           <Flex>
+            {/* <Label htmlFor="Attack Name">Attack Name</Label> */}
+            <Input
+              name="attack"
+              type="text"
+              placeholder="Attack Name "
+            />
+          </Flex>
+          <Flex>
             {/* <Label htmlFor="Hit">Hit</Label> */}
             <Input
               name="hit"
@@ -75,6 +83,14 @@ export default class AttacksWidget extends Widget {
               type="text"
               placeholder="Damage"
               width={1 / 3}
+            />
+          </Flex>
+          <Flex>
+            {/* <Label htmlFor="Attack Name">Attack Name</Label> */}
+            <Input
+              name="attack"
+              type="text"
+              placeholder="Attack Name "
             />
           </Flex>
           <Flex>
