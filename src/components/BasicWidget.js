@@ -59,8 +59,8 @@ export default class BasicWidget extends Widget {
                                     placeholder='Race' />
                             </Box>
 
-                            {/* ================================================
-                                        Race Box
+                    {/* ================================================
+                                        Subclass Box
                     ================================================ */}
                             {/* <Label htmlFor='Character Class'>
                             Class:
@@ -77,38 +77,43 @@ export default class BasicWidget extends Widget {
                     </Box>
 
                     {/* ================================================
-                                        Class Box
+                                        Level Box
                     ================================================ */}
                     <Box>
                         <Flex>
-                            {/* <Label
-                            width={1 / 4}
-                            htmlFor='Race'>
-                            Level:
-                            </Label> */}
-                        <Input
-                            id='charlvl'
-                            name="level"
-                            type="text"
-                            placeholder='level'
-                            width={1 / 4}/>            
-                        </Flex>
-                        <Flex>
-                            {/* <Label htmlFor='Character Subclass'>
-                                Subclass:
-                            </Label> */}
-                            <Input
-                                    id='charSub'
-                                    name="charSub"
+                            <Box variant="statsBox">
+                                <Text variant='cardHeader'>Level</Text>                        
+                                <Input
+                                    id='charlvl'
+                                    name="level"
                                     type="text"
-                                    placeholder='Subclass'
-                            width={1 / 2} />
-                            <Input
+                                    placeholder='level'/> 
+                            </Box>
+           
+                    {/* ================================================
+                                        Subclass Box
+                    ================================================ */}
+                            <Box variant='statsBox'>
+                                <Text variant='cardHeader'>Subclass</Text>
+                                    <Input
+                                        id='charSub'
+                                        name="charSub"
+                                        type="text"
+                                        placeholder='Subclass' />
+                            </Box>
+
+                    {/* ================================================
+                                        Exp Box
+                    ================================================ */}
+                            <Box variant='statsBox'>
+                                <Text variant='cardHeader'>Exp</Text>
+                                <Input
                                     id='charExp'
                                     name="charExp"
                                     type="text"
-                                    placeholder='Exp.'
-                                width={1 / 2} />
+                                    placeholder='Exp.'/>
+                            </Box>
+
                         </Flex>
                     </Box>
                     <Flex>
