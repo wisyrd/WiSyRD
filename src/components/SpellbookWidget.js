@@ -3,10 +3,8 @@ import Widget from './Widget';
 import { Box, Heading, Text } from 'rebass'
 import { Flex } from 'reflexbox'
 import TutorialButton from "./TutorialButton"
-import ResetButton from "./ResetButton"
 import SingleCheckbox from "./SingleCheckbox"
 import { Checkbox, Label } from "@rebass/forms";
-import RitualButton from "./RitualButton";
 import axios from "axios";
 import SpellCard from "./SpellCard";
 
@@ -19,6 +17,7 @@ export default class SpellbookWidget extends Widget {
         super(props);
         // Here is where you write the tutorial!!!
         this.tutorialText = "";
+        this.title = "Spellbook Widget";
         this.state = {
             spellList: [{
                 "name": "Acid Arrow",
@@ -226,18 +225,88 @@ export default class SpellbookWidget extends Widget {
 
                 <Flex>
                     <Text
-                    fontSize={[2, 3, 4]}
+                    fontSize={[1, 2, 3]}
                     fontWeight='bold'
                     color='primary'>
-                        Spell Slots for Level 1:
+                        Spell Slots for Level 1:</Text>
                         <Flex><Label><SingleCheckbox/></Label>
                         <Label><SingleCheckbox/></Label>
                         <Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label></Flex> 
+                </Flex>
+                <Flex>
+                    <Text
+                    fontSize={[1, 2, 3]}
+                    fontWeight='bold'
+                    color='primary'>
+                        Spell Slots for Level 2:</Text>
+                        <Flex><Label><SingleCheckbox/></Label>
                         <Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label></Flex> 
+                </Flex>
+                <Flex>
+                    <Text
+                    fontSize={[1, 2, 3]}
+                    fontWeight='bold'
+                    color='primary'>
+                        Spell Slots for Level 3:</Text>
+                        <Flex><Label><SingleCheckbox/></Label>
                         <Label><SingleCheckbox/></Label>
-                        <Label><SingleCheckbox/></Label></Flex> {/*Will put in Alex's cool-looking death save circles here*/}
-                    </Text>
-                    <ResetButton />
+                        <Label><SingleCheckbox/></Label></Flex> 
+                </Flex>
+                <Flex>
+                    <Text
+                    fontSize={[1, 2, 3]}
+                    fontWeight='bold'
+                    color='primary'>
+                        Spell Slots for Level 4:</Text>
+                        <Flex><Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label></Flex> 
+                </Flex>
+                <Flex>
+                    <Text
+                    fontSize={[1, 2, 3]}
+                    fontWeight='bold'
+                    color='primary'>
+                        Spell Slots for Level 5:</Text>
+                        <Flex><Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label></Flex>
+                </Flex>
+                <Flex>
+                    <Text
+                    fontSize={[1, 2, 3]}
+                    fontWeight='bold'
+                    color='primary'>
+                        Spell Slots for Level 6:</Text>
+                        <Flex><Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label></Flex>
+                </Flex>
+                <Flex>
+                    <Text
+                    fontSize={[1, 2, 3]}
+                    fontWeight='bold'
+                    color='primary'>
+                        Spell Slots for Level 7:</Text>
+                        <Flex><Label><SingleCheckbox/></Label>
+                        <Label><SingleCheckbox/></Label></Flex>
+                </Flex>
+                <Flex>
+                    <Text
+                    fontSize={[1, 2, 3]}
+                    fontWeight='bold'
+                    color='primary'>
+                        Spell Slots for Level 8:</Text>
+                        <Flex><Label><SingleCheckbox/></Label></Flex>
+                </Flex>
+                <Flex>
+                    <Text
+                    fontSize={[1, 2, 3]}
+                    fontWeight='bold'
+                    color='primary'>
+                        Spell Slots for Level 9:</Text>
+                        <Flex><Label><SingleCheckbox/></Label></Flex>
                 </Flex>
                 <hr/>
                 {/* Below here will be a for loop with a call to the API for all spells, then render only the ones for the class passed in as {this.props.userClass} that'll then populate this entire list of spells */}
