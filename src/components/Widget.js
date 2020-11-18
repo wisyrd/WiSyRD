@@ -25,7 +25,8 @@ export default class Widget extends Component {
         return (
             <Box
                 className={`widget ${this.widgetType} ${this.props.className?this.props.className:""}`}
-                bg="#dddddd">
+                bg="#dddddd"
+                height={(this.props.widgetState.layout.h * 46)-8}>
                 <Flex bg="primary" color="white" px={2}>
                     <Heading width={3/4}>{this.id} {this.title}</Heading>
                 </Flex>

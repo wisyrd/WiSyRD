@@ -12,9 +12,6 @@ import InventoryWidget from "./components/InventoryWidget";
 import SpellbookWidget from "./components/SpellbookWidget";
 
 export default class WidgetRenderer extends Component{
-    // static defaultProps = {
-    //     onLayoutChange: function() {}
-    // }
 
     constructor(props) {
         super(props);
@@ -23,31 +20,31 @@ export default class WidgetRenderer extends Component{
                 layout: {x: 0, y:0, w:1, h: 2}
             },
             1:{component: AttacksWidget,
-                layout: {x: 0, y:1, w:1, h: 2}
+                layout: {x: 0, y:1, w:1, h: 3}
             },
             2:{component: ExplorationWidget,
-                layout: {x: 0, y:2, w:1, h: 4}
+                layout: {x: 0, y:2, w:1, h: 5}
             },
             3:{component: SkillWidget,
-                layout: {x: 0, y:3, w:1, h: 17}
+                layout: {x: 0, y:3, w:1, h: 24}
             },
             4:{component: ExampleWidget,
                 layout: {x: 1, y:0, w:1, h: 2}
             },
             5:{component: AttributesWidget,
-                layout: {x: 1, y:1, w:1, h: 9}
+                layout: {x: 1, y:1, w:1, h: 13}
             },
             6:{component: BasicWidget,
-                layout: {x: 1, y:2, w:1, h: 3}
+                layout: {x: 1, y:2, w:1, h: 4}
             },
             7:{component: CombatStatWidget,
-                layout: {x: 1, y:3, w:1, h: 9}
+                layout: {x: 1, y:3, w:1, h: 13}
             },
             8:{component: InventoryWidget,
-                layout: {x: 0, y:4, w:1, h: 3}
+                layout: {x: 0, y:4, w:1, h: 5}
             },
             9:{component: SpellbookWidget,
-                layout: {x: 1, y:4, w:1, h: 6}
+                layout: {x: 1, y:4, w:1, h: 8}
             }
         };
     }
@@ -61,8 +58,6 @@ export default class WidgetRenderer extends Component{
     renderWidgets=()=>{
         console.log("RENDERING!");
         return Object.entries(this.state).map(widgetPair=>{
-            // console.log(widget.component.setX(112));
-            // return <AttacksWidget x={0} />
             let widgetId = widgetPair[0];
             let widget = widgetPair[1];
             let ThisWidgetType = widget.component;
@@ -75,12 +70,8 @@ export default class WidgetRenderer extends Component{
         })
     }
 
-    // onLayoutChange(layout) {
-    //     this.props.onLayoutChange(layout);
-    // }
-
     render=()=>{
-        return (<ReactGridLayout className="layout"  cols={2} rowHeight={55} width={750}>
+        return (<ReactGridLayout className="layout"  cols={2} rowHeight={36} width={750}>
             {this.renderWidgets()}
         </ReactGridLayout>)
     }
