@@ -5,39 +5,46 @@ import { Input } from "@rebass/forms";
 // add row component
 
 export default function AttackRow() {
-    return (
+  return (
     <Box>
-      <Flex>
-      {/* <Label htmlFor="Attack Name">Attack Name</Label> */}
-      <Input
-        name="attack"
-        type="text"
-        placeholder="Attack Name "
-      />
-      </Flex>
-          <Flex>
-              {/* <Label htmlFor="Hit">Hit</Label> */}
-              <Input
-                name="hit"
-                type="text"
-                placeholder="Hit Mod"
-                width={1 / 3}
-              />
-              {/* <Label htmlFor="Range">Range</Label> */}
-              <Input
-                name="range"
-                type="text"
-                placeholder="Attack Range "
-                width={1 / 3}
-              />
-              {/* <Label htmlFor="DamgageType">Damage/Type</Label> */}
-              <Input
-                name="damageType"
-                type="text"
-                placeholder="Damage"
-                width={1 / 3}
-              />
-            </Flex>
-      </Box>  
+      <Box variant='fullWidthBox'>
+        <Text variant='cardHeader'>Attack Name</Text>
+        <Input
+          name="attack"
+          type="text"
+          placeholder="Attack Name "/>
+      </Box>
+
+                  {/* =============Hit Mod============= */ }
+      <Box>
+        <Flex>
+          <Box variant='statsBox'>
+            <Text variant='cardHeader'>Hit Mod</Text>
+            <Input
+              name="hit"
+              type="text"
+              placeholder="Hit Mod" />
+          </Box>
+
+          {/* =============Attack Range============= */}
+          <Box variant='statsBox'>
+            <Text variant='cardHeader'>Attack Range</Text>
+            <Input
+              name="range"
+              type="text"
+              placeholder="Attack Range " />
+          </Box>
+
+          {/* =============Damage============= */}
+          <Box variant='statsBox'>
+            <Text variant='cardHeader'>Damage</Text>
+            <Input
+              name="damageType"
+              type="text"
+              placeholder="Damage" />
+          </Box>
+    </Flex>
+  </Box>
+  </Box > 
     )
 }
