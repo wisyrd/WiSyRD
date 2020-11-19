@@ -23,7 +23,7 @@ export default class SkillWidget extends Widget {
 
     renderPanel =()=> {
         return (<>
-            <Box>
+            <Box variant='backgroundBox'>
                 <Box variant='skillsBox'>
                     <Flex>
                     <DoubleCheckbox />

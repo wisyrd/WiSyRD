@@ -10,7 +10,7 @@ function App() {
 
   return (
     <ThemeProvider className="App" theme={theme}>
-      <WidgetRenderer />
+      <WidgetRenderer apiURL={process.env.REACT_APP_API_URL || "https://lvh.me:8080/api/spells/"}/>
     </ThemeProvider>
   );
 }

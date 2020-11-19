@@ -29,7 +29,7 @@ export default class ExplorationWidget extends Widget {
     return (
       <>
         <Text>{this.props.children}</Text>
-        <Box>
+        <Box variant='backgroundBox'>
           <Flex>
             <Box variant='statsBox'>
               <Text variant='cardHeader'>Speed</Text>
