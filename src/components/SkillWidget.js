@@ -4,7 +4,6 @@ import { ThemeProvider } from 'emotion-theming'
 import { Box, Heading, Text } from 'rebass'
 import DoubleCheckbox from './DoubleCheckbox'
 import { Flex } from 'reflexbox'
-import TutorialButton from "./TutorialButton"
 
 export default class SkillWidget extends Widget {
     constructor(props){

@@ -4,7 +4,6 @@ import Widget from './Widget';
 import { Flex } from 'reflexbox';
 import SingleCheckbox from "./SingleCheckbox";
 import { Label } from "@rebass/forms";
-import TutorialButton from "./TutorialButton";
 export default class SpellSlotWidget extends Widget {
 
     constructor(props){

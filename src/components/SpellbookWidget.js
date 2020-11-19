@@ -2,7 +2,6 @@ import React from 'react';
 import Widget from './Widget';
 import { Heading, Text } from 'rebass'
 import { Flex } from 'reflexbox'
-import TutorialButton from "./TutorialButton"
 import axios from "axios";
 import SpellCard from "./SpellCard";
 
