@@ -4,6 +4,7 @@ import uncheckedcheckbox from '../images/unchecked-checkbox.png';
 import checkedcheckbox from '../images/checked-checkbox.png';
 
 export default function SingleCheckbox() {
+    //NO STATE IMPORTING IS NECESSARY
     const [checkboxState, setCheckboxState] = useState(uncheckedcheckbox);
 
     function indicateState(event) {
@@ -14,7 +15,7 @@ export default function SingleCheckbox() {
 
         return (
             <Box className="single-checkbox">
-                <img src={checkboxState} alt="unchecked-checkbox" width="50" height="50" onClick={indicateState} />
+                <img src={checkboxState} alt="unchecked-checkbox" width="25" height="25" onClick={indicateState} />
             </Box>
         )
 }

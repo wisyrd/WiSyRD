@@ -4,58 +4,39 @@ import { Flex } from 'reflexbox';
 import SingleCheckbox from "./SingleCheckbox";
 import RitualButton from "./RitualButton";
 
+// NO STATE IMPORTING NECESSARY HERE, THE SPELLBOOK WIDGET PASSES ALL CRUCIAL PROPS INFO HERE
+
 export default function SpellCard(props) {
-    const [showModalState, setShowModalState] = useState(false);
-    const [durationState, setDurationState] = useState("");
-    const [levelState, setLevelState] = useState("");
-    const [vComponentState, setVComponentState] = useState("");
-    const [sComponentState, setSComponentState] = useState("");
-    const [materialState, setMaterialState] = useState("");
-    const [descriptionState, setDescriptionState] = useState("");
-
-    function indicateState() {
-        setDurationState(props.duration);
-        setLevelState(props.level);
-        setVComponentState(props.vComponent);
-        setSComponentState(props.sComponent);
-        setMaterialState(props.material);
-        setDescriptionState(props.desc)
-        setShowModalState(true);
+    function showModal() {
+        props.setGlobalState({modal: 
+            {
+            show: true,
+            contents:
+                (
+                <Box className="modal-content" bg="white">
+                    <Heading>{props.name}</Heading>
+                    <Text>Description: {props.description}</Text>
+                    <Text>Spell Duration: {props.duration}</Text>
+                    <Text>Level: {props.level}</Text>
+                    {props.vComponent ? (<Text>V Component: True</Text>) : ""}
+                    {props.sComponent ? (<Text>S Component: True</Text>) : ""}
+                    {props.material ? (<Text>Material: {props.material}</Text>) : "None"}
+                </Box>
+                )
+        }})
     }
-
-    function hideState() {
-        setShowModalState(false);
-    }
-
-    //I want to also accept props for the modal here that'll change state based on what name is clicked
 
     return (
         <Box>
             <Box>
                 <Flex>
                     <Box width={1 / 4}><SingleCheckbox /> </Box>
-                    <Box width={1 / 4}><Button onClick={indicateState}><Text>{props.name}</Text></Button></Box>
+                    <Box width={1 / 4}><Button onClick={showModal}><Text>{props.name}</Text></Button></Box>
                     <Text width={1 / 4 } fontSize={[2, 3, 4]}
                     fontWeight='bold'
                     color='primary'>{props.castTime}</Text>
                     {props.ritual ? <RitualButton width={1 / 4} /> : <Text width={1 /4}></Text>}
                 </Flex>
-            </Box>
-            <Box>
-                {/* Haven't fully stylized the modal but I've got it working!!! */}
-                {showModalState ? (
-                    <div className="modal" style={{ position: "fixed", left: "25vh", top: "15vh", overflow: "auto", backgroundColor: "white", height: "25vh", width: "25vw" }}>
-                        <div className="modal-content">
-                            <span className="close" style={{ float: "right", fontWeight: "bold", textSize: "12", color: "black" }} onClick={hideState}>&times;</span>
-                            <Text>Description: {descriptionState}</Text>
-                            <Text>Spell Duration: {durationState}</Text>
-                            <Text>Level: {levelState}</Text>
-                            {vComponentState ? (<Text>V Component: True</Text>) : ""}
-                            {sComponentState ? (<Text>S Component: True</Text>) : ""}
-                            {materialState ? (<Text>Material: {materialState}</Text>) : ""}
-                        </div>
-                    </div>) : ""
-                }
             </Box>
         </Box>
     )

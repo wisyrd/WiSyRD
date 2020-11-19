@@ -46,7 +46,8 @@ export default {
             fontSize: 3,
             fontWeight:'bold',
             color:'black',
-            textAlign:'center'
+            textAlign:'center',
+            m: '4%'
         },
         skillsText: {
             fontSize: 3,
@@ -59,6 +60,13 @@ export default {
             fontWeight: 'bold',
             color: 'black',
             p: '2%' 
+        },
+        infoText: {
+            fontSize: 1,
+            fontWeight: 'bold',
+            color: 'black',
+            textAlign: 'center',
+            p: '2%'
         }
     },
     variants: {
@@ -77,6 +85,7 @@ export default {
             borderStyle: 'solid',
             borderColor: 'white',
             borderRadius: 8,
+            m: '2%'
         },
         halfWidthBox: {
             bg:'yellow',
@@ -97,7 +106,8 @@ export default {
             borderWidth: '3px',
             borderStyle: 'solid',
             borderColor: 'white',
-            borderRadius: 8
+            borderRadius: 8,
+            m: '2%'
         },
         attributesBox: {
             ml: 'auto',
@@ -122,6 +132,9 @@ export default {
             borderStyle: 'solid',
             borderColor: 'white',
             borderRadius: 8
+        },
+        checkBoxBox: {
+            ml: '10%'
         }
 
     }

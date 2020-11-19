@@ -4,7 +4,6 @@ import { Input, Label } from "@rebass/forms"
 import { Tiles } from '@rebass/layout';
 import Widget from './Widget';
 import InventoryRow from './InventoryRow'
-import TutorialButton from "./TutorialButton"
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class InventoryWidget extends Widget {
@@ -102,10 +101,7 @@ export default class InventoryWidget extends Widget {
             
             <Button onClick = {() => {this.addRow()}}>
                 +         
-    </Button>   
-    <Flex>
-                    <TutorialButton tutorialText={this.tutorialText}/>
-                </Flex>        
+    </Button>    
                 </Box>
         </>
         )

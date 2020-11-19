@@ -3,7 +3,6 @@ import { Box, Heading, Text } from 'rebass';
 import { Input, Label, Checkbox } from '@rebass/forms'
 import Widget from './Widget';
 import { Flex } from 'reflexbox'
-import TutorialButton from "./TutorialButton"
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class CombatStatWidget extends Widget {
@@ -63,10 +62,13 @@ export default class CombatStatWidget extends Widget {
                                     textAlign='center'
                                     placeholder='#' />
                             </Box>
-
+                        </Flex>
+                    </Box>
                             {/* ================================================
                                                     AC Box
                                 ================================================ */}
+                    <Box>
+                        <Flex>
                             <Box variant="statsBox">
                                 <Text variant='cardHeader'>AC</Text>
                                 <Input
@@ -75,15 +77,12 @@ export default class CombatStatWidget extends Widget {
                                     textAlign='center'
                                     placeholder='#' />
                             </Box>
-                        </Flex>
-                    </Box>
+
                
                     {/* ================================================
                                     Lower Bar Box
                     ================================================ */}
-                    <Box
-                        width={1}>
-                        <Flex>
+
                             {/* ================================================
                                                     Initiative Box
                             ================================================ */}
@@ -95,19 +94,19 @@ export default class CombatStatWidget extends Widget {
                                     textAlign='center'
                                     placeholder='#' />
                             </Box>
+                            </Flex>
+                            </Box>
 
                             {/* ================================================
                                             Death Saves Box
-                            ================================================ */}
+                            ================================================ */}                    
+                    <Box>
+                        <Flex>
                             <Box variant="statsBox">
                                 <Text variant='cardHeader'>Death Saves</Text>
                                 <Box>
-                                    <Label
-                                        htmlFor='deathSuccess'
-                                        fontSize={[1]}
-                                        fontWeight='bold'
-                                        color='black'>Successes</Label>
-                                    <Flex>
+                                    <Text variant='infoText'>Sucesses</Text>
+                                    <Flex variant='checkBoxBox'>
                                         <Label><Checkbox id='deathSaveOne' name='deathSaveOne' /></Label>
                                         <Label><Checkbox id='deathSaveTwo' name='deathSaveTwo' /></Label>
                                         <Label><Checkbox id='deathSaveThree' name='deathSaveThree' /></Label>
@@ -115,12 +114,8 @@ export default class CombatStatWidget extends Widget {
                                 </Box>
 
                                 <Box>
-                                    <Label
-                                        htmlFor='deathFail'
-                                        fontSize={[1]}
-                                        fontWeight='bold'
-                                        color='black'>Failures</Label>
-                                    <Flex>
+                                <Text variant='infoText'>Failures</Text>
+                                    <Flex variant='checkBoxBox'>
                                         <Label><Checkbox id='deathSaveOne' name='deathSaveOne' /></Label>
                                         <Label><Checkbox id='deathSaveTwo' name='deathSaveTwo' /></Label>
                                         <Label><Checkbox id='deathSaveThree' name='deathSaveThree' /></Label>
@@ -144,9 +139,6 @@ export default class CombatStatWidget extends Widget {
                 </Box>
 
                 <Text>{this.props.children}</Text>
-                <Flex>
-                    <TutorialButton tutorialText={this.tutorialText}/>
-                </Flex>
         </>)
     }
 }
