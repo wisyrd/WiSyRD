@@ -23,11 +23,6 @@ export default class NotesWidget extends Widget {
                 placeholder='Add notes'>
             </Textarea>
             </Box>
-            
-
-            <Flex>
-                    <TutorialButton tutorialText={this.tutorialText}/>
-                </Flex>
         </>
         )
     }
