@@ -50,8 +50,16 @@ export default class WidgetRenderer extends Component{
                 layout: {x: 0, y:5, w:1, h:5}},
             10:{component: SpellbookWidget,
                 layout: {x: 1, y:4, w:1, h: 8},
+<<<<<<< Updated upstream
                 classState: "cleric"
             }
+=======
+                classState: "cleric",
+                apiURL: this.props.apiURL
+            },
+            modal:{show: false,
+                   contents: ""}
+>>>>>>> Stashed changes
         };
     }
 
