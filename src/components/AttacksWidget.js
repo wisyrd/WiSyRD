@@ -2,7 +2,6 @@ import React from "react";
 import { Flex, Text, Button, Box } from "rebass";
 import Widget from "./Widget";
 import { Input } from "@rebass/forms";
-import TutorialButton from "./TutorialButton"
 import AttackRow from './AttackRow'
 
 export default class AttacksWidget extends Widget {
@@ -209,9 +208,6 @@ export default class AttacksWidget extends Widget {
     
     
     </Box>
-    <Flex>
-                    <TutorialButton tutorialText={this.tutorialText}/>
-                </Flex>    
         </>
     );
   }
