@@ -16,14 +16,15 @@ export default class NotesWidget extends Widget {
 
     renderPanel=()=> {
         return (<>
-        <Flex>
+            <Box variant='fullWidthBox'>
+                <Textarea
+                fontWeight=''
+                color='black'
+                placeholder='Add notes'>
+            </Textarea>
+            </Box>
+            
 
-        <Textarea
-            fontWeight=''
-            color='primary'
-            placeholder='Write here!'>
-        </Textarea>
-            </Flex>
             <Flex>
                     <TutorialButton tutorialText={this.tutorialText}/>
                 </Flex>
