@@ -7,27 +7,30 @@ import TutorialButton from "./TutorialButton"
 
 export default class NotesWidget extends Widget {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.title = "Notes Widget";
         this.widgetType = "notes-widget"
         this.tutorialText = <Text>This is a basic widget for storing any information needed in text format. It may be editted at will and is there for refernce.</Text>
     }
 
-    renderPanel=()=> {
+    renderPanel = () => {
         return (<>
-            <Box variant='fullWidthBox'>
-                <Textarea
-                fontWeight=''
-                color='black'
-                placeholder='Add notes'>
-            </Textarea>
+            <Box variant='backgroundBox'>
+                <Box variant='fullWidthBox'>
+                    <Textarea
+                        fontWeight=''
+                        color='black'
+                        placeholder='Add notes'>
+                    </Textarea>
+                </Box>
             </Box>
-            
+
+
 
             <Flex>
-                    <TutorialButton tutorialText={this.tutorialText}/>
-                </Flex>
+                <TutorialButton tutorialText={this.tutorialText} />
+            </Flex>
         </>
         )
     }
