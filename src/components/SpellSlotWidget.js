@@ -4,17 +4,17 @@ import Widget from './Widget';
 import { Flex } from 'reflexbox';
 import SingleCheckbox from "./SingleCheckbox";
 import { Label } from "@rebass/forms";
-import TutorialButton from "./TutorialButton";
 export default class SpellSlotWidget extends Widget {
 
     constructor(props){
         super(props);
         this.title = "Spell Slot Widget";
         this.widgetType = "spell-slot-widget";
+        // NEEDS TO IMPORT BOTH THE CLASS AND LEVEL OF THE USER HERE
         this.state = {levelState: 15, classState: "druid"}
         this.tutorialText = <Text><a href="" target="blank">Spell Slot Tutorial</a></Text>;
     }
-    //Look up number of slots per level for each class
+    
     showSlots() {
         if (this.state.classState == "warlock")
         {
@@ -1486,7 +1486,6 @@ export default class SpellSlotWidget extends Widget {
         return (<>
             <Heading>{this.props.children}</Heading>
                 {this.showSlots()}
-                <TutorialButton tutorialText={this.tutorialText}/>
             </>
         )
     }

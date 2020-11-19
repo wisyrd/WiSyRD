@@ -4,7 +4,6 @@ import { Tiles } from '@rebass/layout';
 import { Input, Label, Checkbox } from '@rebass/forms'
 import { Flex } from 'reflexbox'
 import Widget from './Widget';
-import TutorialButton from "./TutorialButton"
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class AttributesWidget extends Widget {
@@ -114,9 +113,6 @@ export default class AttributesWidget extends Widget {
 
                 <Text>{this.props.children}</Text>
         </Box>
-        <Flex>
-                    <TutorialButton tutorialText={this.tutorialText}/>
-                </Flex>
             </>
         )
     }
