@@ -19,7 +19,7 @@ export default function SpellCard(props) {
         setVComponentState(props.vComponent);
         setSComponentState(props.sComponent);
         setMaterialState(props.material);
-        setDescriptionState(props.desc);
+        setDescriptionState(props.description);
         setShowModalState(true);
     }
 
