@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Flex, Box, Heading, Text, Button } from "rebass";
+import TutorialButton from "./TutorialButton";
 
 export default class Widget extends Component {
     
@@ -8,7 +9,7 @@ export default class Widget extends Component {
             throw new TypeError("Cannot construct a base widget directly.");
         }
         super(props);
-
+    
         this.id = props.id;
     }
 
@@ -29,6 +30,7 @@ export default class Widget extends Component {
                 height={(this.props.widgetState.layout.h * 46)-8}
                 width={358}>
                 <Flex bg="primary" color="white" px={2}>
+                    <TutorialButton setGlobalState={this.props.setGlobalState} tutorialText={this.tutorialText}/>
                     <Heading className="dragHandle"width={3/4}>{this.id} {this.title}</Heading>
                 </Flex>
                 <Box p={1}>
