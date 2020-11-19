@@ -11,6 +11,7 @@ import CombatStatWidget from "./components/CombatStatWidget";
 import InventoryWidget from "./components/InventoryWidget";
 import SpellbookWidget from "./components/SpellbookWidget";
 import SpellSlotWidget from "./components/SpellSlotWidget";
+import Modal from "./components/Modal";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -51,7 +52,9 @@ export default class WidgetRenderer extends Component{
             10:{component: SpellbookWidget,
                 layout: {x: 1, y:4, w:1, h: 8},
                 classState: "cleric"
-            }
+            },
+            modal:{show: false,
+                   contents: ""}
         };
     }
 
@@ -63,12 +66,13 @@ export default class WidgetRenderer extends Component{
 
     renderWidgets=()=>{
         console.log("RENDERING!");
-        return Object.entries(this.state).map(widgetPair=>{
+        return Object.entries(this.state).filter(widgetPair=>parseInt(widgetPair[0]) >= 0)
+            .map(widgetPair=>{
             let widgetId = widgetPair[0];
             let widget = widgetPair[1];
             let ThisWidgetType = widget.component;
             return (<div data-grid = {widget.layout}
-                                        key={widgetId}>
+                               key = {widgetId}>
                     <ThisWidgetType id             = {widgetId}
                                     globalState    = {this.state}
                                     setGlobalState = {this.handleStateChange}
@@ -78,13 +82,15 @@ export default class WidgetRenderer extends Component{
     }
 
     render=()=>{
-        return (<ResponsiveGridLayout className="layout"
+        return (<><Modal modal={this.state.modal} setGlobalState={this.handleStateChange}/>
+        <ResponsiveGridLayout className="layout"
                                  cols={{lg:2, md:2, sm:1, xs:1, xxs:1}}
                                  breakpoints={{lg:1200, md:996, sm: 720}}
                                  rowHeight={36}
                                  width={{lg:750, md:750, sm:350, xs:350, xxs:350}}
                                  draggableHandle=".dragHandle">
             {this.renderWidgets()}
-        </ResponsiveGridLayout>)
+        </ResponsiveGridLayout>
+        </>)
     }
 }
