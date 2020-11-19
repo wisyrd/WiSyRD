@@ -3,7 +3,6 @@ import { Box, Heading, Text } from 'rebass';
 import { Input, Label, Checkbox } from '@rebass/forms'
 import Widget from './Widget';
 import { Flex } from 'reflexbox'
-import TutorialButton from "./TutorialButton"
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class CombatStatWidget extends Widget {
@@ -140,9 +139,6 @@ export default class CombatStatWidget extends Widget {
                 </Box>
 
                 <Text>{this.props.children}</Text>
-                <Flex>
-                    <TutorialButton tutorialText={this.tutorialText}/>
-                </Flex>
         </>)
     }
 }

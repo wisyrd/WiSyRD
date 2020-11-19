@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Button, Heading, Text, Flex } from "rebass";
 import { Input, Label, Checkbox, Slider } from "@rebass/forms";
 import Widget from "./Widget";
-import TutorialButton from "./TutorialButton"
 const DESCRIPTIONS = [
   "Not exhausted", "Disadvantage on Ability Checks", "	Speed halved", "Disadvantage on Attack rolls and Saving Throws", "Hit point maximum halved","Speed reduced to 0", "Death"
 ]
@@ -75,9 +74,6 @@ export default class ExplorationWidget extends Widget {
           />
           <Text variant='infoText'>{this.state.description}</Text>
         </Box>
-        <Flex>
-                    <TutorialButton tutorialText={this.tutorialText}/>
-                </Flex>
       </>
     );
   }
