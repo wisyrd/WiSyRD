@@ -11,7 +11,6 @@ export default class SpellSlotWidget extends Widget {
         super(props);
         this.title = "Spell Slot Widget";
         this.widgetType = "spell-slot-widget";
-         //REMEMBER TO TAKE THIS OUT, JUST TESTING HERE
         this.state = {levelState: 15, classState: "druid"}
         this.tutorialText = <Text><a href="" target="blank">Spell Slot Tutorial</a></Text>;
     }
