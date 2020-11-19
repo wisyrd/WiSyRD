@@ -23,10 +23,7 @@ export default class AttributesWidget extends Widget {
             {/* ================================================
                                 Primary box styling
             ================================================ */}
-                <Box
-                    p={3}
-                    width={1}
-                    bg='purple'>
+                <Box variant='backgroundBox'>
                         <Tiles columns={[2]}>
             {/* ================================================
                                     STR

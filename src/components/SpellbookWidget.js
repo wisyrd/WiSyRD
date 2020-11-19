@@ -1,6 +1,6 @@
 import React from 'react';
 import Widget from './Widget';
-import { Heading, Text } from 'rebass'
+import { Heading, Text, Box } from 'rebass'
 import { Flex } from 'reflexbox'
 import TutorialButton from "./TutorialButton"
 import axios from "axios";
@@ -64,7 +64,8 @@ renderSpells () {
     renderPanel=()=> {
         return (
             <>
-                <Heading>
+                <Box variant='backgroundBox'>
+                    <Heading>
                     {this.props.children}
                 </Heading>
                 <Flex>
@@ -93,6 +94,8 @@ renderSpells () {
                     <Text width={1 / 4}>Casting Time</Text>
                     <Text width={1 / 4}>Ritual</Text>              
                 </Flex>
+                </Box>
+                
                 {this.renderSpells()}
             </>
         )
