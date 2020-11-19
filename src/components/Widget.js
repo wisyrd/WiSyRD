@@ -25,12 +25,16 @@ export default class Widget extends Component {
     render=()=>{
         return (
             <Box
+                variant='widgetBox'
                 className={`widget ${this.widgetType} ${this.props.className?this.props.className:""}`}
-                bg="#dddddd"
                 height={(this.props.widgetState.layout.h * 46)-8}
                 width={358}>
+<<<<<<< HEAD
+                <Flex variant='widgetTitle'>
+=======
                 <Flex bg="primary" color="white" px={2}>
                     <TutorialButton setGlobalState={this.props.setGlobalState} tutorialText={this.tutorialText}/>
+>>>>>>> dev
                     <Heading className="dragHandle"width={3/4}>{this.id} {this.title}</Heading>
                 </Flex>
                 <Box p={1}>

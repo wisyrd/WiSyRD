@@ -13,9 +13,18 @@ export default {
         boxBorder: '#ffffff'
     },
     fonts: {
-        body: 'system-ui, sans-serif',
-      heading: 'system-ui, sans-serif',
+      body: 'system-ui, sans-serif',
+      heading: 'Metamorphous',
+      text: 'Metamorphous',
       monospace: 'Menlo, monospace'
+    },
+    input: {
+        border: 'none',
+        borderBottom: '1px solid black',
+        color: '#176C64',
+        fontFamily: 'Ubuntu',
+        fontWeight: 'regular',
+        fontSize: 4
     },
     fontWeights: {
         body: 400,
@@ -28,26 +37,31 @@ export default {
     },
     text: {
         attributesHeader: {
-            bg: 'grey',
+            fontFamily: 'Metamorphous',
             textAlign: 'center',
             fontSize: 3,
             fontWeight: 'bold',
-            color: 'black',
-            p: '4%'
+            color: '#9c4122',
+            p: '4%',
+            borderBottom: '2px solid #9c4122'
         },
         attributesDetails: {
+            fontFamily: 'Ubuntu',
+            fontWeight: 'regular',
             textAlign: 'center',
-            fontSize: 5,
-            fontWeight: 'bold',
-            color: 'black',
+            fontSize: 4,
+            color: '#9c4122',
             p: '4%'
         },
         cardHeader: {
+            fontFamily: 'Metamorphous',
             fontSize: 3,
             fontWeight:'bold',
-            color:'black',
+            color:'#9c4122',
             textAlign:'center',
-            m: '4%'
+            m: '4%',
+            p: '4%',
+            borderBottom: '2px solid #9c4122'
         },
         skillsText: {
             fontSize: 3,
@@ -71,70 +85,101 @@ export default {
     },
     variants: {
         heading: {
-            font: 'metamorphosis',
+            font: 'Metamorphous',
             fontSize: 5,
             fontWeight: 'bold',
             color: 'black'
         },
+        backgroundBox: {
+            bg: '#365a74',
+            p: '5%',
+            width: '100%'
+        },
         fullWidthBox: {
-            bg:'yellow',
+            bg:'#ebe1bd',
             textAlign: 'center',
             width: '100%',
             p: '2%', 
             borderWidth: '3px',
             borderStyle: 'solid',
-            borderColor: 'white',
+            borderColor: '#ad9d82',
             borderRadius: 8,
-            m: '2%'
+            boxShadown: '3',
+            m: '1%'
         },
         halfWidthBox: {
-            bg:'yellow',
+            bg:'#ebe1bd',
             textAlign: 'center',
             width: '50%',
             p: '2%', 
             borderWidth: '3px',
             borderStyle: 'solid',
-            borderColor: 'white',
+            borderColor: '#ad9d82',
             borderRadius: 8,
 
         },
         statsBox: {
-            bg:'yellow',
+            bg:'#ebe1bd',
             textAlign: 'center',
             width: '50%',
-            p: '2%', 
+            p: '1%', 
             borderWidth: '3px',
             borderStyle: 'solid',
-            borderColor: 'white',
+            borderColor: '#ad9d82',
             borderRadius: 8,
-            m: '2%'
+            m: '1%'
         },
         attributesBox: {
             ml: 'auto',
             p: '4%',
-            bg: 'orange',
-            borderWidth: '3px',
-            borderStyle: 'solid',
-            borderColor: 'white',
-            borderRadius: 8
+            bg: '#ebe1bd',
+            borderWidth: '5px',
+            borderStyle: 'outset',
+            borderColor: '#ad9d82',
+            borderRadius: 8,
+
         },
         currencyBox: {
-            bg:'yellow',
+            bg:'#ebe1bd',
             textAlign: 'center',
             p: '4%',
-            width: '20%'
+            width: '20%',
+            
+        },
+        currencyContainer: {
+            borderWidth: '5px',
+            borderStyle: 'outset',
+            borderColor: '#ad9d82',
+            bg: '#ebe1bd',
+            borderRadius: 8
         },
         skillsBox: {
             ml: 'auto',
             p: '1%',
-            bg: 'orange',
+            bg: '#ebe1bd',
             borderWidth: '3px',
             borderStyle: 'solid',
-            borderColor: 'white',
+            borderColor: '#ad9d82',
             borderRadius: 8
         },
         checkBoxBox: {
             ml: '10%'
+        },
+        inputBox: {
+            boxShadow: 'none'
+        },
+        widgetTitle: {
+            bg:"#1c302f",
+            color:"white",
+            p:2
+        },
+        widgetBox: {
+            ml: 'auto',
+            bg: '#365a74',
+            borderWidth: '5px',
+            borderStyle: 'outset',
+            borderColor: '#ad9d82',
+            borderRadius: 8,
         }
 
     }

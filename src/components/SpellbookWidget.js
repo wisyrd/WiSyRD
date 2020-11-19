@@ -1,15 +1,14 @@
 import React from 'react';
 import Widget from './Widget';
-import { Heading, Text } from 'rebass'
+import { Heading, Text, Box } from 'rebass'
 import { Flex } from 'reflexbox'
 import axios from "axios";
 import SpellCard from "./SpellCard";
 
-const APIURL = process.env.API_URL? process.env.API_URL: "http://lvh.me:8080/api/spells/"// "localhost:8080/api/spells/";
-
 // Eventually, render each blank space with all the spells depending on the user's class through an AJAX call to the 5e API.
 
 export default class SpellbookWidget extends Widget {
+
     constructor(props) {
         super(props);
         // Here is where you write the tutorial!!!
@@ -22,6 +21,8 @@ export default class SpellbookWidget extends Widget {
         };
         //NEEDS THE STATE OF THE CHARACTER'S CLASS 
         this.classState = props.widgetState.classState
+
+        this.apiURL = props.widgetState.apiURL
     }
 
     // "this" is undefined when this event starts; unsure how to get around it
@@ -41,7 +42,7 @@ export default class SpellbookWidget extends Widget {
             return null;
         }
         else {
-            let spellURL = APIURL + classState;
+            let spellURL = this.apiURL + classState;
             axios.get(spellURL).then((spellList)=>{
                 this.setState({spellList: spellList.data})
             }).catch(err=>{
@@ -70,7 +71,8 @@ renderSpells () {
     renderPanel=()=> {
         return (
             <>
-                <Heading>
+                <Box variant='backgroundBox'>
+                    <Heading>
                     {this.props.children}
                 </Heading>
                 <Flex>
@@ -97,6 +99,8 @@ renderSpells () {
                     <Text width={1 / 4}>Casting Time</Text>
                     <Text width={1 / 4}>Ritual</Text>              
                 </Flex>
+                </Box>
+                
                 {this.renderSpells()}
             </>
         )

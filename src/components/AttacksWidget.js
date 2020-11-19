@@ -25,10 +25,7 @@ export default class AttacksWidget extends Widget {
         {/* ================================================
                       Primary box styling
         ================================================ */}
-                <Box
-                    p={3}
-                    width={1}
-                    bg='purple'>
+                <Box variant='backgroundBox'>
           
         {/* ================================================
                       Attack Box styling
