@@ -51,13 +51,24 @@ export default class Widget extends Component {
         this.setWidgetState({importedId: widgetId});
     }
 
+    setHeight(height) {
+        let newLayout = {...this.props.widgetState.layout}
+        newLayout.h = height;
+        this.setWidgetState({layout: newLayout});
+    }
+
+    getHeight() {
+        return this.props.widgetState.layout.h;
+    }
+
     render=()=>{
         return (
             <Box
                 variant='widgetBox'
                 className={`widget ${this.widgetType} ${this.props.className?this.props.className:""}`}
-                height={(this.props.widgetState.layout.h * 46)-8}
-                width={358}>
+                height="100%"
+                width={358}
+                overflow="hidden">
                 <Flex variant='widgetTitle'>
                     <TutorialButton setGlobalState={this.props.setGlobalState} tutorialText={this.tutorialText}/>
                     <Heading className="dragHandle"width={3/4}>{this.id} {this.title}</Heading>
@@ -69,20 +80,11 @@ export default class Widget extends Component {
         )
     }
 
-    handleChangeHeight=()=>{
-        this.setWidgetState({layout: {
-            x: this.props.widgetState.layout.x,
-            y: this.props.widgetState.layout.y,
-            w: 1,
-            h: 2
-        }});
-    }
 
     // OVERRIDE THIS
     renderPanel=()=>{
         return (<>
             <Heading>YOU FORGOT TO OVERRIDE THE renderPanel() METHOD</Heading>
-            <Button onClick={()=>this.handleChangeHeight()}>Biggen</Button>
             <Text>kajsdfpqiwejfpiasdnfpiawefpiasenfpiasejnfpaseijfpaisefias</Text>
             <Text>kajsdfpqiwejfpiasdnfpiawefpiasenfpiasejnfpaseijfpaisefias</Text>
             <Text>kajsdfpqiwejfpiasdnfpiawefpiasenfpiasejnfpaseijfpaisefias</Text>

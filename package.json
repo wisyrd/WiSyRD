@@ -13,6 +13,7 @@
     "emotion-theming": "^10.0.27",
     "express": "^4.17.1",
     "i": "^0.3.6",
+    "lodash": "^4.17.20",
     "mongojs": "^3.1.0",
     "mongoose": "^5.10.14",
     "morgan": "^1.10.0",
