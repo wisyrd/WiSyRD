@@ -82,6 +82,16 @@ export default {
             p: '4%',
             borderBottom: '2px solid #9c4122'
         },
+        cardHeaderSmall: {
+            fontFamily: 'Metamorphous',
+            fontSize: 2,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center',
+            m: '2%',
+            p: '2%',
+            borderBottom: '2px solid #9c4122'
+        },
         skillsText: {
             fontSize: 3,
             fontWeight:'bold',
@@ -297,6 +307,66 @@ export default {
             width: '40%',
             height: '40%',
             color: '#c7e350'
+        },
+        tableHit: {
+            p: 1,
+            background: '#b4b4a8',
+            width: '33%',
+            fontFamily: 'Metamorphous',
+            fontSize: 3,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableRange: {
+            p: 1,
+            background: '#8d9fa3',
+            width: '33%',
+            fontFamily: 'Metamorphous',
+            fontSize: 3,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableDamage: {
+            p: 1,
+            background: '#b4b4a8',
+            width: '34%',
+            fontFamily: 'Metamorphous',
+            fontSize: 3,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableAtkName: {
+            p: 1,
+            width: '100%',
+            fontFamily: 'Metamorphous',
+            fontSize: 1,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        attackLabel: {
+            width: '100%',
+            pt: '2%',
+            mt: '4%',
+            color: '#9c4122',
+            textAlign: 'center',
+            fontSize: 1
+        },
+        attackInput: {
+            width: '100%',
+            mt: '10px',
+            textAlign: 'center'
+        },
+        attack: {
+            borderWidth: '2px',
+            borderStyle: 'outset',
+            borderColor: '#ad9d82',
+            borderRadius: 8,
+            m: 1,
+            width: '100%'
         },
     }
 }

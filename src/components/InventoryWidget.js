@@ -26,10 +26,10 @@ export default class InventoryWidget extends Widget {
             <Box variant='currencyBackgroundBox'>
 
                 <Box variant='currencyContainer'>
-                    <Text variant="cardHeader" htmlFor='Inventory'>Currency:</Text>
+                    <Text variant="cardHeaderSmall" htmlFor='Inventory'>Currency:</Text>
                     <Flex>
                         <Box variant="currencyBox">
-                            <Text variant="cardHeader">Pp</Text>
+                            <Text variant="cardHeaderSmall">Pp</Text>
                             <Input
                                 id='platinum'
                                 name="pp"
@@ -39,7 +39,7 @@ export default class InventoryWidget extends Widget {
                         </Box>
 
                         <Box variant="currencyBox">
-                            <Text variant="cardHeader">Gp</Text>
+                            <Text variant="cardHeaderSmall">Gp</Text>
                             <Input
                                 id='gold'
                                 name="gp"
@@ -49,7 +49,7 @@ export default class InventoryWidget extends Widget {
                         </Box>
 
                         <Box variant="currencyBox">
-                            <Text variant="cardHeader">Sp</Text>
+                            <Text variant="cardHeaderSmall">Sp</Text>
                             <Input
                                 id='silver'
                                 name="sp"
@@ -58,7 +58,7 @@ export default class InventoryWidget extends Widget {
                             /></Box>
 
                         <Box variant="currencyBox">
-                            <Text variant="cardHeader">Cp</Text>
+                            <Text variant="cardHeaderSmall">Cp</Text>
                             <Input
                                 id='copper'
                                 name="cp"
@@ -67,7 +67,7 @@ export default class InventoryWidget extends Widget {
                             /></Box>
 
                         <Box variant="currencyBox">
-                            <Text variant="cardHeader">Ep</Text>
+                            <Text variant="cardHeaderSmall">Ep</Text>
                             <Input
                                 id='electrum'
                                 name="ep"
