@@ -1,6 +1,10 @@
 # WiSyRD
 
+![WiSyRD](https://imgur.com/YWSE41s)
+[![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 link to deployed app and logo here
+
 
 ## Description
 
