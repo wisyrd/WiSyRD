@@ -18,20 +18,14 @@ export default class NotesWidget extends Widget {
         return (<>
             <Box variant='backgroundBox'>
                 <Box variant='fullWidthBox'>
-                    <Textarea
-                        fontWeight=''
-                        color='black'
-                        placeholder='Add notes'>
-                    </Textarea>
+                    <Textarea variant='textArea' placeholder='Add notes' onChange={this.handleChange}></Textarea>
                 </Box>
             </Box>
-
-
-
-            <Flex>
-                <TutorialButton tutorialText={this.tutorialText} />
-            </Flex>
         </>
         )
+    }
+
+    handleChange=(event)=>{
+        this.setExportedValue("text", event.target.value);
     }
 }

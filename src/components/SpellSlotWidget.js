@@ -11,7 +11,7 @@ export default class SpellSlotWidget extends Widget {
         this.title = "Spell Slot Widget";
         this.widgetType = "spell-slot-widget";
         // NEEDS TO IMPORT BOTH THE CLASS AND LEVEL OF THE USER HERE
-        this.state = {levelState: 15, classState: "druid"}
+        this.state = {levelState: 1, classState: "warlock"}
         this.tutorialText = <Text><a href="" target="blank">Spell Slot Tutorial</a></Text>;
     }
     
@@ -21,15 +21,15 @@ export default class SpellSlotWidget extends Widget {
             if (this.state.levelState == 1)
                     {
                         return (
-                            <Box>
-                                <Flex><Text>Level {this.state.levelState} {this.state.classState}</Text></Flex>
+                            <Box variant='fullWidthBox'>
+                                <Text>Level {this.state.levelState} {this.state.classState}</Text>
                                 <Flex>
                                 <Text
                                 fontSize={[1, 2, 3]}
                                 fontWeight='bold'
                                 color='primary'>
                                     Spell Slots:</Text>
-                                    <Flex><Label><SingleCheckbox/></Label></Flex>
+                                    <Label><SingleCheckbox/></Label>
                                 </Flex>
                             </Box>
                         )

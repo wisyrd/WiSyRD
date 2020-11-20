@@ -7,6 +7,8 @@ import SpellCard from "./SpellCard";
 
 // Eventually, render each blank space with all the spells depending on the user's class through an AJAX call to the 5e API.
 
+//Can't figure out a way to do this without causing an infinite loop.
+
 export default class SpellbookWidget extends Widget {
 
     constructor(props) {
@@ -17,7 +19,8 @@ export default class SpellbookWidget extends Widget {
         this.state = {
             spellList: [],
             isAPICalling: false,
-            // value: 'Alphabetical'
+            value: 'Level',
+            ritualList: []
         };
         //NEEDS THE STATE OF THE CHARACTER'S CLASS 
         this.classState = props.widgetState.classState
@@ -25,11 +28,9 @@ export default class SpellbookWidget extends Widget {
         this.apiURL = props.widgetState.apiURL
     }
 
-    // "this" is undefined when this event starts; unsure how to get around it
-    // handleChange(event) {
-    //     console.log(this)
-    //     // this.setState({value: event.target.value});
-    //   }
+    handleChange(event) {
+        this.setState({value: event.target.value});
+      }
 
     // userClass/this.props.userClass MUST BE THE CLASS NAME IN ALL LOWERCASE OR THIS DOES NOT WORK
     componentDidMount() {
@@ -44,12 +45,48 @@ export default class SpellbookWidget extends Widget {
         else {
             let spellURL = this.apiURL + classState;
             axios.get(spellURL).then((spellList)=>{
-                this.setState({spellList: spellList.data})
+                if (this.state.value == "Alphabetical")
+                {this.setState({spellList: spellList.data})}
+                else if (this.state.value == "Level")
+                {
+                    this.levelSort(spellList);
+                }
+                else if (this.state.value == "Ritual")
+                {
+                    this.ritualSort(spellList)
+                }
             }).catch(err=>{
                 console.error(err);
             }) 
         }
     }
+
+    handleChange = (event) => {
+        this.setState({value: event.target.value});
+        this.spellRender(this.classState);
+    }
+
+    ritualSort = (spellList) => {
+        let ritualList = spellList.data.filter(spell=> spell.ritual == true)
+        this.setState({spellList: ritualList});
+    }
+
+    levelSort = (spellList) => {
+        spellList = spellList.data.sort(this.compareLevels);
+        this.setState({spellList: spellList});
+    }
+
+    compareLevels = (a, b) => {
+        const spellA = a.level;
+        const spellB = b.level;
+        let comparison = 0;
+        if (spellA > spellB) {
+          comparison = 1;
+        } else if (spellA < spellB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
 
 renderSpells () {
     return (this.state.spellList.map(spell => (
@@ -76,7 +113,7 @@ renderSpells () {
                     {this.props.children}
                 </Heading>
                 <Flex>
-                    {/* <Text
+                    <Text
                     fontSize={[2, 3, 4]}
                     fontWeight='bold'
                     color='primary'>
@@ -86,12 +123,10 @@ renderSpells () {
                     <select value={this.state.value} onChange={this.handleChange}>
                         <option value="Alphabetical">Alphabetical</option>
                         <option value="Level">Level</option>
-                        {/* <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option> */}
-                    {/* </select>
+                        <option value="Ritual">Ritual</option>
+                    </select>
                     </label>
-                    // </Text> */}
+                    </Text>
                 </Flex>
                 <Flex>
                     <Text width={1 / 4}>Prep Spell</Text>
