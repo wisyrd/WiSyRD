@@ -11,10 +11,16 @@ export default class ExampleWidget extends Widget {
         this.widgetType = "example-widget"
     }
 
+    handleClick=()=>{
+        this.setHeight(this.getHeight()+1);
+    }
+
     renderPanel=()=> {
+        console.log(this.importedId);
+        console.log(this.getImportedValue("text"));
         return (<>
-                <Button>Beep</Button>
-                <Text>{this.props.children}</Text>
+                <Button onClick={this.handleClick}>Beep</Button>
+                <Text>{this.getImportedValue("text")}</Text>
             </>
         )
     }
