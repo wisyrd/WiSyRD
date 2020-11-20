@@ -13,15 +13,15 @@ export default function TutorialButton(props) {
             {
                 show: true,
                 contents:
-                    (<Box className="modal-content" bg="white">
-                        <Text>{props.tutorialText}</Text>
-                    </Box>)
+                        <Box variant='tutorialModal' className="modal-content">
+                            <Text variant='modalText'>{props.tutorialText}</Text>
+                        </Box>
             }
         })
     }
     return (
             <Button className="tutorial-button" onClick={showModal}>
-                <img src={pictureState} alt="tutorial-button" id="tutorial-button" width="50" height="50" />
+                <img src={pictureState} alt="tutorial-button" id="tutorial-button" width="20" height="20" />
             </Button>
     )
 }

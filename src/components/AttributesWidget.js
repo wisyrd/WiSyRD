@@ -28,7 +28,7 @@ export default class AttributesWidget extends Widget {
                                     STR
             ================================================ */}
                         <Box variant="attributesBox">
-                            <Text variant="attributesHeader">Str</Text>
+                            <Text variant='cardHeader'>Str</Text>
                             <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
@@ -42,7 +42,7 @@ export default class AttributesWidget extends Widget {
                                     Int
             ================================================ */}
                         <Box variant="attributesBox">
-                           <Text variant="attributesHeader">Int</Text>
+                           <Text variant='cardHeader'>Int</Text>
                            <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
@@ -56,7 +56,7 @@ export default class AttributesWidget extends Widget {
                                     WIS
             ================================================ */}
                             <Box variant="attributesBox">
-                                <Text variant="attributesHeader">Wis</Text>
+                                <Text variant='cardHeader'>Wis</Text>
                                 <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
@@ -70,7 +70,7 @@ export default class AttributesWidget extends Widget {
                                     DEX
             ================================================ */}
                             <Box variant="attributesBox">
-                                <Text variant="attributesHeader">Dex</Text>
+                                <Text variant='cardHeader'>Dex</Text>
                                 <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
@@ -84,7 +84,7 @@ export default class AttributesWidget extends Widget {
                                     CHA
             ================================================ */}
                             <Box variant="attributesBox">
-                                <Text variant="attributesHeader">Cha</Text>
+                                <Text variant='cardHeader'>Cha</Text>
                                 <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
@@ -98,7 +98,7 @@ export default class AttributesWidget extends Widget {
                                     CON
             ================================================ */}
                             <Box variant="attributesBox">
-                                <Text variant="attributesHeader">Con</Text>
+                                <Text variant='cardHeader'>Con</Text>
                                 <Text variant="attributesDetails">+/- 0</Text>
                                 <Input
                                     textAlign='center'
