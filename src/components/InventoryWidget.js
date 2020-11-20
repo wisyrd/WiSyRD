@@ -22,9 +22,10 @@ export default class InventoryWidget extends Widget {
     }
     renderPanel=()=> {
         return (<>
-                <Box>
-                <Text variant="cardHeader" htmlFor='Inventory'>Currency:</Text>
-                <Box>
+                <Box variant='backgroundBox'>
+                
+                <Box variant='currencyContainer'>
+                   <Text variant="cardHeader" htmlFor='Inventory'>Currency:</Text> 
                     <Flex>
                         <Box variant="currencyBox">
                             <Text variant="cardHeader">Pp</Text>

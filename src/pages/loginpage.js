@@ -17,7 +17,7 @@ export default function Loginpage() {
 
     const formSubmit = event=>{
         event.preventDefault();
-        API.login(loginFormState).then(loginData=>{
+        API.login({email:loginFormState.email,password:loginFormState.password}).then(loginData=>{
             console.log(loginData);
         })
     }
