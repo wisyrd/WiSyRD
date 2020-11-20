@@ -12,9 +12,11 @@ export default class ExampleWidget extends Widget {
     }
 
     renderPanel=()=> {
+        console.log(this.importedId);
+        console.log(this.getImportedValue("text"));
         return (<>
                 <Button>Beep</Button>
-                <Text>{this.props.children}</Text>
+                <Text>{this.getImportedValue("text")}</Text>
             </>
         )
     }
