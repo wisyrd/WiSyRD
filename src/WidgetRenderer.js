@@ -23,38 +23,37 @@ export default class WidgetRenderer extends Component{
         super(props);
         this.state = {
             0:{component: NotesWidget,
-                layout: {x: 0, y:0, w:1, h: 2},
+                layout: {x: 0, y:0, w:1, h: 7+13},
                 exports: {text: "Testing"}
             },
             1:{component: AttacksWidget,
-                layout: {x: 0, y:1, w:1, h: 3}
+                layout: {x: 0, y:1, w:1, h: 7+142}
             },
             2:{component: ExplorationWidget,
-                layout: {x: 0, y:2, w:1, h: 5}
+                layout: {x: 0, y:2, w:1, h: 7+40}
             },
             3:{component: SkillWidget,
-                layout: {x: 0, y:3, w:1, h: 24}
+                layout: {x: 0, y:3, w:1, h: 7+122}
             },
             4:{component: ExampleWidget,
-                layout: {x: 1, y:0, w:1, h: 2},
-                importedId: 0
+                layout: {x: 1, y:0, w:1, h: 7+6}
             },
             5:{component: AttributesWidget,
-                layout: {x: 1, y:1, w:1, h: 13}
+                layout: {x: 1, y:1, w:1, h: 7+52}
             },
             6:{component: BasicWidget,
-                layout: {x: 1, y:2, w:1, h: 4}
+                layout: {x: 1, y:2, w:1, h: 7+46}
             },
             7:{component: CombatStatWidget,
-                layout: {x: 1, y:3, w:1, h: 13}
+                layout: {x: 1, y:3, w:1, h: 7+58}
             },
             8:{component: InventoryWidget,
-                layout: {x: 0, y:4, w:1, h: 5}
+                layout: {x: 0, y:4, w:1, h: 7+50}
             },
             9:{component: SpellSlotWidget,
-                layout: {x: 0, y:5, w:1, h:5}},
+                layout: {x: 0, y:5, w:1, h:7+8}},
             10:{component: SpellbookWidget,
-                layout: {x: 1, y:4, w:1, h: 8},
+                layout: {x: 1, y:4, w:1, h: 7+16},
                 classState: "cleric",
                 apiURL: this.props.apiURL
             },
@@ -115,10 +114,11 @@ export default class WidgetRenderer extends Component{
     render=()=>{
         return (<><Modal modal={this.state.modal} setGlobalState={this.handleStateChange}/>
         <ResponsiveGridLayout className="layout"
-                                 layouts={{lg: this.state.layouts}}
+                                 layouts={{lg: this.state.layouts, md: this.state.layouts, sm: this.state.layouts, xs: this.state.layouts, xxs: this.state.layouts}}
                                  cols={{lg:2, md:2, sm:1, xs:1, xxs:1}}
+                                 margin={[2,2]}
                                  breakpoints={{lg:1200, md:996, sm: 720}}
-                                 rowHeight={36}
+                                 rowHeight={8}
                                  width={{lg:750, md:750, sm:350, xs:350, xxs:350}}
                                  draggableHandle=".dragHandle">
             {this.renderWidgets()}

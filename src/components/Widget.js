@@ -66,8 +66,9 @@ export default class Widget extends Component {
             <Box
                 variant='widgetBox'
                 className={`widget ${this.widgetType} ${this.props.className?this.props.className:""}`}
-                height={(this.props.widgetState.layout.h * 46)-8}
-                width={358}>
+                height="100%"
+                width={358}
+                overflow="hidden">
                 <Flex variant='widgetTitle'>
                     <TutorialButton setGlobalState={this.props.setGlobalState} tutorialText={this.tutorialText}/>
                     <Heading className="dragHandle"width={3/4}>{this.id} {this.title}</Heading>
