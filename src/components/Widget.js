@@ -31,7 +31,7 @@ export default class Widget extends Component {
                 width={358}>
                 <Flex variant='widgetTitle'>
                     <TutorialButton setGlobalState={this.props.setGlobalState} tutorialText={this.tutorialText}/>
-                    <Heading className="dragHandle"width={3/4}>{this.id} {this.title}</Heading>
+                    <Heading variant='widgetHeader' className="dragHandle">{this.id} {this.title}</Heading>
                 </Flex>
                 <Box p={1}>
                     {this.renderPanel()}
