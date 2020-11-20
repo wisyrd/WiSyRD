@@ -21,7 +21,8 @@ export default class WidgetRenderer extends Component{
         super(props);
         this.state = {
             0:{component: NotesWidget,
-                layout: {x: 0, y:0, w:1, h: 2}
+                layout: {x: 0, y:0, w:1, h: 2},
+                exports: {text: "Testing"}
             },
             1:{component: AttacksWidget,
                 layout: {x: 0, y:1, w:1, h: 3}
@@ -33,7 +34,8 @@ export default class WidgetRenderer extends Component{
                 layout: {x: 0, y:3, w:1, h: 24}
             },
             4:{component: ExampleWidget,
-                layout: {x: 1, y:0, w:1, h: 2}
+                layout: {x: 1, y:0, w:1, h: 2},
+                importedId: 0
             },
             5:{component: AttributesWidget,
                 layout: {x: 1, y:1, w:1, h: 13}
