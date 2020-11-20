@@ -124,6 +124,20 @@ export default {
             color: '#e6ebee',
             fontSize: 3,
             p: 2
+        },
+        ingestionLabel: {
+            fontSize: 5,
+            fontWeight: 'bold',
+            fontFamily: 'Metamorphous',
+            color:'#9c4122',
+            p: '2%'
+        },
+        ingestionText: {
+            fontSize: 2,
+            fontWeight: 'bold',
+            fontFamily: 'Metamorphous',
+            color:'#9c4122',
+            p: '2%'
         }
     },
     variants: {
@@ -368,5 +382,23 @@ export default {
             m: 1,
             width: '100%'
         },
+        frontEndForm: {
+            p: 1,
+            m: '5%',
+            width: '25%',
+            fontFamily: 'Metamorphous',
+            fontSize: 1,
+            fontWeight:'bold',
+            color:'salmon',
+            textAlign:'center',
+            background: '#ebe1bd',
+            borderWidth: '3px',
+            borderStyle: 'solid',
+            borderColor: '#ad9d82',
+            borderRadius: 8
+        },
+        centeringBox: {
+            width: '35%'
+        }
     }
 }
