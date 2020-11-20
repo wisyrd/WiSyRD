@@ -18,7 +18,27 @@ export default {
       text: 'Metamorphous',
       monospace: 'Menlo, monospace'
     },
+    buttons: {
+        primary: {
+            background: '#1c302f'  
+        },
+        outline: {
+            borderWidth: '3px',
+            borderStyle: 'solid',
+            borderColor: '#ad9d82',
+            borderRadius: 8,
+        }
+        
+    },
     input: {
+        border: 'none',
+        borderBottom: '1px solid black',
+        color: '#176C64',
+        fontFamily: 'Ubuntu',
+        fontWeight: 'regular',
+        fontSize: 4
+    },
+    textArea: {
         border: 'none',
         borderBottom: '1px solid black',
         color: '#176C64',
@@ -36,10 +56,11 @@ export default {
         heading: 1.125,
     },
     text: {
+
         attributesHeader: {
             fontFamily: 'Metamorphous',
             textAlign: 'center',
-            fontSize: 3,
+            fontSize: 2,
             fontWeight: 'bold',
             color: '#9c4122',
             p: '4%',
@@ -66,17 +87,26 @@ export default {
         skillsText: {
             fontSize: 3,
             fontWeight:'bold',
+            fontFamily: 'Metamorphous',
             color:'black',
             p: '5%'
         },
         skillsNumber: {
             fontSize: 5,
             fontWeight: 'bold',
-            color: 'black',
+            fontFamily: 'Metamorphous',
+            color:'#9c4122',
             p: '2%' 
         },
         infoText: {
             fontSize: 1,
+            fontWeight: 'bold',
+            color: 'black',
+            textAlign: 'center',
+            p: '2%'
+        },
+        modalText: {
+            fontSize: 2,
             fontWeight: 'bold',
             color: 'black',
             textAlign: 'center',
@@ -93,6 +123,11 @@ export default {
         backgroundBox: {
             bg: '#365a74',
             p: '5%',
+            width: '100%'
+        },
+        currencyBackgroundBox: {
+            bg: '#365a74',
+            p: '3%',
             width: '100%'
         },
         fullWidthBox: {
@@ -131,7 +166,7 @@ export default {
         },
         attributesBox: {
             ml: 'auto',
-            p: '4%',
+            p: '1%',
             bg: '#ebe1bd',
             borderWidth: '5px',
             borderStyle: 'outset',
@@ -142,7 +177,7 @@ export default {
         currencyBox: {
             bg:'#ebe1bd',
             textAlign: 'center',
-            p: '4%',
+            p: '1%',
             width: '20%',
             
         },
@@ -151,7 +186,8 @@ export default {
             borderStyle: 'outset',
             borderColor: '#ad9d82',
             bg: '#ebe1bd',
-            borderRadius: 8
+            borderRadius: 8,
+            width: '100%'
         },
         skillsBox: {
             ml: 'auto',
@@ -180,6 +216,67 @@ export default {
             borderStyle: 'outset',
             borderColor: '#ad9d82',
             borderRadius: 8,
+        },
+        inventoryItem: {
+            borderWidth: '2px',
+            borderStyle: 'outset',
+            borderColor: '#ad9d82',
+            borderRadius: 8,
+            m: 1
+        },
+        tableQT: {
+            p: 1,
+            background: '#b4b4a8',
+            width: '33%',
+            fontFamily: 'Metamorphous',
+            fontSize: 1,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableItem: {
+            p: 1,
+            width: '100%',
+            fontFamily: 'Metamorphous',
+            fontSize: 1,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableLocation: {
+            p: 1,
+            background: '#8d9fa3',
+            width: '33%',
+            fontFamily: 'Metamorphous',
+            fontSize: 1,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableWeight: {
+            p: 1,
+            background: '#b4b4a8',
+            width: '34%',
+            fontFamily: 'Metamorphous',
+            fontSize: 1,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        doubleCheckbox: {
+            mt: '4%'
+        },
+        tutorialModal: {
+            bg:'#ebe1bd',
+            textAlign: 'center',
+            width: '35%',
+            p: '2%', 
+            borderWidth: '3px',
+            borderStyle: 'solid',
+            borderColor: '#ad9d82',
+            borderRadius: 8,
+            boxShadown: '3',
+            m: '1%'
         }
 
     }

@@ -26,21 +26,27 @@ export default class SkillWidget extends Widget {
             <Box variant='backgroundBox'>
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                        <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Acrobatics</Text>
                     </Flex>
                 </Box>
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Animal Handling</Text>
                     </Flex>
                 </Box>
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Arcana</Text>
                     </Flex>
@@ -48,7 +54,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Athletics</Text>
                     </Flex>
@@ -56,7 +64,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Deception</Text>
                     </Flex>
@@ -64,7 +74,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>History</Text>
                     </Flex>
@@ -72,7 +84,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Insight</Text>
                     </Flex>
@@ -80,7 +94,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Intimidation</Text>
                     </Flex>
@@ -88,7 +104,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Investigation</Text>
                     </Flex>
@@ -96,7 +114,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Medicine</Text>
                     </Flex>
@@ -104,7 +124,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Nature</Text>
                     </Flex>
@@ -112,7 +134,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Perception</Text>
                     </Flex>
@@ -120,7 +144,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Performance</Text>
                     </Flex>
@@ -128,7 +154,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Persuasion</Text>
                     </Flex>
@@ -136,7 +164,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Religion</Text>
                     </Flex>
@@ -144,14 +174,18 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Sleight of Hand</Text>
                     </Flex>
                 </Box>
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Stealth</Text>
                     </Flex>
@@ -159,7 +193,9 @@ export default class SkillWidget extends Widget {
 
                 <Box variant='skillsBox'>
                     <Flex>
-                    <DoubleCheckbox />
+                    <Box variant='doubleCheckbox'>
+                            <DoubleCheckbox />
+                        </Box>
                     <Text variant='skillsNumber'>10</Text>
                     <Text variant='skillsText'>Survival</Text>
                     </Flex>

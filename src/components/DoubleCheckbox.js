@@ -19,7 +19,7 @@ export default function DoubleCheckbox() {
 
         return (
             <Box className="double-checkbox">
-                <img src={checkboxState} alt="unchecked-checkbox" width="50" height="50" onClick={indicateState} />
+                <img src={checkboxState} alt="unchecked-checkbox" width="30" height="30" onClick={indicateState} />
             </Box>
         )
 }

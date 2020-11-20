@@ -18,11 +18,7 @@ export default class NotesWidget extends Widget {
         return (<>
             <Box variant='backgroundBox'>
                 <Box variant='fullWidthBox'>
-                    <Textarea
-                        fontWeight=''
-                        color='black'
-                        placeholder='Add notes'>
-                    </Textarea>
+                    <Textarea variant='textArea' placeholder='Add notes'></Textarea>
                 </Box>
             </Box>
 
