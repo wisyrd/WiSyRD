@@ -34,10 +34,10 @@ export default class NewCharacter extends Component {
         this.setState({modal: false})
         console.log(this.state.characterName, this.state.className)
         // Make a create call to the "sheets" route that would make a new character sheet with the character name, userID, and character class
-        // API.newSheet({characterName:this.state.characterName, className:this.state.className, userID: this.userID}).then(data=>{
-        //     console.log(data);
+        API.newSheet({name:this.state.characterName, userID: this.userID}).then(data=>{
+            console.log(data);
         // just posting, so doesn't need to do anything with the data that comes back; the userpage will be refreshed with the new character info... hopefully; maybe send user to that sheet when they make it?
-        // })
+        })
     }
 
     hideModal() {
@@ -63,7 +63,7 @@ export default class NewCharacter extends Component {
             <Button onClick={this.showModal}>New Character</Button>
             </Box>
             {this.state.modal ? (
-                <div className="modalBackground"
+                <Box className="modalBackground"
                     onClick={this.handleModalClick}
                     style={{
                         position: "fixed",
@@ -76,7 +76,7 @@ export default class NewCharacter extends Component {
                         top: "50%",
                         transform: "translate(-50%, -50%)"
                         }}>
-                    <div className="modal"
+                    <Box className="modal"
                         style={{
                           position: "fixed",
                           zIndex: "100000",
@@ -87,24 +87,10 @@ export default class NewCharacter extends Component {
                             <Heading>Create New Character</Heading>
                                 <form onSubmit={this.formSubmit}>
                                     <input onChange = {this.inputChange} value={this.state.characterName} type='text' name='characterName' placeholder='Name' /> 
-                                        <select value={this.state.value} onChange={this.inputChange} name="className" placeholder="barbarian">
-                                            <option value="barbarian">Barbarian</option>
-                                            <option value="bard">Bard</option>
-                                            <option value="cleric">Cleric</option>
-                                            <option value="druid">Druid</option>
-                                            <option value="fighter">Fighter</option>
-                                            <option value="monk">Monk</option>
-                                            <option value="paladin">Paladin</option>
-                                            <option value="ranger">Ranger</option>
-                                            <option value="rogue">Rogue</option>
-                                            <option value="sorcerer">Sorcerer</option>
-                                            <option value="warlock">Warlock</option>
-                                            <option value="wizard">Wizard</option>
-                                        </select>
                                     <input type='submit' value='Create!' /> 
                                 </form>
-                    </div>
-            </div>
+                    </Box>
+            </Box>
             ) : ""}
         </>)
     }
