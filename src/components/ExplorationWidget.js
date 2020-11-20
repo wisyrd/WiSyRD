@@ -32,7 +32,7 @@ export default class ExplorationWidget extends Widget {
         <Box variant='backgroundBox'>
           <Flex>
             <Box variant='statsBox'>
-              <Text variant='cardHeader'>Speed</Text>
+              <Text variant='cardHeaderSmall'>Speed</Text>
               <Input 
                 id="speed" 
                 name="speed" 
@@ -41,7 +41,7 @@ export default class ExplorationWidget extends Widget {
             </Box>
 
             <Box variant='statsBox'>
-              <Text variant='cardHeader'>Mount Speed</Text>
+              <Text variant='cardHeaderSmall'>Mount Speed</Text>
               <Input
                 id="mound speed"
                 name="mound speed"
@@ -50,7 +50,7 @@ export default class ExplorationWidget extends Widget {
             </Box>
 
             <Box variant='statsBox'>
-              <Text variant='cardHeader'>Vehicle</Text>
+              <Text variant='cardHeaderSmall'>Vehicle</Text>
               <Input 
                 id="vehicle" 
                 name="vehicle" 
@@ -61,7 +61,7 @@ export default class ExplorationWidget extends Widget {
         </Box>
         
         <Box variant='fullWidthBox'>
-          <Text variant='cardHeader' htmlFor="exhaustion">Exhaustion:</Text>
+          <Text variant='cardHeaderSmall' htmlFor="exhaustion">Exhaustion:</Text>
           <Text variant='attributesDetails'>{this.state.value}</Text>
           <Slider
             onChange={this.handleIncrement}

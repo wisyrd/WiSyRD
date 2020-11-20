@@ -28,7 +28,6 @@ export default {
             borderColor: '#ad9d82',
             borderRadius: 8,
         }
-        
     },
     input: {
         border: 'none',
@@ -56,7 +55,6 @@ export default {
         heading: 1.125,
     },
     text: {
-
         attributesHeader: {
             fontFamily: 'Metamorphous',
             textAlign: 'center',
@@ -82,6 +80,16 @@ export default {
             textAlign:'center',
             m: '4%',
             p: '4%',
+            borderBottom: '2px solid #9c4122'
+        },
+        cardHeaderSmall: {
+            fontFamily: 'Metamorphous',
+            fontSize: 2,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center',
+            m: '2%',
+            p: '2%',
             borderBottom: '2px solid #9c4122'
         },
         skillsText: {
@@ -111,6 +119,11 @@ export default {
             color: 'black',
             textAlign: 'center',
             p: '2%'
+        },
+        widgetHeader: {
+            color: '#e6ebee',
+            fontSize: 3,
+            p: 2
         }
     },
     variants: {
@@ -172,6 +185,7 @@ export default {
             borderStyle: 'outset',
             borderColor: '#ad9d82',
             borderRadius: 8,
+            width: '100%'
 
         },
         currencyBox: {
@@ -206,8 +220,8 @@ export default {
         },
         widgetTitle: {
             bg:"#1c302f",
-            color:"white",
-            p:2
+            fontSize: 3,
+            height: '40px'
         },
         widgetBox: {
             ml: 'auto',
@@ -216,6 +230,7 @@ export default {
             borderStyle: 'outset',
             borderColor: '#ad9d82',
             borderRadius: 8,
+
         },
         inventoryItem: {
             borderWidth: '2px',
@@ -238,7 +253,7 @@ export default {
             p: 1,
             width: '100%',
             fontFamily: 'Metamorphous',
-            fontSize: 1,
+            fontSize: 3,
             fontWeight:'bold',
             color:'#9c4122',
             textAlign:'center'
@@ -248,7 +263,7 @@ export default {
             background: '#8d9fa3',
             width: '33%',
             fontFamily: 'Metamorphous',
-            fontSize: 1,
+            fontSize: 3,
             fontWeight:'bold',
             color:'#9c4122',
             textAlign:'center'
@@ -258,7 +273,7 @@ export default {
             background: '#b4b4a8',
             width: '34%',
             fontFamily: 'Metamorphous',
-            fontSize: 1,
+            fontSize: 3,
             fontWeight:'bold',
             color:'#9c4122',
             textAlign:'center'
@@ -277,7 +292,81 @@ export default {
             borderRadius: 8,
             boxShadown: '3',
             m: '1%'
-        }
-
+        },
+        iconBox: {
+            width: '25%',
+            pt: '2%',
+            mt: '4%',
+            color: '#42484a'
+        },
+        itemBox: {
+            width: '75%',
+            p: '8%'
+        },
+        tutorialIcon: {
+            width: '40%',
+            height: '40%',
+            color: '#c7e350'
+        },
+        tableHit: {
+            p: 1,
+            background: '#b4b4a8',
+            width: '33%',
+            fontFamily: 'Metamorphous',
+            fontSize: 3,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableRange: {
+            p: 1,
+            background: '#8d9fa3',
+            width: '33%',
+            fontFamily: 'Metamorphous',
+            fontSize: 3,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableDamage: {
+            p: 1,
+            background: '#b4b4a8',
+            width: '34%',
+            fontFamily: 'Metamorphous',
+            fontSize: 3,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableAtkName: {
+            p: 1,
+            width: '100%',
+            fontFamily: 'Metamorphous',
+            fontSize: 1,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        attackLabel: {
+            width: '100%',
+            pt: '2%',
+            mt: '4%',
+            color: '#9c4122',
+            textAlign: 'center',
+            fontSize: 1
+        },
+        attackInput: {
+            width: '100%',
+            mt: '10px',
+            textAlign: 'center'
+        },
+        attack: {
+            borderWidth: '2px',
+            borderStyle: 'outset',
+            borderColor: '#ad9d82',
+            borderRadius: 8,
+            m: 1,
+            width: '100%'
+        },
     }
 }
