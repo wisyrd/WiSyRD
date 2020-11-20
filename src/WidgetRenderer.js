@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Responsive, WidthProvider} from "react-grid-layout";
+import GridLayout from "react-grid-layout";
 import AttacksWidget from "./components/AttacksWidget";
 import ExampleWidget from "./components/ExampleWidget";
 import ExplorationWidget from "./components/ExplorationWidget";
@@ -12,6 +13,7 @@ import InventoryWidget from "./components/InventoryWidget";
 import SpellbookWidget from "./components/SpellbookWidget";
 import SpellSlotWidget from "./components/SpellSlotWidget";
 import Modal from "./components/Modal";
+import _ from "lodash";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -59,6 +61,8 @@ export default class WidgetRenderer extends Component{
             modal:{show: false,
                    contents: ""}
         };
+
+        this.state.layouts = this.compressLayouts();
     }
 
     handleStateChange=(newState)=>{
@@ -84,9 +88,34 @@ export default class WidgetRenderer extends Component{
         })
     }
 
+    resizeGrid=()=>{
+        
+        console.log("RESIZING")
+        this.setState({layouts: this.compressLayouts()});
+    }
+
+    compressLayouts(){
+        let layouts = [];
+        for(const key in this.state){
+            if(parseInt(key)>=0){
+                layouts.push({...this.state[key].layout, i:key});
+            }
+        }
+        console.log(layouts)
+        return layouts;
+    }
+
+    componentDidUpdate=(prevProps, prevState)=>{
+        if(!(_.isEqual({...this.state, layouts: []}, {...prevState, layouts: []}))){
+            // Something other than layouts changed
+            this.resizeGrid();
+        }
+    }
+
     render=()=>{
         return (<><Modal modal={this.state.modal} setGlobalState={this.handleStateChange}/>
         <ResponsiveGridLayout className="layout"
+                                 layouts={{lg: this.state.layouts}}
                                  cols={{lg:2, md:2, sm:1, xs:1, xxs:1}}
                                  breakpoints={{lg:1200, md:996, sm: 720}}
                                  rowHeight={36}
@@ -94,6 +123,14 @@ export default class WidgetRenderer extends Component{
                                  draggableHandle=".dragHandle">
             {this.renderWidgets()}
         </ResponsiveGridLayout>
+        {/* <GridLayout className="layout"
+                    layout={this.state.layouts}
+                    cols={2}
+                    rowHeight={36}
+                    width={750}
+                    draggableHandle=".dragHandle">
+                        {this.renderWidgets()}
+                    </GridLayout> */}
         </>)
     }
 }
