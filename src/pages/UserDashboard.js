@@ -10,7 +10,7 @@ export default class UserDashboard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            sheetList: [{characterName: "Quint", link: "shadylink.com"}, {characterName: "Jeff", link: "cool.com"}, {characterName: "Always Named Jeff", link: "jeff.jeff"}]
+            sheetList: [{name: "Quint", link: "shadylink.com"}, {name: "Jeff", link: "cool.com"}, {name: "Always Named Jeff", link: "jeff.jeff"}]
         };
         // Needs to take in the unique userID from the login page/session
         // this.userID = props.widgetState.userID
@@ -23,15 +23,15 @@ export default class UserDashboard extends Component {
     sheetRender = (userID) => {
         //A fetch route that'll locate the user's sheets, sets the sheetList to be equal to the sheets that I get
 
-        // API.sheets({userID: userID}).then(sheetData=>{
-        //     this.setState({sheetList: sheetData})
-        // })
+        API.getSheets({userID: userID}).then(sheetData=>{
+            this.setState({sheetList: sheetData})
+        })
     }
 
     renderSheets() {
         return (this.state.sheetList.map(sheet => (
             <SheetCard 
-            name = {sheet.characterName}
+            name = {sheet.name}
             link = {sheet.link}
             />
             ))

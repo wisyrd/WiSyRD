@@ -34,11 +34,30 @@ create:function(userData){
 
    },
    body:(qs.stringify(userData))
-}).then(res=> {console.log(res);return res.json()}).then(data=>{return (data);}).catch(err=>null)
-} 
-//want a get route called "sheets" that returns all of a user's sheets (and especially the keys of the character's name and the link to the page of the sheet itself) when given the userID
-  
-  //want a post route called "newSheet" that makes a new character sheet that has a name and class immediately associated with said sheet
+}).then(res=> {console.log(res);return res.json()}).then(data=>{return (data);}).catch(err=>null)},
+
+getSheets:function(userID){
+  return fetch(`${apiURL}users/sheets`, {
+    method:"GET",
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+
+  },
+  body:(qs.stringify(userID))
+  }).then(res=> {console.log(res);return res.json()}).then(data=>{return (data);}).catch(err=>null)},
+
+newSheets:function(newSheet){
+  return fetch(`${apiURL}users/sheets`, {
+    method:"POST",
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+
+  },
+  body:(qs.stringify(newSheet))
+  }).then(res=> {console.log(res); return res.json()}).then(data=>{return (data);}).catch(err=>null)}
 }
+//want a get route called "sheets" that returns all of a user's sheets (and especially the keys of the character's name and the link to the page of the sheet itself) when given the userID
+  //want a post route called "newSheet" that makes a new character sheet that has a name and class immediately associated with said sheet
+
 
 module.exports = API;
