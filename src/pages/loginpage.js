@@ -62,7 +62,6 @@ export default function Loginpage() {
             <form onSubmit={formSubmit}>
                 <Flex>
                     <Box variant='centeringBox'></Box>
-                    
                         <Box variant='frontEndForm'>
                             <Text variant='ingestionLabel'>Login to Wisyrd</Text>
                             <Text variant='ingestionText'>Use your Wisyrd credentials to login below</Text>
@@ -72,10 +71,7 @@ export default function Loginpage() {
                         </Box>
                         <Box variant='centeringBox'></Box>
                 </Flex>
-
-
             </form>
-
         </Box>
     )
 }
