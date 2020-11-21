@@ -3,6 +3,7 @@ import SheetCard from "../components/SheetCard"
 import { Box, Heading, Text } from 'rebass';
 import API from '../utils/API'
 import NewCharacter from "../components/NewCharacter";
+import { Link } from "react-router-dom";
 
 // Have to make a call to an API route (sheets) that will find all character sheets under a user's name. For each sheet, give them the name of the character and then a link to that sheet. Also need to give them a button to make a new sheet...
 
@@ -16,9 +17,9 @@ export default class UserDashboard extends Component {
         // this.userID = props.widgetState.userID
     }
 
-    componentDidMount() {
-        this.sheetRender(this.userID);
-    }
+    // componentDidMount() {
+    //     this.sheetRender(this.userID);
+    // }
     // Updates the sheetlist with the user's info here by making an API call to fetch all their created character sheets
     sheetRender = (userID) => {
         //A fetch route that'll locate the user's sheets, sets the sheetList to be equal to the sheets that I get
