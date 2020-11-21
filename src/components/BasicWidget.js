@@ -61,8 +61,9 @@ export default class BasicWidget extends Widget {
                             Class:
                             </Label> */}
                             <Box variant='halfWidthBox'>
-                                <Text variant='cardHeader'>Class</Text>
-                                <Select>
+                                <Text variant='cardHeaderSmall'>Class</Text>
+                                <Box variant='classSelect'>
+                                    <Select>
                                     <option value="barbarian">Barbarian</option>
                                     <option value="bard">Bard</option>
                                     <option value="cleric">Cleric</option>
@@ -76,6 +77,7 @@ export default class BasicWidget extends Widget {
                                     <option value="warlock">Warlock</option>
                                     <option value="wizard">Wizard</option>
                                 </Select>
+                                </Box>
                             </Box>
                         </Flex>
                     </Box>
