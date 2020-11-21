@@ -6,8 +6,8 @@ import { Input } from "@rebass/forms";
 
 export default function AttackRow() {
   return (
-    <Box variant='attack'>
-      <Box variant='tableAtkName'>Attack</Box>
+    <Box variant='clusterMain'>
+      <Box variant='tableName'>Attack</Box>
       <Input
         textAlign='center'
         name="attack"
@@ -15,8 +15,8 @@ export default function AttackRow() {
         placeholder="Name" />
       <Box>
         <Flex className="attackBox">
-          <Box variant='tableHit'>
-            <Box variant='attackLabel'>Hit</Box>
+          <Box variant='tableLeft'>
+            <Box variant='tableLabel'>Hit</Box>
             <Input
               textAlign='center'
               name="hit"
@@ -24,8 +24,8 @@ export default function AttackRow() {
               placeholder="#" />
           </Box>
 
-          <Box variant='tableRange'>
-            <Box variant='attackLabel'>Damage</Box>
+          <Box variant='tableMid'>
+            <Box variant='tableLabel'>Damage</Box>
             <Input
               textAlign='center'
               name="damageType"
@@ -33,8 +33,8 @@ export default function AttackRow() {
               placeholder="#" />
           </Box>
 
-          <Box variant='tableDamage'>
-            <Box variant='attackLabel'>Range</Box>
+          <Box variant='tableRight'>
+            <Box variant='tableLabel'>Range</Box>
             <Input
               textAlign='center'
               name="range"

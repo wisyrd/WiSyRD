@@ -40,6 +40,12 @@ export default {
         textAlign: 'center',
         fontSize: 4
     },
+    select: {
+        border: 'none',
+        fontFamily: 'Ubuntu',
+        fontWeight: 'regular',
+        fontSize: 4
+    },
     textArea: {
         border: 'none',
         borderBottom: '1px solid black',
@@ -301,7 +307,7 @@ export default {
         tutorialModal: {
             bg:'#ebe1bd',
             textAlign: 'center',
-            width: '35%',
+            width: '100%',
             p: '2%', 
             borderWidth: '3px',
             borderStyle: 'solid',
@@ -325,7 +331,7 @@ export default {
             height: '40%',
             color: '#c7e350'
         },
-        tableHit: {
+        tableLeft: {
             p: 1,
             background: '#b4b4a8',
             width: '33%',
@@ -335,7 +341,7 @@ export default {
             color:'#9c4122',
             textAlign:'center'
         },
-        tableRange: {
+        tableMid: {
             p: 1,
             background: '#8d9fa3',
             width: '33%',
@@ -345,7 +351,7 @@ export default {
             color:'#9c4122',
             textAlign:'center'
         },
-        tableDamage: {
+        tableRight: {
             p: 1,
             background: '#b4b4a8',
             width: '34%',
@@ -355,7 +361,7 @@ export default {
             color:'#9c4122',
             textAlign:'center'
         },
-        tableAtkName: {
+        tableName: {
             p: 1,
             width: '100%',
             fontFamily: 'Metamorphous',
@@ -364,7 +370,7 @@ export default {
             color:'#9c4122',
             textAlign:'center'
         },
-        attackLabel: {
+        tableLabel: {
             width: '100%',
             pt: '2%',
             mt: '4%',
@@ -377,12 +383,13 @@ export default {
             mt: '10px',
             textAlign: 'center'
         },
-        attack: {
+        clusterMain: {
+            background: '#ebe1bd',
             borderWidth: '2px',
             borderStyle: 'outset',
             borderColor: '#ad9d82',
             borderRadius: 8,
-            m: 1,
+            p: 1,
             width: '100%'
         },
         frontEndForm: {
@@ -403,6 +410,7 @@ export default {
         centeringBox: {
             width: '35%'
         },
+<<<<<<< HEAD
         dashboard: {
             background: '#ebe1bd'
         },
@@ -415,6 +423,16 @@ export default {
             borderRadius: 8,
             width: '200px',
             textAlign:'center',
+=======
+        classSelect: {
+            borderRadius: 8,
+            border: 'none',
+            color: '#176C64',
+            fontFamily: 'Ubuntu',
+            fontWeight: 'regular',
+            fontSize: 2,
+            width: '100%'
+>>>>>>> dev
         }
     }
 }

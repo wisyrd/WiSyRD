@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import API from '../utils/API'
-import { Box, Button, Card, Heading, Text } from 'rebass';
-import { Input, Label, Checkbox } from '@rebass/forms'
+import { Box, Button, Text } from 'rebass';
+import { Input } from '@rebass/forms'
 import { Flex } from 'reflexbox'
+import { Link } from "react-router-dom";
 
 export default function Loginpage() {
     const [loginFormState, setLoginFormState] = useState({
@@ -72,6 +73,7 @@ export default function Loginpage() {
                         <Box variant='centeringBox'></Box>
                 </Flex>
             </form>
+            <Button><Link to="/register">Need a new account? Click here.</Link></Button>
         </Box>
     )
 }

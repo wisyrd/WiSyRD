@@ -22,22 +22,10 @@ export default class AttacksWidget extends Widget {
   renderPanel = () => {
     return (
       <>
-
-
-
-<Box variant='fullWidthBox'>
             {this.state.rowArray.map(row => {
             return <AttackRow />
           })}
-
-          <Button onClick={() => { this.addRow() }}>
-            +
-    </Button>
-</Box>
-
-
-
-
+          <Button onClick={() => { this.addRow() }}>+</Button>
       </>
     );
   }

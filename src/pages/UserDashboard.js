@@ -3,6 +3,7 @@ import SheetCard from "../components/SheetCard"
 import { Box, Heading, Text } from 'rebass';
 import API from '../utils/API'
 import NewCharacter from "../components/NewCharacter";
+import { Link } from "react-router-dom";
 
 // Have to make a call to an API route (sheets) that will find all character sheets under a user's name. For each sheet, give them the name of the character and then a link to that sheet. Also need to give them a button to make a new sheet...
 
