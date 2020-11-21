@@ -42,7 +42,11 @@ export default class WidgetRenderer extends Component{
                 layout: {x: 1, y:1, w:1, h: 7+52}
             },
             6:{component: BasicWidget,
-                layout: {x: 1, y:2, w:1, h: 7+46}
+                layout: {x: 1, y:2, w:1, h: 7+46},
+                exports: {
+                    charClass: "paladin",
+                    charLevel: 20
+                }
             },
             7:{component: CombatStatWidget,
                 layout: {x: 1, y:3, w:1, h: 7+58}
@@ -51,7 +55,9 @@ export default class WidgetRenderer extends Component{
                 layout: {x: 0, y:4, w:1, h: 7+50}
             },
             9:{component: SpellSlotWidget,
-                layout: {x: 0, y:5, w:1, h:7+8}},
+                layout: {x: 0, y:5, w:1, h:7+8},
+                importedId: 6
+            },
             10:{component: SpellbookWidget,
                 layout: {x: 1, y:4, w:1, h: 7+16},
                 classState: "cleric",
