@@ -34,6 +34,7 @@ export default class ExplorationWidget extends Widget {
             <Box variant='statsBox'>
               <Text variant='cardHeaderSmall'>Speed</Text>
               <Input 
+                textAlign='center'
                 id="speed" 
                 name="speed" 
                 type="integer" 
@@ -43,6 +44,7 @@ export default class ExplorationWidget extends Widget {
             <Box variant='statsBox'>
               <Text variant='cardHeaderSmall'>Mount Speed</Text>
               <Input
+                textAlign='center'
                 id="mound speed"
                 name="mound speed"
                 type="integer"
@@ -52,6 +54,7 @@ export default class ExplorationWidget extends Widget {
             <Box variant='statsBox'>
               <Text variant='cardHeaderSmall'>Vehicle</Text>
               <Input 
+                textAlign='center'
                 id="vehicle" 
                 name="vehicle" 
                 type="integer" 
