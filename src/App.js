@@ -13,10 +13,10 @@ function App() {
 
   return (
     <ThemeProvider className="App" theme={theme}>
-      <LoginPage />
-      {/* <Registrationpage />
-      <UserDashboard />
-      <WidgetRenderer apiURL={process.env.REACT_APP_API_URL || "https://lvh.me:8080/api/spells/"}/> */}
+      {/* <LoginPage /> */}
+      {/* <Registrationpage /> */}
+      {/* <UserDashboard /> */}
+      <WidgetRenderer apiURL={process.env.REACT_APP_API_URL || "https://lvh.me:8080/api/spells/"}/>
     </ThemeProvider>
   );
 }

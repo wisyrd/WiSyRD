@@ -37,6 +37,12 @@ export default {
         fontWeight: 'regular',
         fontSize: 4
     },
+    select: {
+        border: 'none',
+        fontFamily: 'Ubuntu',
+        fontWeight: 'regular',
+        fontSize: 4
+    },
     textArea: {
         border: 'none',
         borderBottom: '1px solid black',
@@ -298,7 +304,7 @@ export default {
         tutorialModal: {
             bg:'#ebe1bd',
             textAlign: 'center',
-            width: '35%',
+            width: '100%',
             p: '2%', 
             borderWidth: '3px',
             borderStyle: 'solid',
@@ -399,6 +405,15 @@ export default {
         },
         centeringBox: {
             width: '35%'
+        },
+        classSelect: {
+            borderRadius: 8,
+            border: 'none',
+            color: '#176C64',
+            fontFamily: 'Ubuntu',
+            fontWeight: 'regular',
+            fontSize: 2,
+            width: '100%'
         }
     }
 }
