@@ -1,7 +1,7 @@
 export default {
     colors: {
         text: '#000',
-        background: '#ff00f0',
+        background: '#ebe1bd',
         primary: '#07c',
         secondary: '#05a',
         accent: '#609',
@@ -10,7 +10,8 @@ export default {
         boxHeadlineText: '#f7700d',
         statHeading: '#0df74e',
         statBackground: '#c65618',
-        boxBorder: '#ffffff'
+        boxBorder: '#ffffff',
+
     },
     fonts: {
       body: 'system-ui, sans-serif',
@@ -20,7 +21,8 @@ export default {
     },
     buttons: {
         primary: {
-            background: '#1c302f'  
+            background: '#365a74',
+            m: '5px'  
         },
         outline: {
             borderWidth: '3px',
@@ -408,6 +410,20 @@ export default {
         centeringBox: {
             width: '35%'
         },
+<<<<<<< HEAD
+        dashboard: {
+            background: '#ebe1bd'
+        },
+        characterBox: {
+            p: '1%',
+            bg: '#ebe1bd',
+            borderWidth: '5px',
+            borderStyle: 'outset',
+            borderColor: '#ad9d82',
+            borderRadius: 8,
+            width: '200px',
+            textAlign:'center',
+=======
         classSelect: {
             borderRadius: 8,
             border: 'none',
@@ -416,6 +432,7 @@ export default {
             fontWeight: 'regular',
             fontSize: 2,
             width: '100%'
+>>>>>>> dev
         }
     }
 }

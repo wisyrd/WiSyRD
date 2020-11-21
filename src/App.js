@@ -29,11 +29,16 @@ function App() {
     <ThemeProvider className="App" theme={theme}>
       {/* <LoginPage /> */}
       {/* <Registrationpage /> */}
+<<<<<<< HEAD
+      <UserDashboard />
+      {/* <WidgetRenderer apiURL={process.env.REACT_APP_API_URL || "https://lvh.me:8080/api/spells/"}/> */}
+=======
       {/* <UserDashboard /> */}
       <WidgetRenderer apiURL={process.env.REACT_APP_API_URL || "https://lvh.me:8080/api/spells/"}/>
       <Registrationpage />
       {/* <UserDashboard />
       <WidgetRenderer apiURL={process.env.REACT_APP_API_URL || "https://lvh.me:8080/api/spells/"}/> */}
+>>>>>>> dev
     </ThemeProvider>
 >>>>>>> dev
   );

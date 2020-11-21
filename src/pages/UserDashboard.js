@@ -41,14 +41,14 @@ export default class UserDashboard extends Component {
 
     render() {
         return (<>
-            <Box>
-                <Heading>Welcome, Idiot</Heading>
-                <Text>Here are your character sheets:</Text>
+            <Box variant='dashboard'>
+                <Heading variant='ingestionLabel'>Welcome, Idiot</Heading>
+                <Text variant='ingestionText'>Please select one of your character sheets below:</Text>
                 {this.renderSheets()}
             </Box>
-            <Box>
+            <Box >
                 {/* Needs to pass down the userID so that the new character can be made with the correct user association */}
-                <NewCharacter userID={this.userID}/>
+                <NewCharacter  userID={this.userID}/>
             </Box>
         </>)
     }
