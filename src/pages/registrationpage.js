@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import API from '../utils/API'
-import { Box, Button, Card, Heading, Text } from 'rebass';
-import { Input, Label, Checkbox } from '@rebass/forms'
+import { Box, Button, Text } from 'rebass';
+import { Input } from '@rebass/forms'
 import { Flex } from 'reflexbox'
+import { Link } from "react-router-dom";
 
 export default function Registrationpage() {
   
@@ -49,6 +50,7 @@ export default function Registrationpage() {
                     </Box>
                 </Flex> 
             </form>
+            <Link to="/"><Button>Back to Login</Button></Link>
         </Box>
     )
 }
