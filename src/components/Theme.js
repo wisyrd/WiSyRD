@@ -35,6 +35,7 @@ export default {
         color: '#176C64',
         fontFamily: 'Ubuntu',
         fontWeight: 'regular',
+        textAlign: 'center',
         fontSize: 4
     },
     select: {
