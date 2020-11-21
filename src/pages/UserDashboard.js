@@ -16,9 +16,9 @@ export default class UserDashboard extends Component {
         // this.userID = props.widgetState.userID
     }
 
-    componentDidMount() {
-        this.sheetRender(this.userID);
-    }
+    // componentDidMount() {
+    //     this.sheetRender(this.userID);
+    // }
     // Updates the sheetlist with the user's info here by making an API call to fetch all their created character sheets
     sheetRender = (userID) => {
         //A fetch route that'll locate the user's sheets, sets the sheetList to be equal to the sheets that I get
@@ -40,14 +40,14 @@ export default class UserDashboard extends Component {
 
     render() {
         return (<>
-            <Box>
-                <Heading>Welcome, Idiot</Heading>
-                <Text>Here are your character sheets:</Text>
+            <Box variant='dashboard'>
+                <Heading variant='ingestionLabel'>Welcome, Idiot</Heading>
+                <Text variant='ingestionText'>Please select one of your character sheets below:</Text>
                 {this.renderSheets()}
             </Box>
-            <Box>
+            <Box >
                 {/* Needs to pass down the userID so that the new character can be made with the correct user association */}
-                <NewCharacter userID={this.userID}/>
+                <NewCharacter  userID={this.userID}/>
             </Box>
         </>)
     }
