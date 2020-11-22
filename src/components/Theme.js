@@ -404,7 +404,7 @@ export default {
         frontEndForm: {
             p: 1,
             m: '5%',
-            width: '25%',
+            width: '40%',
             fontFamily: 'Metamorphous',
             fontSize: 1,
             fontWeight:'bold',
@@ -448,7 +448,8 @@ export default {
             p: '10px'
         },
         dashboardCharacter: {
-            textAlign: 'center'
+            textAlign: 'center',
+            p: '10px'
         }
     }
 }

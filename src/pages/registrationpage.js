@@ -37,10 +37,9 @@ export default function Registrationpage() {
 
 
     return (
-        <Box className="App" >
+        <Box className="App" variant='dashboard' >
             <form onSubmit={formSubmit}>
                 <Flex>
-                    <Box variant='centeringBox'></Box>
                     <Box variant='frontEndForm'>
                     <Text variant='ingestionLabel'>Create a new Wisyrd account</Text>
                             <Text variant='ingestionText'>Please input the requested information below to create your Wisyrd account</Text>

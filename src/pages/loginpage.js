@@ -61,21 +61,21 @@ export default function Loginpage() {
     }
 
     return (
-        <Box className="App" >
+        <Box className="App" variant='dashboard'>
             <form onSubmit={formSubmit}>
-                <Flex>
-                    <Box variant='centeringBox'></Box>
-                        <Box variant='frontEndForm'>
-                            <Text variant='ingestionLabel'>Login to Wisyrd</Text>
-                            <Text variant='ingestionText'>Use your Wisyrd credentials to login below</Text>
-                            <Input onChange={inputChange} value={loginFormState.email} type='text' name='email' placeholder='email' />
-                            <Input onChange={inputChange} value={loginFormState.password} type='password' name='password' placeholder='password' />
-                            <Input type='submit' value='login' />
+                    <Flex>
+                    <Box variant='frontEndForm'>
+                        <Text variant='ingestionLabel'>Login to Wisyrd</Text>
+                        <Text variant='ingestionText'>Use your Wisyrd credentials to login below</Text>
+                        <Input onChange={inputChange} value={loginFormState.email} type='text' name='email' placeholder='email' />
+                        <Input onChange={inputChange} value={loginFormState.password} type='password' name='password' placeholder='password' />
+                        <Input type='submit' value='login' />
+                        <Box variant='dashboardCharacter'>
+                            <Link to="/register">Need a new account? Click here.</Link>
                         </Box>
-                        <Box variant='centeringBox'></Box>
-                </Flex>
+                    </Box>
+                </Flex>   
             </form>
-            <Button><Link to="/register">Need a new account? Click here.</Link></Button>
         </Box>
     )
 }
