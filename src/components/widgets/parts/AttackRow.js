@@ -1,10 +1,15 @@
 import React from 'react'
-import { Box, Flex, Button, Heading, Text } from 'rebass';
+import { Box, Flex } from 'rebass';
 import { Input } from "@rebass/forms";
 
 // add row component
 
-export default function AttackRow() {
+export default function AttackRow(props) {
+
+  function handleUpdate(event, field){
+    props.handleUpdate(event, field, props.rowNumber);
+  }
+
   return (
     <Box variant='clusterMain'>
       <Box variant='tableName'>Attack</Box>
@@ -12,7 +17,8 @@ export default function AttackRow() {
         textAlign='center'
         name="attack"
         type="text"
-        placeholder="Name" />
+        placeholder="Name"
+        onChange={event=>handleUpdate(event,"name")} />
       <Box>
         <Flex className="attackBox">
           <Box variant='tableLeft'>
@@ -21,7 +27,8 @@ export default function AttackRow() {
               textAlign='center'
               name="hit"
               type="text"
-              placeholder="#" />
+              placeholder="#"
+              onChange={event=>handleUpdate(event,"hit")} />
           </Box>
 
           <Box variant='tableMid'>
@@ -30,7 +37,8 @@ export default function AttackRow() {
               textAlign='center'
               name="damageType"
               type="text"
-              placeholder="#" />
+              placeholder="#" 
+              onChange={event=>handleUpdate(event,"damage")} />
           </Box>
 
           <Box variant='tableRight'>
@@ -39,7 +47,8 @@ export default function AttackRow() {
               textAlign='center'
               name="range"
               type="text"
-              placeholder="#" />
+              placeholder="#"
+              onChange={event=>handleUpdate(event,"range")} />
           </Box>
         </Flex>
       </Box>

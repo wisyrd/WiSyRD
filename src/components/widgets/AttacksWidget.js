@@ -1,7 +1,8 @@
 import React from "react";
-import { Flex, Text, Button, Box } from "rebass";
 import Widget from "../Widget";
-import AttackRow from './parts/AttackRow'
+import {Text, Button} from "rebass";
+
+import AttackRow from './parts/AttackRow';
 
 export default class AttacksWidget extends Widget {
   constructor(props) {
@@ -10,21 +11,36 @@ export default class AttacksWidget extends Widget {
     this.title = "Attacks Widget";
     this.widgetType = "attacks-widget"
     this.tutorialText = <Text>Add items or spell statistics to track various types of attacks here. Parameters for Hit modification, attack range, and damage amount and type are determined by the character's base attributes and type of attack used. Attack functionality can be explained further in depth <a href="https://www.dndbeyond.com/sources/basic-rules/combat#MakinganAttack" target="blank"></a>HERE</Text>
-    this.state = { rowArray: [0] }
+    this.initializeIfNew();
   }
-  addRow() {
 
-    this.state.rowArray.push(0);
-    this.setState(this.state)
+  initialize(){
+    console.log("Setting Attack Array!");
+    this.setWidgetState({attackArray: [0], testing: true});
+  }
+
+  addRow() {
+    const oldAttackArray = this.props.widgetState.attackArray || [];
+    const numAttacks = oldAttackArray.length;
+    let newAttackArray = [...oldAttackArray];
+    
+    newAttackArray.push(numAttacks);
+    this.setWidgetState({attackArray: newAttackArray})
+  }
+
+  handleUpdate=(event, field, rowNumber)=> {
+    this.setWidgetState({[`${field}${rowNumber}`]: event.target.value});
   }
 
   renderPanel = () => {
+    console.log(this.props.widgetState);
+    let array = this.props.widgetState.attackArray || [];
     return (
       <>
-            {this.state.rowArray.map(row => {
-            return <AttackRow />
-          })}
-          <Button onClick={() => { this.addRow() }}>+</Button>
+        {array.map(row => {
+          return <AttackRow rowNumber={row} handleUpdate={this.handleUpdate} />
+        })}
+        <Button variant="secondary" onClick={() => { this.addRow() }}>+</Button>
       </>
     );
   }
