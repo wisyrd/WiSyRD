@@ -1,8 +1,8 @@
 import React from 'react';
+import Widget from '../Widget';
 import { Box, Text } from 'rebass';
 import { Tiles } from '@rebass/layout';
 import { Input } from '@rebass/forms'
-import Widget from '../Widget';
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class AttributesWidget extends Widget {
