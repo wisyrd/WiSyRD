@@ -49,11 +49,13 @@ export default function Loginpage() {
             console.log(newToken);
             sessionStorage.setItem("token", newToken.token)
             API.getProfile(newToken.token).then(profileData => {
+                sessionStorage.setItem("username", profileData.username)
                 console.log(profileData)
                 setProfilestate({
                     email: profileData.email,
                     isLoggedin: true
                 });
+                window.location.href = "/user"
             });
         })
     }

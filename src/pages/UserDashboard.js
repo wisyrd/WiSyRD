@@ -48,12 +48,11 @@ export default class UserDashboard extends Component {
     render() {
         return (<>
             <Box variant='dashboard'>
-                <Heading variant='ingestionLabel'>Welcome, Idiot</Heading>
+                <Heading variant='ingestionLabel'>Welcome, {sessionStorage.getItem("username")}</Heading>
                 <Text variant='ingestionText'>Please select one of your character sheets below:</Text>
                 {this.renderSheets()}
             </Box>
-            <Box >
-                {/* Needs to pass down the userID so that the new character can be made with the correct user association */}
+            <Box>
                 <NewCharacter  userID={this.userID}/>
             </Box>
         </>)

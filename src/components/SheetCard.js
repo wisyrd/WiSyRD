@@ -15,14 +15,7 @@ export default function SheetCard(props) {
                         <Text variant='modalText'>Elf</Text>
                         <Text variant='ingestionText'>Level</Text>
                         <Text variant='modalText'>12</Text>
-                        <Button>Select {props.name}</Button>
-                    </Box>
-                    <Box>
-                        <Button 
-                        // onClick={goLink}
-                        >
-                            <Text>{props.link}</Text>
-                        </Button>
+                        <Button><Link to="/user/sheet">Select {props.name} </Link></Button>
                     </Box>
                 </Flex>
             </Box>
