@@ -71,9 +71,7 @@ export default class WidgetRenderer extends Component{
     }
 
     handleStateChange=(newState)=>{
-        console.log("Changing state!");
         this.setState(newState);
-        console.log(this.state);
     }
 
     renderWidgets=()=>{
