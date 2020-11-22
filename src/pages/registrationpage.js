@@ -30,6 +30,7 @@ export default function Registrationpage() {
                     email:"",
                     password:"" 
                 });
+                window.location.href = "/"
             });
         }
     
