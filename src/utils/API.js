@@ -37,17 +37,16 @@ create:function(userData){
 }).then(res=> {console.log(res);return res.json()}).then(data=>{return (data);}).catch(err=>null)},
 
 getSheets:function(userID){
-  return fetch(`${apiURL}users/sheets`, {
+  return fetch(`${apiURL}sheets/ownedby/${userID}`, {
     method:"GET",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
 
-  },
-  body:(qs.stringify(userID))
+  }
   }).then(res=> {console.log(res);return res.json()}).then(data=>{return (data);}).catch(err=>null)},
 
 newSheets:function(newSheet){
-  return fetch(`${apiURL}users/sheets`, {
+  return fetch(`${apiURL}sheets`, {
     method:"POST",
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
