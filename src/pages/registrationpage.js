@@ -24,13 +24,13 @@ export default function Registrationpage() {
     const formSubmit = event=>{
         event.preventDefault();
         API.create({username:createFormState.username, email:createFormState.email,password:createFormState.password}).then(newUser=>{
-            console.log(newUser); 
+            console.log(typeof newUser); 
                 setCreateFormState({
                     username:"",
                     email:"",
                     password:"" 
                 });
-                window.location.href = "/"
+                // window.location.href = "/"
             });
         }
     
