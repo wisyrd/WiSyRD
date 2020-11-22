@@ -18,7 +18,7 @@ export default class NotesWidget extends Widget {
         return (<>
             <Box variant='backgroundBox'>
                 <Box variant='fullWidthBox'>
-                    <Textarea variant='textArea' placeholder='Add notes' onChange={this.handleChange}></Textarea>
+                    <Textarea variant='textArea' placeholder='Add notes' onChange={this.handleChange} style={{resize:"none"}}></Textarea>
                 </Box>
             </Box>
         </>
