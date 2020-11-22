@@ -122,9 +122,6 @@ export default class BasicWidget extends Widget {
 
                         </Flex>
                     </Box>
-                    <Flex>
-                        <TutorialButton tutorialText={this.tutorialText}/>
-                    </Flex>
                 </Box>
             </>
         )
