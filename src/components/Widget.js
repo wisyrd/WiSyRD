@@ -12,6 +12,8 @@ export default class Widget extends Component {
     
         this.id = props.id;
 
+        this.stagedChanges = {};
+
         let importedId = this.props.globalState[this.id].importedId;
         if(importedId!==undefined&&importedId!==null)
             this.importedId = importedId;
@@ -21,8 +23,14 @@ export default class Widget extends Component {
 
     // Updates this widget's state with the given changes
     setWidgetState=(widgetStateChanges)=> {
-        let newWidgetState = {...this.props.widgetState, ...widgetStateChanges};
+        this.stagedChanges = {...this.stagedChanges, ...widgetStateChanges}
+
+        let newWidgetState = {...this.props.widgetState, ...this.stagedChanges};
         this.props.setGlobalState({[this.props.id]: newWidgetState});
+    }
+
+    componentDidUpdate=()=>{
+        this.stagedChanges = {};
     }
 
     // Returns the value at key from the exports field of the imported widget
@@ -61,6 +69,20 @@ export default class Widget extends Component {
         return this.props.widgetState.layout.h;
     }
 
+    initializeIfNew() {
+        console.log(this.props.widgetState);
+        if(!this.props.widgetState.hasBeenInitialized){
+            this.initialize();
+            this.setWidgetState({hasBeenInitialized: true});
+        }
+    }
+
+    // Override this if necessary
+    initialize() {
+        return;
+    }
+
+    // Don't touch this!
     render=()=>{
         return (
             <Box
