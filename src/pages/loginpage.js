@@ -47,7 +47,7 @@ export default function Loginpage() {
         event.preventDefault();
         API.login({ email: loginFormState.email, password: loginFormState.password }).then(newToken => {
             console.log(newToken);
-            localStorage.setItem("token", newToken.token)
+            sessionStorage.setItem("token", newToken.token)
             API.getProfile(newToken.token).then(profileData => {
                 console.log(profileData)
                 setProfilestate({

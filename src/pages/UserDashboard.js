@@ -14,18 +14,24 @@ export default class UserDashboard extends Component {
             sheetList: [{name: "Quint", link: "shadylink.com"}, {name: "Jeff", link: "cool.com"}, {name: "Always Named Jeff", link: "jeff.jeff"}]
         };
         // Needs to take in the unique userID from the login page/session
-        // this.userID = props.widgetState.userID
+        // this.userID = 
     }
 
-    // componentDidMount() {
-    //     this.sheetRender(this.userID);
-    // }
+    componentDidMount() {
+        this.sheetRender(this.userID);
+    }
     // Updates the sheetlist with the user's info here by making an API call to fetch all their created character sheets
-    sheetRender = (userID) => {
+    sheetRender = () => {
         //A fetch route that'll locate the user's sheets, sets the sheetList to be equal to the sheets that I get
 
-        API.getSheets({userID: userID}).then(sheetData=>{
-            this.setState({sheetList: sheetData})
+        API.getProfile(sessionStorage.getItem("token")).then(userInfo=>{
+            console.log(userInfo)
+            API.getSheets(userInfo._id).then(sheetData=>{
+                if (sheetData)
+                {this.setState({sheetList: sheetData})}
+                else
+                {this.setState({sheetList: []})}
+            })  
         })
     }
 

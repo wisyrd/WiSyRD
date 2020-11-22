@@ -410,20 +410,6 @@ export default {
         centeringBox: {
             width: '35%'
         },
-<<<<<<< HEAD
-        dashboard: {
-            background: '#ebe1bd'
-        },
-        characterBox: {
-            p: '1%',
-            bg: '#ebe1bd',
-            borderWidth: '5px',
-            borderStyle: 'outset',
-            borderColor: '#ad9d82',
-            borderRadius: 8,
-            width: '200px',
-            textAlign:'center',
-=======
         classSelect: {
             borderRadius: 8,
             border: 'none',
@@ -432,7 +418,6 @@ export default {
             fontWeight: 'regular',
             fontSize: 2,
             width: '100%'
->>>>>>> dev
         }
     }
 }

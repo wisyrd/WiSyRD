@@ -17,8 +17,6 @@ export default class NewCharacter extends Component {
         this.handleModalClick = this.handleModalClick.bind(this);
         this.formSubmit = this.formSubmit.bind(this);
         this.inputChange = this.inputChange.bind(this);
-        // Needs to take in the unique userID from the login page/session
-        // this.userID = props.widgetState.userID
     }
 
     inputChange (event){
@@ -34,9 +32,11 @@ export default class NewCharacter extends Component {
         this.setState({modal: false})
         console.log(this.state.characterName, this.state.className)
         // Make a create call to the "sheets" route that would make a new character sheet with the character name, userID, and character class
-        API.newSheet({name:this.state.characterName, userID: this.userID}).then(data=>{
+        API.getProfile(sessionStorage.getItem("token")).then(userInfo=>{ 
+            API.newSheets({name:this.state.characterName, userid: userInfo._id, sheetData: {}}).then(data=>{
             console.log(data);
-        // just posting, so doesn't need to do anything with the data that comes back; the userpage will be refreshed with the new character info... hopefully; maybe send user to that sheet when they make it?
+            window.location.reload();
+            })
         })
     }
 

@@ -9,7 +9,6 @@ export default function SheetCard(props) {
         <Box>
             <Box >
                 <Flex>
-<<<<<<< HEAD
                     <Box variant='characterBox'>
                         <Text variant='cardHeader'>{props.name}</Text>
                         <Text variant='ingestionText'>Race</Text>
@@ -19,14 +18,12 @@ export default function SheetCard(props) {
                         <Button>Select {props.name}</Button>
                     </Box>
                     <Box>
-                        <Button onClick={goLink}>
+                        <Button 
+                        // onClick={goLink}
+                        >
                             <Text>{props.link}</Text>
                         </Button>
                     </Box>
-=======
-                    <Box width={1 / 2}><Text>{props.name}</Text></Box>
-                    <Box width={1 / 2}><Button><Text><Link to={`/sheets/${props.link}`}>{props.link}</Link></Text></Button></Box>
->>>>>>> dev
                 </Flex>
             </Box>
         </Box>
