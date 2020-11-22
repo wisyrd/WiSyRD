@@ -32,6 +32,8 @@ export default function Modal(props) {
             transform: "translate(-50%, -50%)"}}>
         <div className="modal"
               style={{position: "fixed",
+                      maxWidth: "90%",
+                      width: "50rem",
                       zIndex: "100000",
                       left: "50%",
                       top: "50%",

@@ -13,7 +13,7 @@ export default function TutorialButton(props) {
             {
                 show: true,
                 contents:
-                        <Box variant='tutorialModal' className="modal-content">
+                        <Box variant='tutorialModal' width="100%" className="modal-content">
                             <Text variant='modalText'>{props.tutorialText}</Text>
                         </Box>
             }
