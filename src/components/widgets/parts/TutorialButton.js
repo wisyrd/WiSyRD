@@ -21,9 +21,9 @@ export default function TutorialButton(props) {
     }
     return (
             <Button className="tutorial-button" onClick={showModal}>
-                <Box variant='tutorialIcon'>
+                <Text variant='tutorialIcon'>
                     <FiHelpCircle />
-                </Box>
+                </Text>
                 
             </Button>
     )

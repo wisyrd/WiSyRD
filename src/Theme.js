@@ -129,6 +129,10 @@ export default {
             textAlign: 'center',
             p: '2%'
         },
+        tutorialIcon: {
+            marginTop: '-15%',
+            color: '#c7e350'
+        },
         widgetHeader: {
             color: '#e6ebee',
             fontSize: 3,
@@ -325,11 +329,6 @@ export default {
         itemBox: {
             width: '75%',
             p: '8%'
-        },
-        tutorialIcon: {
-            width: '40%',
-            height: '40%',
-            color: '#c7e350'
         },
         tableLeft: {
             p: 1,
