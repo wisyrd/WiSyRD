@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Responsive, WidthProvider} from "react-grid-layout";
-import GridLayout from "react-grid-layout";
+
 import AttacksWidget from "./components/widgets/AttacksWidget";
 import ExampleWidget from "./components/widgets/ExampleWidget";
 import ExplorationWidget from "./components/widgets/ExplorationWidget";
@@ -12,6 +12,7 @@ import CombatStatWidget from "./components/widgets/CombatStatWidget";
 import InventoryWidget from "./components/widgets/InventoryWidget";
 import SpellbookWidget from "./components/widgets/SpellbookWidget";
 import SpellSlotWidget from "./components/widgets/SpellSlotWidget";
+
 import Modal from "./components/Modal";
 import _ from "lodash";
 
@@ -27,19 +28,24 @@ export default class WidgetRenderer extends Component{
                 exports: {text: "Testing"}
             },
             1:{component: AttacksWidget,
-                layout: {x: 0, y:1, w:1, h: 7+142}
+                layout: {x: 0, y:1, w:1, h: 7+142},
+                exports: {}
             },
             2:{component: ExplorationWidget,
-                layout: {x: 0, y:2, w:1, h: 7+40}
+                layout: {x: 0, y:2, w:1, h: 7+40},
+                exports: {}
             },
             3:{component: SkillWidget,
-                layout: {x: 0, y:3, w:1, h: 7+122}
+                layout: {x: 0, y:3, w:1, h: 7+122},
+                exports: {}
             },
             4:{component: ExampleWidget,
-                layout: {x: 1, y:0, w:1, h: 7+6}
+                layout: {x: 1, y:0, w:1, h: 7+6},
+                exports: {}
             },
             5:{component: AttributesWidget,
-                layout: {x: 1, y:1, w:1, h: 7+52}
+                layout: {x: 1, y:1, w:1, h: 7+52},
+                exports: {}
             },
             6:{component: BasicWidget,
                 layout: {x: 1, y:2, w:1, h: 7+46},
@@ -49,19 +55,22 @@ export default class WidgetRenderer extends Component{
                 }
             },
             7:{component: CombatStatWidget,
-                layout: {x: 1, y:3, w:1, h: 7+58}
+                layout: {x: 1, y:3, w:1, h: 7+58},
+                exports: {}
             },
             8:{component: InventoryWidget,
-                layout: {x: 0, y:4, w:1, h: 7+50}
+                layout: {x: 0, y:4, w:1, h: 7+50},
+                exports: {}
             },
             9:{component: SpellSlotWidget,
                 layout: {x: 0, y:5, w:1, h:7+8},
+                exports: {},
                 importedId: 6
             },
             10:{component: SpellbookWidget,
                 layout: {x: 1, y:4, w:1, h: 7+16},
-                classState: "cleric",
-                apiURL: this.props.apiURL
+                exports: {},
+                classState: "cleric"
             },
             modal:{show: false,
                    contents: ""}
