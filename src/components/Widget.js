@@ -13,6 +13,7 @@ export default class Widget extends Component {
         this.id = props.id;
 
         this.stagedChanges = {};
+        this.stagedExportChanges = {};
 
         let importedId = this.props.globalState[this.id].importedId;
         if(importedId!==undefined&&importedId!==null)
@@ -31,6 +32,7 @@ export default class Widget extends Component {
 
     componentDidUpdate=()=>{
         this.stagedChanges = {};
+        this.stagedExportChanges = {};
     }
 
     // Returns the value at key from the exports field of the imported widget
@@ -43,12 +45,10 @@ export default class Widget extends Component {
 
     // Sets the value at key in the exports field of this widget
     setExportedValue(key, value) {
-        let newExports;
+        const oldExports = this.props.widgetState.exports || {};
+        this.stagedExportChanges = {...this.stagedExportChanges, [key]: value}
 
-        if(this.props.globalState[this.props.id].exports)
-            newExports = {...this.props.globalState[this.props.id].exports, [key]: value};
-        else
-            newExports = {[key]: value};
+        let newExports = {...oldExports, ...this.stagedExportChanges};
         
         this.setWidgetState({exports: newExports});
     }
