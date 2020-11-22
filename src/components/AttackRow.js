@@ -6,45 +6,43 @@ import { Input } from "@rebass/forms";
 
 export default function AttackRow() {
   return (
-    <Box>
-      <Box variant='fullWidthBox'>
-        <Text variant='cardHeader'>Attack Name</Text>
-        <Input
-          name="attack"
-          type="text"
-          placeholder="Attack Name "/>
-      </Box>
-
-                  {/* =============Hit Mod============= */ }
+    <Box variant='clusterMain'>
+      <Box variant='tableName'>Attack</Box>
+      <Input
+        textAlign='center'
+        name="attack"
+        type="text"
+        placeholder="Name" />
       <Box>
-        <Flex>
-          <Box variant='statsBox'>
-            <Text variant='cardHeader'>Hit Mod</Text>
+        <Flex className="attackBox">
+          <Box variant='tableLeft'>
+            <Box variant='tableLabel'>Hit</Box>
             <Input
+              textAlign='center'
               name="hit"
               type="text"
-              placeholder="Hit Mod" />
+              placeholder="#" />
           </Box>
 
-          {/* =============Attack Range============= */}
-          <Box variant='statsBox'>
-            <Text variant='cardHeader'>Attack Range</Text>
+          <Box variant='tableMid'>
+            <Box variant='tableLabel'>Damage</Box>
             <Input
-              name="range"
-              type="text"
-              placeholder="Attack Range " />
-          </Box>
-
-          {/* =============Damage============= */}
-          <Box variant='statsBox'>
-            <Text variant='cardHeader'>Damage</Text>
-            <Input
+              textAlign='center'
               name="damageType"
               type="text"
-              placeholder="Damage" />
+              placeholder="#" />
           </Box>
-    </Flex>
-  </Box>
-  </Box > 
-    )
+
+          <Box variant='tableRight'>
+            <Box variant='tableLabel'>Range</Box>
+            <Input
+              textAlign='center'
+              name="range"
+              type="text"
+              placeholder="#" />
+          </Box>
+        </Flex>
+      </Box>
+    </Box>
+  )
 }

@@ -17,9 +17,12 @@
     "mongojs": "^3.1.0",
     "mongoose": "^5.10.14",
     "morgan": "^1.10.0",
+    "qs": "^6.9.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-grid-layout": "^1.1.1",
+    "react-icons": "^3.11.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "rebass": "^4.0.7",
     "web-vitals": "^0.2.4"

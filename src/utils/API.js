@@ -12,8 +12,48 @@ const API = {
 
         },
         body:(qs.stringify(userData))
-    }).then(res=> {console.log(res);return res.json()}).then(data=>{console.log(data);}).catch(err=>null)
-  } 
+    }).then(res=> {console.log(res);return res.json()}).then(data=>{return (data);}).catch(err=>null)
+  }, 
+
+  getProfile:function(token){
+    return fetch(`${apiURL}users/secretProfile`, {
+     method:"GET",
+     headers: {
+         'authorization': `Bearer ${token}`
+
+     },
+ }).then(res=> {console.log(res);return res.json()}).then(data=>{return (data);}).catch(err=>null)
+},
+
+create:function(userData){
+  console.log(userData); 
+  return fetch(`${apiURL}users/`, {
+   method:"POST",
+   headers: {
+       'Content-Type': 'application/x-www-form-urlencoded',
+
+   },
+   body:(qs.stringify(userData))
+}).then(res=> {console.log(res);return res.json()}).then(data=>{return (data);}).catch(err=>null)},
+
+getSheets:function(userID){
+  return fetch(`${apiURL}sheets/ownedby/${userID}`, {
+    method:"GET",
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+
+  }
+  }).then(res=> {console.log(res);return res.json()}).then(data=>{return (data);}).catch(err=>null)},
+
+newSheets:function(newSheet){
+  return fetch(`${apiURL}sheets`, {
+    method:"POST",
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+
+  },
+  body:(qs.stringify(newSheet))
+  }).then(res=> {console.log(res); return res.json()}).then(data=>{return (data);}).catch(err=>null)}
 }
 
 module.exports = API;

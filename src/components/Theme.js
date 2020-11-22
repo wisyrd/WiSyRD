@@ -1,7 +1,7 @@
 export default {
     colors: {
         text: '#000',
-        background: '#ff00f0',
+        background: '#ebe1bd',
         primary: '#07c',
         secondary: '#05a',
         accent: '#609',
@@ -10,7 +10,8 @@ export default {
         boxHeadlineText: '#f7700d',
         statHeading: '#0df74e',
         statBackground: '#c65618',
-        boxBorder: '#ffffff'
+        boxBorder: '#ffffff',
+
     },
     fonts: {
       body: 'system-ui, sans-serif',
@@ -20,7 +21,8 @@ export default {
     },
     buttons: {
         primary: {
-            background: '#1c302f'  
+            background: '#365a74',
+            m: '5px'  
         },
         outline: {
             borderWidth: '3px',
@@ -28,12 +30,18 @@ export default {
             borderColor: '#ad9d82',
             borderRadius: 8,
         }
-        
     },
     input: {
         border: 'none',
         borderBottom: '1px solid black',
         color: '#176C64',
+        fontFamily: 'Ubuntu',
+        fontWeight: 'regular',
+        textAlign: 'center',
+        fontSize: 4
+    },
+    select: {
+        border: 'none',
         fontFamily: 'Ubuntu',
         fontWeight: 'regular',
         fontSize: 4
@@ -56,7 +64,6 @@ export default {
         heading: 1.125,
     },
     text: {
-
         attributesHeader: {
             fontFamily: 'Metamorphous',
             textAlign: 'center',
@@ -82,6 +89,16 @@ export default {
             textAlign:'center',
             m: '4%',
             p: '4%',
+            borderBottom: '2px solid #9c4122'
+        },
+        cardHeaderSmall: {
+            fontFamily: 'Metamorphous',
+            fontSize: 2,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center',
+            m: '2%',
+            p: '2%',
             borderBottom: '2px solid #9c4122'
         },
         skillsText: {
@@ -110,6 +127,25 @@ export default {
             fontWeight: 'bold',
             color: 'black',
             textAlign: 'center',
+            p: '2%'
+        },
+        widgetHeader: {
+            color: '#e6ebee',
+            fontSize: 3,
+            p: 2
+        },
+        ingestionLabel: {
+            fontSize: 5,
+            fontWeight: 'bold',
+            fontFamily: 'Metamorphous',
+            color:'#9c4122',
+            p: '2%'
+        },
+        ingestionText: {
+            fontSize: 2,
+            fontWeight: 'bold',
+            fontFamily: 'Metamorphous',
+            color:'#9c4122',
             p: '2%'
         }
     },
@@ -172,6 +208,7 @@ export default {
             borderStyle: 'outset',
             borderColor: '#ad9d82',
             borderRadius: 8,
+            width: '100%'
 
         },
         currencyBox: {
@@ -206,8 +243,8 @@ export default {
         },
         widgetTitle: {
             bg:"#1c302f",
-            color:"white",
-            p:2
+            fontSize: 3,
+            height: '40px'
         },
         widgetBox: {
             ml: 'auto',
@@ -216,6 +253,7 @@ export default {
             borderStyle: 'outset',
             borderColor: '#ad9d82',
             borderRadius: 8,
+
         },
         inventoryItem: {
             borderWidth: '2px',
@@ -238,7 +276,7 @@ export default {
             p: 1,
             width: '100%',
             fontFamily: 'Metamorphous',
-            fontSize: 1,
+            fontSize: 3,
             fontWeight:'bold',
             color:'#9c4122',
             textAlign:'center'
@@ -248,7 +286,7 @@ export default {
             background: '#8d9fa3',
             width: '33%',
             fontFamily: 'Metamorphous',
-            fontSize: 1,
+            fontSize: 3,
             fontWeight:'bold',
             color:'#9c4122',
             textAlign:'center'
@@ -258,7 +296,7 @@ export default {
             background: '#b4b4a8',
             width: '34%',
             fontFamily: 'Metamorphous',
-            fontSize: 1,
+            fontSize: 3,
             fontWeight:'bold',
             color:'#9c4122',
             textAlign:'center'
@@ -269,7 +307,7 @@ export default {
         tutorialModal: {
             bg:'#ebe1bd',
             textAlign: 'center',
-            width: '35%',
+            width: '100%',
             p: '2%', 
             borderWidth: '3px',
             borderStyle: 'solid',
@@ -277,7 +315,109 @@ export default {
             borderRadius: 8,
             boxShadown: '3',
             m: '1%'
+        },
+        iconBox: {
+            width: '25%',
+            pt: '2%',
+            mt: '4%',
+            color: '#42484a'
+        },
+        itemBox: {
+            width: '75%',
+            p: '8%'
+        },
+        tutorialIcon: {
+            width: '40%',
+            height: '40%',
+            color: '#c7e350'
+        },
+        tableLeft: {
+            p: 1,
+            background: '#b4b4a8',
+            width: '33%',
+            fontFamily: 'Metamorphous',
+            fontSize: 3,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableMid: {
+            p: 1,
+            background: '#8d9fa3',
+            width: '33%',
+            fontFamily: 'Metamorphous',
+            fontSize: 3,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableRight: {
+            p: 1,
+            background: '#b4b4a8',
+            width: '34%',
+            fontFamily: 'Metamorphous',
+            fontSize: 3,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableName: {
+            p: 1,
+            width: '100%',
+            fontFamily: 'Metamorphous',
+            fontSize: 1,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center'
+        },
+        tableLabel: {
+            width: '100%',
+            pt: '2%',
+            mt: '4%',
+            color: '#9c4122',
+            textAlign: 'center',
+            fontSize: 1
+        },
+        attackInput: {
+            width: '100%',
+            mt: '10px',
+            textAlign: 'center'
+        },
+        clusterMain: {
+            background: '#ebe1bd',
+            borderWidth: '2px',
+            borderStyle: 'outset',
+            borderColor: '#ad9d82',
+            borderRadius: 8,
+            p: 1,
+            width: '100%'
+        },
+        frontEndForm: {
+            p: 1,
+            m: '5%',
+            width: '25%',
+            fontFamily: 'Metamorphous',
+            fontSize: 1,
+            fontWeight:'bold',
+            color:'salmon',
+            textAlign:'center',
+            background: '#ebe1bd',
+            borderWidth: '3px',
+            borderStyle: 'solid',
+            borderColor: '#ad9d82',
+            borderRadius: 8
+        },
+        centeringBox: {
+            width: '35%'
+        },
+        classSelect: {
+            borderRadius: 8,
+            border: 'none',
+            color: '#176C64',
+            fontFamily: 'Ubuntu',
+            fontWeight: 'regular',
+            fontSize: 2,
+            width: '100%'
         }
-
     }
 }

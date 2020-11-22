@@ -26,7 +26,7 @@ export default class CombatStatWidget extends Widget {
                                     Current HP Box
                     ================================================ */}
                     <Box variant="fullWidthBox">
-                        <Text variant='cardHeader'>Current HP</Text>
+                        <Text variant='cardHeaderSmall'>Current HP</Text>
                         <Input
                             id='currentHP'
                             type='integer'
@@ -40,7 +40,7 @@ export default class CombatStatWidget extends Widget {
                     <Box>
                         <Flex>
                             <Box variant="statsBox">
-                                <Text variant='cardHeader'>Max HP</Text>
+                                <Text variant='cardHeaderSmall'>Max HP</Text>
                                 <Input
                                     id='maxHP'
                                     type='integer'
@@ -52,7 +52,7 @@ export default class CombatStatWidget extends Widget {
                                                     Temp HP Box
                                 ================================================ */}
                             <Box variant="statsBox">
-                                <Text variant='cardHeader'>Temp HP</Text>
+                                <Text variant='cardHeaderSmall'>Temp HP</Text>
                                 <Input
                                     id='tempHP'
                                     type='integer'
@@ -67,7 +67,7 @@ export default class CombatStatWidget extends Widget {
                     <Box>
                         <Flex>
                             <Box variant="statsBox">
-                                <Text variant='cardHeader'>AC</Text>
+                                <Text variant='cardHeaderSmall'>AC</Text>
                                 <Input
                                     id='AC'
                                     type='integer'
@@ -84,7 +84,7 @@ export default class CombatStatWidget extends Widget {
                                                     Initiative Box
                             ================================================ */}
                             <Box variant="statsBox">
-                                <Text variant='cardHeader'>Initiative</Text>
+                                <Text variant='cardHeaderSmall'>Initiative</Text>
                                 <Input
                                     id='initiative'
                                     type='integer'
@@ -100,7 +100,7 @@ export default class CombatStatWidget extends Widget {
                     <Box>
                         <Flex>
                             <Box variant="statsBox">
-                                <Text variant='cardHeader'>Death Saves</Text>
+                                <Text variant='cardHeaderSmall'>Death Saves</Text>
                                 <Box>
                                     <Text variant='infoText'>Sucesses</Text>
                                     <Flex variant='checkBoxBox'>
@@ -124,7 +124,7 @@ export default class CombatStatWidget extends Widget {
                                             Speed Box
                             ================================================ */}
                             <Box variant="statsBox">
-                                <Text variant='cardHeader'>Speed</Text>
+                                <Text variant='cardHeaderSmall'>Speed</Text>
                                 <Input
                                     id='speed'
                                     type='integer'

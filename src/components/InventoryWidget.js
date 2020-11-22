@@ -1,9 +1,10 @@
 import React from 'react';
 import { Box, Flex, Button, Heading, Text } from 'rebass';
-import { Input, Label } from "@rebass/forms"
+import { Input, Label } from "@rebass/forms";
 import { Tiles } from '@rebass/layout';
 import Widget from './Widget';
-import InventoryRow from './InventoryRow'
+import InventoryRow from './InventoryRow';
+
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class InventoryWidget extends Widget {
@@ -25,10 +26,10 @@ export default class InventoryWidget extends Widget {
             <Box variant='currencyBackgroundBox'>
 
                 <Box variant='currencyContainer'>
-                    <Text variant="cardHeader" htmlFor='Inventory'>Currency:</Text>
+                    <Text variant="cardHeaderSmall" htmlFor='Inventory'>Currency:</Text>
                     <Flex>
                         <Box variant="currencyBox">
-                            <Text variant="cardHeader">Pp</Text>
+                            <Text variant="cardHeaderSmall">Pp</Text>
                             <Input
                                 id='platinum'
                                 name="pp"
@@ -38,7 +39,7 @@ export default class InventoryWidget extends Widget {
                         </Box>
 
                         <Box variant="currencyBox">
-                            <Text variant="cardHeader">Gp</Text>
+                            <Text variant="cardHeaderSmall">Gp</Text>
                             <Input
                                 id='gold'
                                 name="gp"
@@ -48,7 +49,7 @@ export default class InventoryWidget extends Widget {
                         </Box>
 
                         <Box variant="currencyBox">
-                            <Text variant="cardHeader">Sp</Text>
+                            <Text variant="cardHeaderSmall">Sp</Text>
                             <Input
                                 id='silver'
                                 name="sp"
@@ -57,7 +58,7 @@ export default class InventoryWidget extends Widget {
                             /></Box>
 
                         <Box variant="currencyBox">
-                            <Text variant="cardHeader">Cp</Text>
+                            <Text variant="cardHeaderSmall">Cp</Text>
                             <Input
                                 id='copper'
                                 name="cp"
@@ -66,7 +67,7 @@ export default class InventoryWidget extends Widget {
                             /></Box>
 
                         <Box variant="currencyBox">
-                            <Text variant="cardHeader">Ep</Text>
+                            <Text variant="cardHeaderSmall">Ep</Text>
                             <Input
                                 id='electrum'
                                 name="ep"
@@ -80,11 +81,11 @@ export default class InventoryWidget extends Widget {
             <Box variant='backgroundBox'>
                 <Tiles columns={[2]}>
                     <Box variant="attributesBox">
-                        <Text variant="attributesHeader">Imported Weight</Text>
+                        <Text variant="attributesHeader">Weight</Text>
                         <Text variant="attributesDetails">50</Text>
                     </Box>
                     <Box variant="attributesBox">
-                        <Text variant="attributesHeader">Encumbered Weight</Text>
+                        <Text variant="attributesHeader">Capacity</Text>
                         <Text variant="attributesDetails">50</Text>
                     </Box>
                 </Tiles>
@@ -93,13 +94,6 @@ export default class InventoryWidget extends Widget {
 
 
             <Box variant='fullWidthBox'>
-                <Box>
-                    <Flex>
-                        <Box variant='tableQT'>QT.</Box>
-                        <Box variant='tableLocation'>Location</Box>
-                        <Box variant='tableWeight'>Weight</Box>
-                    </Flex>
-                </Box>
                 {this.state.rowArray.map(row => {
                     return <InventoryRow />
                 })}

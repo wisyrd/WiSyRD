@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Flex, Button, Heading, Text, } from 'rebass';
-import { Input, Label } from "@rebass/forms"
+import { Input, Label, Select } from "@rebass/forms"
 import Widget from './Widget';
 import TutorialButton from "./TutorialButton"
 
@@ -16,8 +16,6 @@ export default class BasicWidget extends Widget {
 
     renderPanel=()=> {
         return (<>
-                <Heading variant="heading">Basic Info</Heading>
-
                 {/* ================================================
                                 Primary box styling
             ================================================ */}
@@ -30,7 +28,7 @@ export default class BasicWidget extends Widget {
                             Name:
                             </Label> */}
                     <Box variant='fullWidthBox'>
-                        <Text variant='cardHeader'>Character Name</Text>
+                        <Text variant='cardHeaderSmall'>Character Name</Text>
                         <Input
                             id='charName'
                             name='name'
@@ -48,7 +46,7 @@ export default class BasicWidget extends Widget {
                             Race:
                             </Label> */}
                             <Box variant='halfWidthBox'>
-                                <Text variant='cardHeader'>Race</Text>
+                                <Text variant='cardHeaderSmall'>Race</Text>
                                 <Input
                                     id='charRace'
                                     name='race'
@@ -57,18 +55,29 @@ export default class BasicWidget extends Widget {
                             </Box>
 
                     {/* ================================================
-                                        Subclass Box
+                                        Class Box
                     ================================================ */}
                             {/* <Label htmlFor='Character Class'>
                             Class:
                             </Label> */}
                             <Box variant='halfWidthBox'>
-                                <Text variant='cardHeader'>Subclass</Text>
-                                <Input
-                                    id='charClass'
-                                    name='charClass'
-                                    type='text'
-                                    placeholder='Class' />
+                                <Text variant='cardHeaderSmall'>Class</Text>
+                                <Box variant='classSelect'>
+                                    <Select>
+                                    <option value="barbarian">Barbarian</option>
+                                    <option value="bard">Bard</option>
+                                    <option value="cleric">Cleric</option>
+                                    <option value="druid">Druid</option>
+                                    <option value="fighter">Fighter</option>
+                                    <option value="monk">Monk</option>
+                                    <option value="paladin">Paladin</option>
+                                    <option value="ranger">Ranger</option>
+                                    <option value="rogue">Rogue</option>
+                                    <option value="sorcerer">Sorcerer</option>
+                                    <option value="warlock">Warlock</option>
+                                    <option value="wizard">Wizard</option>
+                                </Select>
+                                </Box>
                             </Box>
                         </Flex>
                     </Box>
@@ -79,7 +88,7 @@ export default class BasicWidget extends Widget {
                     <Box>
                         <Flex>
                             <Box variant="statsBox">
-                                <Text variant='cardHeader'>Level</Text>                        
+                                <Text variant='cardHeaderSmall'>Level</Text>                        
                                 <Input
                                     id='charlvl'
                                     name="level"
@@ -91,7 +100,7 @@ export default class BasicWidget extends Widget {
                                         Subclass Box
                     ================================================ */}
                             <Box variant='statsBox'>
-                                <Text variant='cardHeader'>Subclass</Text>
+                                <Text variant='cardHeaderSmall'>Subclass</Text>
                                     <Input
                                         id='charSub'
                                         name="charSub"
@@ -103,7 +112,7 @@ export default class BasicWidget extends Widget {
                                         Exp Box
                     ================================================ */}
                             <Box variant='statsBox'>
-                                <Text variant='cardHeader'>Exp</Text>
+                                <Text variant='cardHeaderSmall'>Exp</Text>
                                 <Input
                                     id='charExp'
                                     name="charExp"
