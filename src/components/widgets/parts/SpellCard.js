@@ -1,8 +1,7 @@
+import { Checkbox, Label } from '@rebass/forms';
 import React, { useState } from 'react';
 import { Box, Heading, Text, Button } from 'rebass';
 import { Flex } from 'reflexbox';
-import SingleCheckbox from "./SingleCheckbox";
-import RitualButton from "./RitualButton";
 
 // NO STATE IMPORTING NECESSARY HERE, THE SPELLBOOK WIDGET PASSES ALL CRUCIAL PROPS INFO HERE
 
@@ -30,12 +29,12 @@ export default function SpellCard(props) {
         <Box>
             <Box>
                 <Flex>
-                    <Box width={1 / 4}><SingleCheckbox /> </Box>
+                    <Box width={1 / 4}><Label><Checkbox /></Label> </Box>
                     <Box width={1 / 4}><Button onClick={showModal}><Text>{props.name}</Text></Button></Box>
                     <Text width={1 / 4 } fontSize={[2, 3, 4]}
                     fontWeight='bold'
                     color='primary'>{props.castTime}</Text>
-                    {props.ritual ? <RitualButton width={1 / 4} /> : <Text width={1 /4}></Text>}
+                    {props.ritual ? <Text width={1/4}>Ritual</Text> : <Text width={1 /4}></Text>}
                 </Flex>
             </Box>
         </Box>

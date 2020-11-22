@@ -1,8 +1,7 @@
 import React from "react";
 import { Flex, Text, Button, Box } from "rebass";
-import Widget from "./Widget";
-import { Input } from "@rebass/forms";
-import AttackRow from './AttackRow'
+import Widget from "../Widget";
+import AttackRow from './parts/AttackRow'
 
 export default class AttacksWidget extends Widget {
   constructor(props) {

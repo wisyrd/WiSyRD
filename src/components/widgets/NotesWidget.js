@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, Button, Heading, Text, Flex } from 'rebass';
 import { Label, Textarea } from '@rebass/forms'
-import Widget from './Widget';
-import TutorialButton from "./TutorialButton"
+import Widget from '../Widget';
 
 
 export default class NotesWidget extends Widget {

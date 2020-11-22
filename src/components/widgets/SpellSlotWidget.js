@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Flex, Heading, Text } from 'rebass';
 import {Checkbox, Label} from '@rebass/forms';
-import Widget from './Widget';
+import Widget from '../Widget';
 
 const slotList = {
     bard: "full",

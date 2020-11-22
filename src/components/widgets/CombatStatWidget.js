@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Heading, Text } from 'rebass';
 import { Input, Label, Checkbox } from '@rebass/forms'
-import Widget from './Widget';
+import Widget from '../Widget';
 import { Flex } from 'reflexbox'
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>

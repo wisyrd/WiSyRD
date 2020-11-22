@@ -3,7 +3,7 @@ import { Box, Button, Card, Heading, Text } from 'rebass';
 import { Tiles } from '@rebass/layout';
 import { Input, Label, Checkbox } from '@rebass/forms'
 import { Flex } from 'reflexbox'
-import Widget from './Widget';
+import Widget from '../Widget';
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class AttributesWidget extends Widget {

@@ -1,8 +1,7 @@
 import React from 'react';
-import Widget from './Widget';
-import { ThemeProvider } from 'emotion-theming'
+import Widget from '../Widget';
 import { Box, Heading, Text } from 'rebass'
-import DoubleCheckbox from './DoubleCheckbox'
+import DoubleCheckbox from './parts/DoubleCheckbox'
 import { Flex } from 'reflexbox'
 
 export default class SkillWidget extends Widget {

@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import {Responsive, WidthProvider} from "react-grid-layout";
 import GridLayout from "react-grid-layout";
-import AttacksWidget from "./components/AttacksWidget";
-import ExampleWidget from "./components/ExampleWidget";
-import ExplorationWidget from "./components/ExplorationWidget";
-import NotesWidget from "./components/NotesWidget";
-import SkillWidget from "./components/SkillWidget";
-import AttributesWidget from "./components/AttributesWidget";
-import BasicWidget from "./components/BasicWidget";
-import CombatStatWidget from "./components/CombatStatWidget";
-import InventoryWidget from "./components/InventoryWidget";
-import SpellbookWidget from "./components/SpellbookWidget";
-import SpellSlotWidget from "./components/SpellSlotWidget";
+import AttacksWidget from "./components/widgets/AttacksWidget";
+import ExampleWidget from "./components/widgets/ExampleWidget";
+import ExplorationWidget from "./components/widgets/ExplorationWidget";
+import NotesWidget from "./components/widgets/NotesWidget";
+import SkillWidget from "./components/widgets/SkillWidget";
+import AttributesWidget from "./components/widgets/AttributesWidget";
+import BasicWidget from "./components/widgets/BasicWidget";
+import CombatStatWidget from "./components/widgets/CombatStatWidget";
+import InventoryWidget from "./components/widgets/InventoryWidget";
+import SpellbookWidget from "./components/widgets/SpellbookWidget";
+import SpellSlotWidget from "./components/widgets/SpellSlotWidget";
 import Modal from "./components/Modal";
 import _ from "lodash";
 

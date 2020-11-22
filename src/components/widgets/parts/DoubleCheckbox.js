@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Box } from 'rebass'
-import uncheckedcheckbox from '../images/unchecked-checkbox.png';
-import checkedcheckbox from '../images/checked-checkbox.png';
-import starcheckbox from '../images/star-checkbox.jpg'
+import uncheckedcheckbox from '../../../images/unchecked-checkbox.png';
+import checkedcheckbox from '../../../images/checked-checkbox.png';
+import starcheckbox from '../../../images/star-checkbox.jpg'
 
 export default function DoubleCheckbox() {
     // NO STATE IMPORTING NECESSARY

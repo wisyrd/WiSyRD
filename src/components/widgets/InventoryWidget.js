@@ -2,8 +2,8 @@ import React from 'react';
 import { Box, Flex, Button, Heading, Text } from 'rebass';
 import { Input, Label } from "@rebass/forms";
 import { Tiles } from '@rebass/layout';
-import Widget from './Widget';
-import InventoryRow from './InventoryRow';
+import Widget from '../Widget';
+import InventoryRow from './parts/InventoryRow';
 
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Heading, Text, Flex } from "rebass";
 import { Input, Label, Checkbox, Slider } from "@rebass/forms";
-import Widget from "./Widget";
+import Widget from "../Widget";
 const DESCRIPTIONS = [
   "Not exhausted", "Disadvantage on Ability Checks", "	Speed halved", "Disadvantage on Attack rolls and Saving Throws", "Hit point maximum halved","Speed reduced to 0", "Death"
 ]

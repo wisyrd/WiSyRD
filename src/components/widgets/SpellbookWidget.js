@@ -1,10 +1,10 @@
 import React from 'react';
-import Widget from './Widget';
+import Widget from '../Widget';
 import { Heading, Text, Box } from 'rebass'
 import { Select, Input } from "@rebass/forms"
 import { Flex } from 'reflexbox'
 import axios from "axios";
-import SpellCard from "./SpellCard";
+import SpellCard from "./parts/SpellCard";
 
 // Eventually, render each blank space with all the spells depending on the user's class through an AJAX call to the 5e API.
 

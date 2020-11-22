@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, Flex, Button, Heading, Text, } from 'rebass';
 import { Input, Label, Select } from "@rebass/forms"
-import Widget from './Widget';
-import TutorialButton from "./TutorialButton"
+import Widget from '../Widget';
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class BasicWidget extends Widget {
@@ -122,9 +121,6 @@ export default class BasicWidget extends Widget {
 
                         </Flex>
                     </Box>
-                    <Flex>
-                        <TutorialButton tutorialText={this.tutorialText}/>
-                    </Flex>
                 </Box>
             </>
         )

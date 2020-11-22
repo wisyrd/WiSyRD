@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Flex, Box, Heading, Text, Button } from "rebass";
-import TutorialButton from "./TutorialButton";
+import TutorialButton from "./widgets/parts/TutorialButton";
 
 export default class Widget extends Component {
     

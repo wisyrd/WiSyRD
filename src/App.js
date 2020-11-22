@@ -4,7 +4,7 @@ import { ThemeProvider } from 'emotion-theming'
 import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
 
 // import theme from '@rebass/preset'
-import theme from './components/Theme'
+import theme from './Theme'
 import Registrationpage from './pages/registrationpage';
 import UserDashboard from './pages/UserDashboard';
 import ErrorPage from './pages/ErrorPage';
