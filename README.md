@@ -1,34 +1,51 @@
 # WiSyRD
 
-![WiSyRD](https://imgur.com/YWSE41s)
 [![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-link to deployed app and logo here
+[WiSyRD](https://wisyrd.herokuapp.com/)
 
+![WiSyRD](public\wisyrdText.svg)
 
 ## Description
 
-D&D has a lot of info.
+Dungeons and Dragons is great, but the amount of information needed to make a character and run a campaign is unwieldy. Character sheets are useful for writing down all of that info but their large size and somewhat odd formatting can make finding the necessary info during a critical roll impossible. Enter WiSyRD: Widget Systems for Roleplaying Data. WiSyRD replaces the cluttered character sheet with a set of movable widgets. If you don't want to stare at the super-long spells list while in a non-combat stretch of the campaign, you can move it out of sight. You're in control of where your character's information is.
+
+The widgets speak to each other, too! Modifying your character's attributes will automatically modify your skills. Increasing your level as a magic class will instantly add the correct number of spell slots. WiSyRD has all the useful functionality of D&D Beyond and Roll20's character sheets, but with a level of customizability greater than either system. Head to [WiSyRD](https://wisyrd.herokuapp.com/) to get started.
 
 ## Table of Contents
 
-* [Installation](#installation)
 * [Usage](#usage)
-* [Tests](#Tests)
+* [Technologies](#Technologies)
+* [Collaborators](#collaborators)
+* [Future](#future)
 * [Questions/Contributions](#Questions/Contributions)
 * [License](#license)
 
-## Installation
-
-Uses React for front-end rendering, Rebass for CSS
-
 ## Usage 
 
-Yon! A new epic tale yearns to be written!
+[WiSyRD](https://wisyrd.herokuapp.com/) is the login page for WiSyRD. It should look like the following screenshot:
 
-## Tests
 
-There are no tests written at this time.
+
+## Technologies
+
+WiSyRD is built on [React](https://reactjs.org/). It uses [Rebass](https://rebassjs.org/) for basic components and functionality, [Emotion Theming](https://emotion.sh/docs/theming) for styling, and the [React-Grid-Layout](https://github.com/STRML/react-grid-layout) React library for its drag-and-drop widget system. For the back-end, WiSyRD uses a [Mongo database](https://www.mongodb.com/) that is connected to the front-end via [Node](https://nodejs.org/en/) and [Express](https://expressjs.com/). Calls to the database are made via [Axios](https://www.npmjs.com/package/axios). The information that the spellbook widget uses came from [dnd5eapi](https://www.dnd5eapi.co/).
+
+## Collaborators
+
+Jacob Cowan: https://mrjcowman.github.io/
+
+Quint Turner: https://pungry.wordpress.com/
+
+Evan Kirkland: 
+
+Magnus Appel:
+
+Alex Milroy:
+
+## Future
+
+At its core, WiSyRD is a set of adaptable, drag-and-drop widgets that can have their contents customized for any tabletop game, not just for 5th Edition Dungeons and Dragons. As of right now, the default widgets are made for keeping track of a character in a 5th Edition campaign. Our first plans are to make the WiSyRD widget grid usable for DMs that want to keep track of their own NPC or monster info by adding in the ability to add and remove widgets from the page. After that, we hope to bring WiSyRD to any and all tabletop games that require a hefty amount of tracked information for play, and adjust the game mechanic widgets as needed.
 
 ## Questions/Contributions
 
@@ -43,18 +60,6 @@ For any questions or ideas for contributions, please find us on GitHub or reach 
 [Magnus Appel](mailto:)
 
 [Alex Milroy](mailto:)
-
-## COLLABORATORS
-
-Jacob Cowan: https://mrjcowman.github.io/
-
-Quint Turner: https://pungry.wordpress.com/
-
-Evan Kirkland:
-
-Magnus Appel:
-
-Alex Milroy:
 
 ## License 
 
