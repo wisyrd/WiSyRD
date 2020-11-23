@@ -106,7 +106,7 @@ export default class InventoryWidget extends Widget {
                     </Box>
                     <Box variant="attributesBox">
                         <Text variant="attributesHeader">Capacity</Text>
-                        <Text variant="attributesDetails">{this.props.widgetState.capacity}</Text>
+                        <Text variant="attributesDetails">{150+(this.getImportedValue("strmod")*30)}</Text>
                     </Box>
                 </Tiles>
             </Box>
