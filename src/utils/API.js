@@ -78,6 +78,20 @@ newSheets:function(newSheet){
     }).catch(err => {
         console.error(err);
     })
+  },
+
+  saveSheet:function(sheetId, sheetState){
+    return fetch(`${apiURL}sheets/${sheetId}`, {
+      method:"POST",
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: qs.stringify(sheetState)
+    }).then(res=>{
+      return res.json();
+    }).catch(err=>{
+      return err;
+    })
   }
 }
 

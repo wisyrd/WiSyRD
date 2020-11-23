@@ -86,8 +86,9 @@ export default class SpellSlotWidget extends Widget {
 
 
     showSlots() {
-        this.charClass = this.getImportedValue("charClass");
-        this.charLevel = this.getImportedValue("charLevel");
+        console.log("CRASH IN SHOW SLOTS")
+        this.charClass = this.getImportedValue("charClass") || "";
+        this.charLevel = this.getImportedValue("charLevel") || 1;
 
            let casterType = slotList[this.charClass];
            let slotArray = [];
@@ -108,7 +109,6 @@ export default class SpellSlotWidget extends Widget {
                 }else{
                     mystics = []
                 }
-                
 
                 return (<>
                     <Flex>  {/* The first spell slot item for warlocks */}

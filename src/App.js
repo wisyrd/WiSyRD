@@ -18,7 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Loginpage} />
           <Route exact path="/register" component={Registrationpage} />
-          <Route path="/user/sheet" component={WidgetRenderer} />
+          <Route path="/sheets/:id" component={WidgetRenderer} />
           <Route path="/user" component={UserDashboard} />
           <Route component={ErrorPage} />
         </Switch>
