@@ -14,15 +14,20 @@ export default class ExplorationWidget extends Widget {
     this.widgetType = "exploration-widget";
     this.tutorialText = <Text>travel based statistics may be stored and tracked here. Different speeds for various methods of transportation may be tracked simultaneously. Use the slider to track levels of exhaustion as given. Each stage of the slider will provide a describe of the newly acquired penalty of exhaustion. In depth descriptions of travel and exhaustion may be found <a href="https://www.dndbeyond.com/sources/basic-rules/adventuring#Movement"target="blank">HERE</a></Text>
 
-    this.state = {
-      value: 0,
-    };
-    this.handleIncrement = (event) => {
-      console.log("handleIncrement");
-      console.log(event.target.value);
-      this.setState({ value: event.target.value, description: DESCRIPTIONS[event.target.value] });
-      console.log(this.state);
-    };
+    this.initializeIfNew();
+
+  }
+
+  initialize(){
+    this.setWidgetState({value: 0, description: ""});
+  }
+
+  handleIncrement = (event) => {
+    this.setWidgetState({value:event.target.value, description: DESCRIPTIONS[event.target.value]})
+  }
+
+  handleUpdate = (event, field) =>{
+    this.setWidgetState({[field]: event.target.value})
   }
 
   renderPanel=()=> {
@@ -35,37 +40,37 @@ export default class ExplorationWidget extends Widget {
               <Text variant='cardHeaderSmall'>Speed</Text>
               <Input 
                 textAlign='center'
-                id="speed" 
                 name="speed" 
-                type="integer" 
-                placeholder="" />
+                type="number" 
+                placeholder="#"
+                onChange={event=>this.handleUpdate(event, "speed")} />
             </Box>
 
             <Box variant='statsBox'>
-              <Text variant='cardHeaderSmall'>Mount Speed</Text>
+              <Text variant='cardHeaderSmall'>Mount</Text>
               <Input
                 textAlign='center'
-                id="mound speed"
-                name="mound speed"
-                type="integer"
-                placeholder=""/>
+                name="mountspeed"
+                type="number"
+                placeholder="#"
+                onChange={event=>this.handleUpdate(event, "mountspeed")} />
             </Box>
 
             <Box variant='statsBox'>
               <Text variant='cardHeaderSmall'>Vehicle</Text>
               <Input 
                 textAlign='center'
-                id="vehicle" 
-                name="vehicle" 
-                type="integer" 
-                placeholder="" />
+                name="vehiclespeed" 
+                type="number" 
+                placeholder="#"
+                onChange={event=>this.handleUpdate(event, "vehiclespeed")} />
             </Box>
           </Flex>
         </Box>
         
         <Box variant='fullWidthBox'>
           <Text variant='cardHeaderSmall' htmlFor="exhaustion">Exhaustion:</Text>
-          <Text variant='attributesDetails'>{this.state.value}</Text>
+          <Text variant='attributesDetails'>{this.props.widgetState.value}</Text>
           <Slider
             onChange={this.handleIncrement}
             id="exhaustion"
@@ -75,7 +80,7 @@ export default class ExplorationWidget extends Widget {
             max="6"
             bg="primary"
           />
-          <Text variant='infoText'>{this.state.description}</Text>
+          <Text variant='infoText'>{this.props.widgetState.description}</Text>
         </Box>
       </>
     );
