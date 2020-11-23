@@ -64,7 +64,35 @@ newSheets:function(newSheet){
 
   },
   body:(qs.stringify(newSheet))
-  }).then(res=> {console.log(res); return res.json()}).then(data=>{return (data);}).catch(err=>null)}
+  }).then(res=> {console.log(res); return res.json()}).then(data=>{return (data);}).catch(err=>null)},
+
+  getSpells:function(charClass) {
+    return fetch(`${apiURL}spells/${charClass}`).then(res => {
+      console.log(res);
+      switch(res.status){
+        case 200:
+          return res.json();
+        default:
+          return [];
+      }
+    }).catch(err => {
+        console.error(err);
+    })
+  },
+
+  saveSheet:function(sheetId, sheetState){
+    return fetch(`${apiURL}sheets/${sheetId}`, {
+      method:"POST",
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: qs.stringify(sheetState)
+    }).then(res=>{
+      return res.json();
+    }).catch(err=>{
+      return err;
+    })
+  }
 }
 
 module.exports = API;

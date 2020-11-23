@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 
 
 export default function SheetCard(props) {
+    let link = "/sheets/"+props.id;
     return (
         <Box variant='characterBox'>
             <Text variant='cardHeader'>{props.name}</Text>
             <Text variant='linkText'>
-                <Link to="/user/sheet">Select {props.name} </Link>
+                <Link to={link}>Select {props.name} </Link>
             </Text>
         </Box>
     )

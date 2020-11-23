@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Heading, Text } from 'rebass';
 import { Input, Label, Checkbox } from '@rebass/forms'
-import Widget from './Widget';
+import Widget from '../Widget';
 import { Flex } from 'reflexbox'
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
@@ -11,6 +11,16 @@ export default class CombatStatWidget extends Widget {
         this.title = "Combat Stats";
         this.widgetType = "combat-stat-widget"
         this.tutorialText = <Text>This widget shows basic combat statistics needed most frequently. These statistics are directly influenced by the character's attribute modifiers. An in depth guide to combat can be found <a href="https://www.dndbeyond.com/sources/basic-rules/combat"target="blank">HERE</a></Text>
+    
+        this.initializeIfNew();
+    }
+
+    initialize(){
+
+    }
+
+    handleUpdate(event, field){
+        this.setWidgetState({[field]: event.target.value})
     }
 
     renderPanel=()=> {
@@ -29,9 +39,10 @@ export default class CombatStatWidget extends Widget {
                         <Text variant='cardHeaderSmall'>Current HP</Text>
                         <Input
                             id='currentHP'
-                            type='integer'
+                            type='number'
                             textAlign='center'
-                            placeholder='CurrentHP' />
+                            placeholder='#'
+                            onChange={event=>this.handleUpdate(event, "curHP")} />
                     </Box>
                 
                     {/* ================================================
@@ -43,9 +54,10 @@ export default class CombatStatWidget extends Widget {
                                 <Text variant='cardHeaderSmall'>Max HP</Text>
                                 <Input
                                     id='maxHP'
-                                    type='integer'
+                                    type='number'
                                     textAlign='center'
-                                    placeholder='#' />
+                                    placeholder='#'
+                                    onChange={event=>this.handleUpdate(event, "maxHP")} />
                             </Box>
 
                             {/* ================================================
@@ -55,9 +67,10 @@ export default class CombatStatWidget extends Widget {
                                 <Text variant='cardHeaderSmall'>Temp HP</Text>
                                 <Input
                                     id='tempHP'
-                                    type='integer'
+                                    type='number'
                                     textAlign='center'
-                                    placeholder='#' />
+                                    placeholder='#'
+                                    onChange={event=>this.handleUpdate(event, "tempHP")} />
                             </Box>
                         </Flex>
                     </Box>
@@ -70,9 +83,10 @@ export default class CombatStatWidget extends Widget {
                                 <Text variant='cardHeaderSmall'>AC</Text>
                                 <Input
                                     id='AC'
-                                    type='integer'
+                                    type='number'
                                     textAlign='center'
-                                    placeholder='#' />
+                                    placeholder='#'
+                                    onChange={event=>this.handleUpdate(event, "AC")} />
                             </Box>
 
                
@@ -87,9 +101,10 @@ export default class CombatStatWidget extends Widget {
                                 <Text variant='cardHeaderSmall'>Initiative</Text>
                                 <Input
                                     id='initiative'
-                                    type='integer'
+                                    type='number'
                                     textAlign='center'
-                                    placeholder='#' />
+                                    placeholder='#'
+                                    onChange={event=>this.handleUpdate(event, "initiative")} />
                             </Box>
                             </Flex>
                             </Box>
@@ -100,6 +115,7 @@ export default class CombatStatWidget extends Widget {
                     <Box>
                         <Flex>
                             <Box variant="statsBox">
+                                {/* TODO: save death save state */}
                                 <Text variant='cardHeaderSmall'>Death Saves</Text>
                                 <Box>
                                     <Text variant='infoText'>Sucesses</Text>
@@ -127,9 +143,10 @@ export default class CombatStatWidget extends Widget {
                                 <Text variant='cardHeaderSmall'>Speed</Text>
                                 <Input
                                     id='speed'
-                                    type='integer'
+                                    type='number'
                                     textAlign='center'
-                                    placeholder='#' />
+                                    placeholder='#'
+                                    onChange={event=>this.handleUpdate(event, "speed")} />
                             </Box>
                         </Flex>
                     </Box>

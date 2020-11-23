@@ -28,6 +28,7 @@ export default class UserDashboard extends Component {
         API.getProfile(sessionStorage.getItem("token")).then(userInfo => {
             console.log(userInfo)
             API.getSheets(userInfo._id).then(sheetData => {
+                console.log("sheetData",sheetData)
                 if (sheetData) { this.setState({ sheetList: sheetData }) }
                 else { this.setState({ sheetList: [] }) }
             })
@@ -38,7 +39,7 @@ export default class UserDashboard extends Component {
         return (this.state.sheetList.map(sheet => (
             <SheetCard
                 name={sheet.name}
-                link={sheet.link}
+                id={sheet._id}
             />
         ))
         )

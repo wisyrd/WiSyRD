@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, Flex, Button, Heading, Text, } from 'rebass';
-import { Input, Label, Select } from "@rebass/forms"
-import Widget from './Widget';
-import TutorialButton from "./TutorialButton"
+import Widget from '../Widget';
+import { Box, Flex, Text, } from 'rebass';
+import { Input, Select } from "@rebass/forms"
 
 // Usage: <ExampleWidget>Hello World!</ExampleWidget>
 export default class BasicWidget extends Widget {
@@ -10,8 +9,29 @@ export default class BasicWidget extends Widget {
     constructor(props) {
         super(props);
         this.title = "Basic Info widget";
-        this.widgetType = "Basic-widget"
+        this.widgetType = "basic-info-widget"
         this.tutorialText = <Text>This widget controls the display of basic character information. Information may be input and editted freely as necessary. In depth information on selecting a class and race may be found <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#1ChooseaRace"target="blank">HERE</a></Text>
+    
+        this.initializeIfNew();
+    }
+
+    initialize(){
+        this.setExportedValue("charRace", "");
+        this.setExportedValue("charClass", "barbarian");
+        this.setExportedValue("charLevel", 1);
+    }
+
+    handleUpdate(event, field){
+        let value = event.target.value;
+        switch(field){
+            case "charLevel": value = parseInt(value);
+            case "charRace":
+            case "charClass":
+                this.setExportedValue(field, value);
+                break;
+            default:
+                this.setWidgetState({[field]: value});
+        }
     }
 
     renderPanel=()=> {
@@ -33,7 +53,8 @@ export default class BasicWidget extends Widget {
                             id='charName'
                             name='name'
                             type='text'
-                            placeholder='Character Name' />
+                            placeholder='Character Name'
+                            onChange={event=>this.handleUpdate(event, "charName")} />
                     </Box>
 
                     {/* ================================================
@@ -51,7 +72,8 @@ export default class BasicWidget extends Widget {
                                     id='charRace'
                                     name='race'
                                     type='text'
-                                    placeholder='Race' />
+                                    placeholder='Race'
+                                    onChange={event=>this.handleUpdate(event, "charRace")} />
                             </Box>
 
                     {/* ================================================
@@ -63,19 +85,20 @@ export default class BasicWidget extends Widget {
                             <Box variant='halfWidthBox'>
                                 <Text variant='cardHeaderSmall'>Class</Text>
                                 <Box variant='classSelect'>
-                                    <Select>
+                                    <Select
+                                        onChange={event=>this.handleUpdate(event, "charClass")}>
                                     <option value="barbarian">Barbarian</option>
-                                    <option value="bard">Bard</option>
-                                    <option value="cleric">Cleric</option>
-                                    <option value="druid">Druid</option>
-                                    <option value="fighter">Fighter</option>
-                                    <option value="monk">Monk</option>
-                                    <option value="paladin">Paladin</option>
-                                    <option value="ranger">Ranger</option>
-                                    <option value="rogue">Rogue</option>
-                                    <option value="sorcerer">Sorcerer</option>
-                                    <option value="warlock">Warlock</option>
-                                    <option value="wizard">Wizard</option>
+                                    <option value="bard"     >Bard</option>
+                                    <option value="cleric"   >Cleric</option>
+                                    <option value="druid"    >Druid</option>
+                                    <option value="fighter"  >Fighter</option>
+                                    <option value="monk"     >Monk</option>
+                                    <option value="paladin"  >Paladin</option>
+                                    <option value="ranger"   >Ranger</option>
+                                    <option value="rogue"    >Rogue</option>
+                                    <option value="sorcerer" >Sorcerer</option>
+                                    <option value="warlock"  >Warlock</option>
+                                    <option value="wizard"   >Wizard</option>
                                 </Select>
                                 </Box>
                             </Box>
@@ -92,8 +115,9 @@ export default class BasicWidget extends Widget {
                                 <Input
                                     id='charlvl'
                                     name="level"
-                                    type="text"
-                                    placeholder='level'/> 
+                                    type="number"
+                                    placeholder='level'
+                                    onChange={event=>this.handleUpdate(event, "charLevel")}/> 
                             </Box>
            
                     {/* ================================================
@@ -105,7 +129,8 @@ export default class BasicWidget extends Widget {
                                         id='charSub'
                                         name="charSub"
                                         type="text"
-                                        placeholder='Subclass' />
+                                        placeholder='Subclass'
+                                        onChange={event=>this.handleUpdate(event, "charSubclass")} />
                             </Box>
 
                     {/* ================================================
@@ -116,8 +141,9 @@ export default class BasicWidget extends Widget {
                                 <Input
                                     id='charExp'
                                     name="charExp"
-                                    type="text"
-                                    placeholder='Exp.'/>
+                                    type="number"
+                                    placeholder='Exp.'
+                                    onChange={event=>this.handleUpdate(event, "charExp")}/>
                             </Box>
 
                         </Flex>

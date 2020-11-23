@@ -1,10 +1,10 @@
 import React from 'react';
-import Widget from './Widget';
+import Widget from '../Widget';
 import { Heading, Text, Box } from 'rebass'
 import { Select, Input } from "@rebass/forms"
 import { Flex } from 'reflexbox'
-import axios from "axios";
-import SpellCard from "./SpellCard";
+import API from '../../utils/API';
+import SpellCard from "./parts/SpellCard";
 
 // Eventually, render each blank space with all the spells depending on the user's class through an AJAX call to the 5e API.
 
@@ -15,7 +15,7 @@ export default class SpellbookWidget extends Widget {
     constructor(props) {
         super(props);
         // Here is where you write the tutorial!!!
-        this.tutorialText = <Text>This widget allows you to manage various spells each class can utilize during play. There is a slot to mark the uses and variables involved with each spell. More information on spells may be found <a href="https://roll20.net/compendium/dnd5e/Spells#content" target="blank">HERE</a> </Text>;
+        this.tutorialText = <Text>This widget allows you to manage various spells each class can utilize during play. There is a slot to mark the uses and variables involved with each spell. More information on spells may be found <a href="https://roll20.net/compendium/dnd5e/Spells#content" target="blank">HERE</a> </Text>
         this.title = "Spellbook Widget";
         this.state = {
             spellList: [],
@@ -27,50 +27,60 @@ export default class SpellbookWidget extends Widget {
         this.classState = props.widgetState.classState
 
         this.apiURL = props.widgetState.apiURL
+
+        this.initializeIfNew();
+        this.charClass = this.getImportedValue("charClass");
+    }
+
+    initialize = () => {
+        this.setWidgetState({
+            spellList: [],
+            sortBy: "Level",
+            ritualList: []
+        })
+
+        this.loadSpells();
     }
 
     handleChange(event) {
         this.setState({ value: event.target.value });
     }
 
-    // userClass/this.props.userClass MUST BE THE CLASS NAME IN ALL LOWERCASE OR THIS DOES NOT WORK
-    componentDidMount() {
-        this.spellRender(this.classState);
+    beforeImporting=(nextImportState)=>{
+        if(nextImportState["charClass"]!=this.getImportedValue("charClass")){
+            console.log("HELLO WORLD")
+            this.charClass = nextImportState["charClass"];
+            this.loadSpells();
+        }
     }
 
-    spellRender = (classState) => {
-        if (this.state.isAPICalling) {
-            return null;
-        }
-        else {
-            let spellURL = this.apiURL + classState;
-            axios.get(spellURL).then((spellList) => {
-                if (this.state.value == "Alphabetical") { this.setState({ spellList: spellList.data }) }
-                else if (this.state.value == "Level") {
+    loadSpells = () => {
+            API.getSpells(this.charClass).then(spellList=>{
+                console.log(spellList);
+                if (this.props.widgetState.sortBy == "Alphabetical") {
+                    this.setWidgetState({ spellList })
+                } else if (this.props.widgetState.sortBy == "Level") {
                     this.levelSort(spellList);
                 }
                 else if (this.state.value == "Ritual") {
                     this.ritualSort(spellList)
                 }
-            }).catch(err => {
-                console.error(err);
             })
-        }
     }
 
     handleChange = (event) => {
-        this.setState({ value: event.target.value });
-        this.spellRender(this.classState);
+        this.setWidgetState({ value: event.target.value });
+        this.loadSpells();
     }
 
     ritualSort = (spellList) => {
-        let ritualList = spellList.data.filter(spell => spell.ritual == true)
-        this.setState({ spellList: ritualList });
+        let ritualList = spellList.filter(spell => spell.ritual == true)
+        this.setWidgetState({ spellList: ritualList });
     }
 
     levelSort = (spellList) => {
-        spellList = spellList.data.sort(this.compareLevels);
-        this.setState({ spellList: spellList });
+        spellList = spellList.sort(this.compareLevels);
+        this.setWidgetState({ spellList: spellList });
     }
 
     compareLevels = (a, b) => {
@@ -86,7 +96,8 @@ export default class SpellbookWidget extends Widget {
     }
 
     renderSpells() {
-        return (this.state.spellList.map(spell => (
+        let spells = this.props.widgetState.spellList || [];
+        return (spells.map(spell => (
             <SpellCard
                 setGlobalState={this.props.setGlobalState}
                 name={spell.name}
@@ -100,6 +111,10 @@ export default class SpellbookWidget extends Widget {
                 description={spell.desc}
             />
         )))
+    }
+
+    beforeUpdating(){
+
     }
 
     renderPanel = () => {

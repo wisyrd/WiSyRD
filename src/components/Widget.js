@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Flex, Box, Heading, Text, Button } from "rebass";
-import TutorialButton from "./TutorialButton";
+import TutorialButton from "./widgets/parts/TutorialButton";
+import _ from "lodash";
 
 export default class Widget extends Component {
     
@@ -12,6 +13,9 @@ export default class Widget extends Component {
     
         this.id = props.id;
 
+        this.stagedChanges = {};
+        this.stagedExportChanges = {};
+
         let importedId = this.props.globalState[this.id].importedId;
         if(importedId!==undefined&&importedId!==null)
             this.importedId = importedId;
@@ -21,8 +25,45 @@ export default class Widget extends Component {
 
     // Updates this widget's state with the given changes
     setWidgetState=(widgetStateChanges)=> {
-        let newWidgetState = {...this.props.widgetState, ...widgetStateChanges};
+        this.stagedChanges = {...this.stagedChanges, ...widgetStateChanges}
+
+        let newWidgetState = {...this.props.widgetState, ...this.stagedChanges};
         this.props.setGlobalState({[this.props.id]: newWidgetState});
+    }
+
+    componentDidUpdate=()=>{
+        this.stagedChanges = {};
+        this.stagedExportChanges = {};
+    }
+
+    shouldComponentUpdate=(nextProps)=>{
+
+        // Update component if widget state changes
+        if(!_.isEqual(nextProps.widgetState, this.props.widgetState)){
+            this.beforeUpdating(nextProps.widgetState);
+            return true;
+        }
+
+        // Update component if imported values change
+        if(this.props.widgetState.importedId){
+            if(!_.isEqual(nextProps.globalState[nextProps.widgetState.importedId].exports,
+                         this.props.globalState[this.props.widgetState.importedId].exports)){
+                this.beforeImporting(nextProps.globalState[nextProps.widgetState.importedId].exports);
+                this.beforeUpdating(nextProps.widgetState);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    // OVERRIDE THIS
+    beforeImporting=(nextImportState)=>{
+        return;
+    }
+
+    // OVERRIDE THIS
+    beforeUpdating=(nextWidgetState)=>{
+        return;
     }
 
     // Returns the value at key from the exports field of the imported widget
@@ -35,12 +76,10 @@ export default class Widget extends Component {
 
     // Sets the value at key in the exports field of this widget
     setExportedValue(key, value) {
-        let newExports;
+        const oldExports = this.props.widgetState.exports || {};
+        this.stagedExportChanges = {...this.stagedExportChanges, [key]: value}
 
-        if(this.props.globalState[this.props.id].exports)
-            newExports = {...this.props.globalState[this.props.id].exports, [key]: value};
-        else
-            newExports = {[key]: value};
+        let newExports = {...oldExports, ...this.stagedExportChanges};
         
         this.setWidgetState({exports: newExports});
     }
@@ -61,6 +100,20 @@ export default class Widget extends Component {
         return this.props.widgetState.layout.h;
     }
 
+    initializeIfNew() {
+        console.log(this.props.widgetState);
+        if(!this.props.widgetState.hasBeenInitialized){
+            this.initialize();
+            this.setWidgetState({hasBeenInitialized: true});
+        }
+    }
+
+    // Override this if necessary
+    initialize() {
+        return;
+    }
+
+    // Don't touch this!
     render=()=>{
         return (
             <Box

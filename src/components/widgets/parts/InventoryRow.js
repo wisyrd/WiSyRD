@@ -4,27 +4,27 @@ import { Input, } from '@rebass/forms'
 import { BiCrosshair } from "react-icons/bi";
 import { FaBalanceScaleRight, FaHashtag } from 'react-icons/fa'
 
-export default function InventoryRow() {
+export default function InventoryRow(props) {
     return (
         <Box variant='inventoryItem'>
             <Box variant='tableItem'>
                 <Input
-                    id='itemName'
-                    type='integer'
+                    type='text'
                     textAlign='center'
-                    placeholder='Item Name' />
+                    placeholder='Item Name'
+                    onChange={event=>props.handleUpdate(event, "itemname", props.rowNumber)} />
             </Box>
             <Box>
                 <Flex className="invBox">
                     <Box variant='tableQT'>
                         <Flex>
                             <Box variant='iconBox'><FaHashtag /></Box>
-                            <Box varient='itemBox'>
+                            <Box variant='itemBox'>
                                 <Input
-                                    id='quantity'
-                                    type='integer'
+                                    type='number'
                                     textAlign='center'
-                                    placeholder='#' />
+                                    placeholder='#'
+                                    onChange={event=>props.handleUpdate(event, "itemquantity", props.rowNumber)} />
                             </Box>
                         </Flex>
                     </Box>
@@ -33,10 +33,10 @@ export default function InventoryRow() {
                             <Box variant='iconBox'><BiCrosshair /></Box>
                             <Box variant='itemBox'>
                                 <Input
-                                    id='location'
-                                    type='integer'
+                                    type='text'
                                     textAlign='center'
-                                    placeholder='#' />
+                                    placeholder='#'
+                                    onChange={event=>props.handleUpdate(event, "itemlocation", props.rowNumber)} />
                             </Box>
                         </Flex>
                     </Box>
@@ -45,10 +45,10 @@ export default function InventoryRow() {
                             <Box variant='iconBox'><FaBalanceScaleRight /></Box>
                             <Box variant='itemBox'>
                                 <Input
-                                    id='weight'
-                                    type='integer'
+                                    type='number'
                                     textAlign='center'
-                                    placeholder='#' />
+                                    placeholder='#'
+                                    onChange={event=>props.handleUpdate(event, "itemweight", props.rowNumber)} />
                             </Box>
                         </Flex>
                     </Box>
