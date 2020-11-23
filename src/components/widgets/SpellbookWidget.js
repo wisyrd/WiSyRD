@@ -15,7 +15,7 @@ export default class SpellbookWidget extends Widget {
     constructor(props) {
         super(props);
         // Here is where you write the tutorial!!!
-        this.tutorialText = <Text>This widget allows you to manage various spells each class can utilize during play. There is a slot to mark the uses and variables involved with each spell. More information on spells may be found <a href="https://roll20.net/compendium/dnd5e/Spells#content" target="blank">HERE</a> </Text>;
+        this.tutorialText = <Text>This widget allows you to manage various spells each class can utilize during play. There is a slot to mark the uses and variables involved with each spell. More information on spells may be found <a href="https://roll20.net/compendium/dnd5e/Spells#content" target="blank">HERE</a> </Text>
         this.title = "Spellbook Widget";
         this.state = {
             spellList: [],
