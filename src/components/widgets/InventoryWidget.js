@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Flex, Button, Heading, Text } from 'rebass';
-import { Input, Label } from "@rebass/forms";
-import { Tiles } from '@rebass/layout';
 import Widget from '../Widget';
+import { Box, Flex, Button, Text } from 'rebass';
+import { Input } from "@rebass/forms";
+import { Tiles } from '@rebass/layout';
 import InventoryRow from './parts/InventoryRow';
 
 
@@ -13,15 +13,35 @@ export default class InventoryWidget extends Widget {
         super(props);
         this.title = "Inventory widget";
         this.widgetType = "Inventory-widget"
-        this.state = { rowArray: [0] }
         this.tutorialText = <Text>Items and equipment held on person may be tracked here. Click the "+" in order to add a new row to insert a new item. Weight and incumberence may be tracked via this widget as well if desired. Amount of currency on hand and what denominations of it possessed may also be tracked using the inputs in the top portion of the widget. More in depth information about inventory may be found <a href="https://www.dndbeyond.com/sources/basic-rules/equipment" target="blank">HERE</a></Text>
+
+        this.initializeIfNew();
     }
+    
+    initialize(){
+        this.setWidgetState({itemArray: [0], weight: 50, capacity: 250});
+    }
+
     addRow() {
 
-        this.state.rowArray.push(0);
-        this.setState(this.state)
+        const oldItemArray = this.props.widgetState.itemArray || [];
+        const numItems = oldItemArray.length;
+        let newItemArray = [...oldItemArray];
+
+        newItemArray.push(numItems);
+        this.setWidgetState({itemArray: newItemArray})
     }
+
+    handleRowUpdate=(event, field, rowNumber)=> {
+        this.setWidgetState({[`${field}${rowNumber}`]: event.target.value});
+      }
+
+    handleUpdate=(event, field)=>{
+        this.setWidgetState({[field]: event.target.value});
+    }
+
     renderPanel = () => {
+        let array = this.props.widgetState.itemArray || [];
         return (<>
             <Box variant='currencyBackgroundBox'>
 
@@ -31,48 +51,48 @@ export default class InventoryWidget extends Widget {
                         <Box variant="currencyBox">
                             <Text variant="cardHeaderSmall">Pp</Text>
                             <Input
-                                id='platinum'
                                 name="pp"
-                                type="text"
+                                type="number"
                                 placeholder='Pp'
+                                onChange={event=>this.handleUpdate(event, "pp")}
                             />
                         </Box>
 
                         <Box variant="currencyBox">
                             <Text variant="cardHeaderSmall">Gp</Text>
                             <Input
-                                id='gold'
                                 name="gp"
-                                type="text"
+                                type="number"
                                 placeholder='Gp'
+                                onChange={event=>this.handleUpdate(event, "gp")}
                             />
                         </Box>
 
                         <Box variant="currencyBox">
                             <Text variant="cardHeaderSmall">Sp</Text>
                             <Input
-                                id='silver'
                                 name="sp"
-                                type="text"
+                                type="number"
                                 placeholder='Sp'
+                                onChange={event=>this.handleUpdate(event, "sp")}
                             /></Box>
 
                         <Box variant="currencyBox">
                             <Text variant="cardHeaderSmall">Cp</Text>
                             <Input
-                                id='copper'
                                 name="cp"
-                                type="text"
+                                type="number"
                                 placeholder='Cp'
+                                onChange={event=>this.handleUpdate(event, "cp")}
                             /></Box>
 
                         <Box variant="currencyBox">
                             <Text variant="cardHeaderSmall">Ep</Text>
                             <Input
-                                id='electrum'
                                 name="ep"
-                                type="text"
-                                placeholder='Ep' /></Box>
+                                type="number"
+                                placeholder='Ep'
+                                onChange={event=>this.handleUpdate(event, "pp")} /></Box>
                     </Flex>
                 </Box>
             </Box>
@@ -82,11 +102,11 @@ export default class InventoryWidget extends Widget {
                 <Tiles columns={[2]}>
                     <Box variant="attributesBox">
                         <Text variant="attributesHeader">Weight</Text>
-                        <Text variant="attributesDetails">50</Text>
+                        <Text variant="attributesDetails">{this.props.widgetState.weight}</Text>
                     </Box>
                     <Box variant="attributesBox">
                         <Text variant="attributesHeader">Capacity</Text>
-                        <Text variant="attributesDetails">50</Text>
+                        <Text variant="attributesDetails">{this.props.widgetState.capacity}</Text>
                     </Box>
                 </Tiles>
             </Box>
@@ -94,11 +114,11 @@ export default class InventoryWidget extends Widget {
 
 
             <Box variant='fullWidthBox'>
-                {this.state.rowArray.map(row => {
-                    return <InventoryRow />
+                {array.map(row => {
+                    return <InventoryRow handleUpdate={this.handleRowUpdate} rowNumber={row} />
                 })}
 
-                <Button onClick={() => { this.addRow() }}>
+                <Button onClick={() => { this.addRow() }} style={{margin:"0 auto"}}>
                     +
     </Button>
             </Box>
