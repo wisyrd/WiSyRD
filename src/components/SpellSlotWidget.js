@@ -12,7 +12,7 @@ export default class SpellSlotWidget extends Widget {
         this.widgetType = "spell-slot-widget";
         // NEEDS TO IMPORT BOTH THE CLASS AND LEVEL OF THE USER HERE
         this.state = {levelState: 1, classState: "warlock"}
-        this.tutorialText = <Text><a href="" target="blank">Spell Slot Tutorial</a></Text>;
+        this.tutorialText = <Text>This widget can be used to track spell slots, which indicate how many times a spell may be used. More in depth information on spell slots may be found<a href="https://roll20.net/compendium/dnd5e/Spells#content" target="blank">HERE</a></Text>;
     }
     
     showSlots() {
