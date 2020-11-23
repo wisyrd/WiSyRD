@@ -33,6 +33,9 @@ export default class AttributesWidget extends Widget {
         this.setExportedValue("intmod", 0)
         this.setExportedValue("wismod", 0)
         this.setExportedValue("chamod", 0)
+
+        // Placeholder
+        this.setExportedValue("prof", 2);
     }
 
 

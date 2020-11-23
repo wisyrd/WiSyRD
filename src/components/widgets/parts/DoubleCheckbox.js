@@ -4,17 +4,23 @@ import uncheckedcheckbox from '../../../images/unchecked-checkbox.png';
 import checkedcheckbox from '../../../images/checked-checkbox.png';
 import starcheckbox from '../../../images/star-checkbox.jpg'
 
-export default function DoubleCheckbox() {
+export default function DoubleCheckbox(props) {
     // NO STATE IMPORTING NECESSARY
 
     const [checkboxState, setCheckboxState] = useState(uncheckedcheckbox);
 
+    let onChange = props.onChange;
+
+    if(!onChange){
+        onChange = function(){};
+    }
+
     function indicateState(event) {
-        if (checkboxState == uncheckedcheckbox) { setCheckboxState(checkedcheckbox) }
+        if (checkboxState == uncheckedcheckbox) { setCheckboxState(checkedcheckbox); onChange(1) }
 
-        else if (checkboxState == checkedcheckbox) { setCheckboxState(starcheckbox) }
+        else if (checkboxState == checkedcheckbox) { setCheckboxState(starcheckbox); onChange(2) }
 
-        else if (checkboxState == starcheckbox) { setCheckboxState(uncheckedcheckbox) }
+        else if (checkboxState == starcheckbox) { setCheckboxState(uncheckedcheckbox); onChange(0) }
     }
 
         return (
