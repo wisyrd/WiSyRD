@@ -92,6 +92,21 @@ newSheets:function(newSheet){
     }).catch(err=>{
       return err;
     })
+  },
+
+  loadSheet:function(sheetId){
+    return fetch(`${apiURL}sheets/${sheetId}`).then(res=>{
+      console.log(res);
+      switch(res.status){
+        case 200:
+          return res.json();
+        default:
+          return null;
+      }
+    }).catch(err=>{
+      console.log(err);
+      return err;
+    })
   }
 }
 

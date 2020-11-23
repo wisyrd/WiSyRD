@@ -101,7 +101,6 @@ export default class Widget extends Component {
     }
 
     initializeIfNew() {
-        console.log(this.props.widgetState);
         if(!this.props.widgetState.hasBeenInitialized){
             this.initialize();
             this.setWidgetState({hasBeenInitialized: true});
