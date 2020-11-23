@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Flex, Box, Heading, Text, Button } from "rebass";
-import TutorialButton from "./TutorialButton";
+import TutorialButton from "./widgets/parts/TutorialButton";
+import _ from "lodash";
 
 export default class Widget extends Component {
     
@@ -11,27 +12,118 @@ export default class Widget extends Component {
         super(props);
     
         this.id = props.id;
+
+        this.stagedChanges = {};
+        this.stagedExportChanges = {};
+
+        let importedId = this.props.globalState[this.id].importedId;
+        if(importedId!==undefined&&importedId!==null)
+            this.importedId = importedId;
+        else
+            this.importedId = -1;
     }
 
+    // Updates this widget's state with the given changes
     setWidgetState=(widgetStateChanges)=> {
-        let newWidgetState = {...this.props.widgetState};
-        for (const key in widgetStateChanges) {
-            newWidgetState[key] = widgetStateChanges[key];
-        }
-        console.log({[this.props.id]: newWidgetState});
+        this.stagedChanges = {...this.stagedChanges, ...widgetStateChanges}
+
+        let newWidgetState = {...this.props.widgetState, ...this.stagedChanges};
         this.props.setGlobalState({[this.props.id]: newWidgetState});
     }
 
+    componentDidUpdate=()=>{
+        this.stagedChanges = {};
+        this.stagedExportChanges = {};
+    }
+
+    shouldComponentUpdate=(nextProps)=>{
+
+        // Update component if widget state changes
+        if(!_.isEqual(nextProps.widgetState, this.props.widgetState)){
+            this.beforeUpdating(nextProps.widgetState);
+            return true;
+        }
+
+        // Update component if imported values change
+        if(this.props.widgetState.importedId){
+            if(!_.isEqual(nextProps.globalState[nextProps.widgetState.importedId].exports,
+                         this.props.globalState[this.props.widgetState.importedId].exports)){
+                this.beforeImporting(nextProps.globalState[nextProps.widgetState.importedId].exports);
+                this.beforeUpdating(nextProps.widgetState);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    // OVERRIDE THIS
+    beforeImporting=(nextImportState)=>{
+        return;
+    }
+
+    // OVERRIDE THIS
+    beforeUpdating=(nextWidgetState)=>{
+        return;
+    }
+
+    // Returns the value at key from the exports field of the imported widget
+    getImportedValue(key) {
+        if(this.importedId>=0)
+            return this.props.globalState[this.importedId].exports[key];
+        else
+            return null;
+    }
+
+    // Sets the value at key in the exports field of this widget
+    setExportedValue(key, value) {
+        const oldExports = this.props.widgetState.exports || {};
+        this.stagedExportChanges = {...this.stagedExportChanges, [key]: value}
+
+        let newExports = {...oldExports, ...this.stagedExportChanges};
+        
+        this.setWidgetState({exports: newExports});
+    }
+
+    // Sets the import widget to be the given widgetId
+    setImportWidget(widgetId) {
+        this.importedId = widgetId;
+        this.setWidgetState({importedId: widgetId});
+    }
+
+    setHeight(height) {
+        let newLayout = {...this.props.widgetState.layout}
+        newLayout.h = height;
+        this.setWidgetState({layout: newLayout});
+    }
+
+    getHeight() {
+        return this.props.widgetState.layout.h;
+    }
+
+    initializeIfNew() {
+        if(!this.props.widgetState.hasBeenInitialized){
+            this.initialize();
+            this.setWidgetState({hasBeenInitialized: true});
+        }
+    }
+
+    // Override this if necessary
+    initialize() {
+        return;
+    }
+
+    // Don't touch this!
     render=()=>{
         return (
             <Box
                 variant='widgetBox'
                 className={`widget ${this.widgetType} ${this.props.className?this.props.className:""}`}
-                height={(this.props.widgetState.layout.h * 46)-8}
-                width={358}>
-                <Flex bg="primary" color="white" px={2}>
+                height="100%"
+                width={358}
+                overflow="hidden">
+                <Flex variant='widgetTitle'>
                     <TutorialButton setGlobalState={this.props.setGlobalState} tutorialText={this.tutorialText}/>
-                    <Heading className="dragHandle"width={3/4}>{this.id} {this.title}</Heading>
+                    <Heading variant='widgetHeader' className="dragHandle">{this.id} {this.title}</Heading>
                 </Flex>
                 <Box p={1}>
                     {this.renderPanel()}
@@ -40,20 +132,11 @@ export default class Widget extends Component {
         )
     }
 
-    handleChangeHeight=()=>{
-        this.setWidgetState({layout: {
-            x: this.props.widgetState.layout.x,
-            y: this.props.widgetState.layout.y,
-            w: 1,
-            h: 2
-        }});
-    }
 
     // OVERRIDE THIS
     renderPanel=()=>{
         return (<>
             <Heading>YOU FORGOT TO OVERRIDE THE renderPanel() METHOD</Heading>
-            <Button onClick={()=>this.handleChangeHeight()}>Biggen</Button>
             <Text>kajsdfpqiwejfpiasdnfpiawefpiasenfpiasejnfpaseijfpaisefias</Text>
             <Text>kajsdfpqiwejfpiasdnfpiawefpiasenfpiasejnfpaseijfpaisefias</Text>
             <Text>kajsdfpqiwejfpiasdnfpiawefpiasenfpiasejnfpaseijfpaisefias</Text>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Text, Button, Box } from 'rebass'
-import tutorialbutton from '../images/tutorial-button.png';
+import { FiHelpCircle } from 'react-icons/fi'
 
 export default function TutorialButton(props) {
-    const [pictureState, setPictureState] = useState(tutorialbutton);
+
 
     //On click, open the specific tutorial...
 
@@ -13,15 +13,18 @@ export default function TutorialButton(props) {
             {
                 show: true,
                 contents:
-                    (<Box className="modal-content" bg="white">
-                        <Text>{props.tutorialText}</Text>
-                    </Box>)
+                        <Box variant='tutorialModal' width="100%" className="modal-content">
+                            <Text variant='modalText'>{props.tutorialText}</Text>
+                        </Box>
             }
         })
     }
     return (
             <Button className="tutorial-button" onClick={showModal}>
-                <img src={pictureState} alt="tutorial-button" id="tutorial-button" width="50" height="50" />
+                <Text variant='tutorialIcon'>
+                    <FiHelpCircle />
+                </Text>
+                
             </Button>
     )
 }
