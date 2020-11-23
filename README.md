@@ -4,7 +4,7 @@
 
 [WiSyRD](https://wisyrd.herokuapp.com/)
 
-![WiSyRD](public\wisyrdText.svg)
+![Imgur](https://i.imgur.com/YWSE41s.png)
 
 ## Description
 
@@ -25,23 +25,23 @@ The widgets speak to each other, too! Modifying your character's attributes will
 
 [WiSyRD](https://wisyrd.herokuapp.com/) is the login page for WiSyRD. It should look like the following screenshot:
 
-![Login](public\login.png)
+![Login](https://i.imgur.com/oah0fc7.png)
 
 Now, if this is your first time here, you'll want to register a new account by clicking this button on that login page:
 
-![Registration-Button](public\Registration-Button.png)
+![Registration-Button](https://i.imgur.com/QJ5Jc5k.png)
 
 That'll take you to the registration page, as seen below:
 
-![New-Account-Page](public\new-account.png)
+![New-Account-Page](https://i.imgur.com/a0ADI4F.png)
 
 To make a new account, we just need a username, email, and password. Once you fill out the necessary fields, hit the "create account" button, and it'll take you back to the login page where you should input your email and password. That will take you to the user dashboard which will have a list of all of your characters and a link to each of their associated widgets. It will look like my dashboard below when populated.
 
-![User-Dashboard](public\user-dashboard.png)
+![User-Dashboard](https://i.imgur.com/qa30ovW.png)
 
 Whenever you want to make a new character, just hit the "New Character" button at the bottom. But hitting the "Select Character" link will take you to where the magic happens... the widgets. At first glance, the widgets page is a little overwhelming, I understand. But the widgets are really straightforward to use. They each come with their own tutorial for how to use. Just click the button in the upper-left corner of a widget to open a tutorial.
 
-![Tutorial-Button](public\Tutorial-Button.png)
+![Tutorial-Button](https://i.imgur.com/AOzMT2o.png)
 
 The real great thing about the widgets is that they can be dragged and dropped wherever you want. Grab onto the top bar of a widget and then move it around. It'll snap into place when you release your mouse/index finger because WiSyRD is mobile-friendly. 
 
