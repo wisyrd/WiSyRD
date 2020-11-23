@@ -23,7 +23,7 @@ export default class AttacksWidget extends Widget {
     const oldAttackArray = this.props.widgetState.attackArray || [];
     const numAttacks = oldAttackArray.length;
     let newAttackArray = [...oldAttackArray];
-    
+
     newAttackArray.push(numAttacks);
     this.setWidgetState({attackArray: newAttackArray})
   }
@@ -33,7 +33,6 @@ export default class AttacksWidget extends Widget {
   }
 
   renderPanel = () => {
-    console.log(this.props.widgetState);
     let array = this.props.widgetState.attackArray || [];
     return (
       <>
