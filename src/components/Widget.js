@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Flex, Box, Heading, Text, Button } from "rebass";
 import TutorialButton from "./widgets/parts/TutorialButton";
+import _ from "lodash";
 
 export default class Widget extends Component {
     
@@ -33,6 +34,36 @@ export default class Widget extends Component {
     componentDidUpdate=()=>{
         this.stagedChanges = {};
         this.stagedExportChanges = {};
+    }
+
+    shouldComponentUpdate=(nextProps)=>{
+
+        // Update component if widget state changes
+        if(!_.isEqual(nextProps.widgetState, this.props.widgetState)){
+            this.beforeUpdating(nextProps.widgetState);
+            return true;
+        }
+
+        // Update component if imported values change
+        if(this.props.widgetState.importedId){
+            if(!_.isEqual(nextProps.globalState[nextProps.widgetState.importedId].exports,
+                         this.props.globalState[this.props.widgetState.importedId].exports)){
+                this.beforeImporting(nextProps.globalState[nextProps.widgetState.importedId].exports);
+                this.beforeUpdating(nextProps.widgetState);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    // OVERRIDE THIS
+    beforeImporting=(nextImportState)=>{
+        return;
+    }
+
+    // OVERRIDE THIS
+    beforeUpdating=(nextWidgetState)=>{
+        return;
     }
 
     // Returns the value at key from the exports field of the imported widget
