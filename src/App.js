@@ -8,6 +8,7 @@ import theme from './Theme'
 import Registrationpage from './pages/registrationpage';
 import UserDashboard from './pages/UserDashboard';
 import ErrorPage from './pages/ErrorPage';
+import SheetPage from './pages/SheetPage';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Loginpage} />
           <Route exact path="/register" component={Registrationpage} />
-          <Route path="/sheets/:id" component={WidgetRenderer} />
+          <Route path="/sheets/:id" component={SheetPage} />
           <Route path="/user" component={UserDashboard} />
           <Route component={ErrorPage} />
         </Switch>
