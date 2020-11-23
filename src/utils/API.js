@@ -34,7 +34,18 @@ create:function(userData){
 
    },
    body:(qs.stringify(userData))
-}).then(res=> {console.log(res);return res.json()}).then(data=>{return (data);}).catch(err=>null)},
+}).then(res=> {
+  console.log(res);
+  switch (res.status) {
+    case 200:
+    case 204:
+      return res.json() 
+    case 400:
+      throw new Error(res.body); 
+    default:
+      throw new Error(res.body); 
+  };
+}).catch(err=>{console.error(err);return err})},
 
 getSheets:function(userID){
   return fetch(`${apiURL}sheets/ownedby/${userID}`, {

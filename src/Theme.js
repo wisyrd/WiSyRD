@@ -143,14 +143,24 @@ export default {
             fontWeight: 'bold',
             fontFamily: 'Metamorphous',
             color:'#9c4122',
-            p: '2%'
+            p: '1%'
         },
         ingestionText: {
             fontSize: 2,
             fontWeight: 'bold',
             fontFamily: 'Metamorphous',
             color:'#9c4122',
-            p: '2%'
+            p: '1%'
+        },
+        linkText: {
+            fontFamily: 'Metamorphous',
+            fontSize: 2,
+            fontWeight:'bold',
+            color:'#9c4122',
+            textAlign:'center',
+            m: '2%',
+            p: '2%',
+
         }
     },
     variants: {
@@ -191,7 +201,6 @@ export default {
             borderStyle: 'solid',
             borderColor: '#ad9d82',
             borderRadius: 8,
-
         },
         statsBox: {
             bg:'#ebe1bd',
@@ -394,7 +403,7 @@ export default {
         frontEndForm: {
             p: 1,
             m: '5%',
-            width: '25%',
+            width: '40%',
             fontFamily: 'Metamorphous',
             fontSize: 1,
             fontWeight:'bold',
@@ -417,6 +426,29 @@ export default {
             fontWeight: 'regular',
             fontSize: 2,
             width: '100%'
+        },
+        dashboard: {
+            bg: '#ebe1bd',
+            width: '100%',
+            textAlign: 'center'
+        },
+        characterBox: {
+                bg:'#ebe1bd',
+                textAlign: 'center',
+                width: '30%', 
+                borderWidth: '3px',
+                borderStyle: 'solid',
+                borderColor: '#ad9d82',
+                borderRadius: 8,
+                m: '10px'
+        },
+        newCharacter: {
+            m: '10px',
+            p: '10px'
+        },
+        dashboardCharacter: {
+            textAlign: 'center',
+            p: '10px'
         }
     }
 }

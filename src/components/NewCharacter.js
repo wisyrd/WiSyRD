@@ -1,5 +1,6 @@
 import { Box, Heading, Text, Button } from 'rebass';
 import React, { Component } from 'react'
+import { Input } from '@rebass/forms'
 import API from '../utils/API'
 
 //Ask for name and class, send the info to the API to create a new character with the name and class keys, refresh the page to show the new character
@@ -76,18 +77,18 @@ export default class NewCharacter extends Component {
                         top: "50%",
                         transform: "translate(-50%, -50%)"
                         }}>
-                    <Box className="modal"
+                    <Box className="modal" variant='halfWidthBox'
                         style={{
                           position: "fixed",
                           zIndex: "100000",
                           left: "50%",
                           top: "50%",
                           transform: "translate(-50%, -50%)",
-                          backgroundColor: "white"}}>
-                            <Heading>Create New Character</Heading>
+                          backgroundColor: "#ebe1bd"}}>
+                            <Heading variant='cardHeaderSmall'>Create New Character</Heading>
                                 <form onSubmit={this.formSubmit}>
-                                    <input onChange = {this.inputChange} value={this.state.characterName} type='text' name='characterName' placeholder='Name' /> 
-                                    <input type='submit' value='Create!' /> 
+                                    <Input onChange = {this.inputChange} value={this.state.characterName} type='text' name='characterName' placeholder='Name' /> 
+                                    <Button type='submit' value='Create!'>Create</Button>
                                 </form>
                     </Box>
             </Box>
