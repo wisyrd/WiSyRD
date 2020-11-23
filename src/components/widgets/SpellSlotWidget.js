@@ -64,6 +64,8 @@ const slotList = {
 
 export default class SpellSlotWidget extends Widget {
 
+    // TODO: Handle resizing on update
+
     constructor(props){
         super(props);
         this.title = "Spell Slot Widget";
@@ -84,8 +86,11 @@ export default class SpellSlotWidget extends Widget {
 
 
     showSlots() {
+        this.charClass = this.getImportedValue("charClass");
+        this.charLevel = this.getImportedValue("charLevel");
+
            let casterType = slotList[this.charClass];
-           let slotArray;
+           let slotArray = [];
            switch(casterType){
                case "full":  slotArray = slotList.spells[                             this.charLevel       ]; break;
                case "half":  slotArray = slotList.spells[                  Math.floor(this.charLevel/2)    ]; break;

@@ -64,7 +64,21 @@ newSheets:function(newSheet){
 
   },
   body:(qs.stringify(newSheet))
-  }).then(res=> {console.log(res); return res.json()}).then(data=>{return (data);}).catch(err=>null)}
+  }).then(res=> {console.log(res); return res.json()}).then(data=>{return (data);}).catch(err=>null)},
+
+  getSpells:function(charClass) {
+    return fetch(`${apiURL}spells/${charClass}`).then(res => {
+      console.log(res);
+      switch(res.status){
+        case 200:
+          return res.json();
+        default:
+          return [];
+      }
+    }).catch(err => {
+        console.error(err);
+    })
+  }
 }
 
 module.exports = API;
