@@ -1,6 +1,6 @@
 import React from "react";
 import Widget from "../Widget";
-import {Text, Button} from "rebass";
+import {Text, Button, Box} from "rebass";
 
 import AttackRow from './parts/AttackRow';
 
@@ -39,7 +39,9 @@ export default class AttacksWidget extends Widget {
         {array.map(row => {
           return <AttackRow rowNumber={row} handleUpdate={this.handleUpdate} />
         })}
-        <Button variant="secondary" onClick={() => { this.addRow() }}>+</Button>
+        <Box width="100%">
+          <Button variant="secondary" onClick={() => { this.addRow() }} style={{margin: "0 auto", display: "block"}}>+</Button>
+        </Box>
       </>
     );
   }
