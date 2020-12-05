@@ -45,7 +45,9 @@ export default function Loginpage() {
 
     const formSubmit = event => {
         event.preventDefault();
-        API.login({ email: loginFormState.email, password: loginFormState.password }).then(newToken => {
+        let lowercaseEmail = loginFormState.email.toLowerCase();
+        console.log(lowercaseEmail)
+        API.login({ email: lowercaseEmail, password: loginFormState.password }).then(newToken => {
             console.log(newToken);
             sessionStorage.setItem("token", newToken.token)
             API.getProfile(newToken.token).then(profileData => {
