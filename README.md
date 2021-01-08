@@ -10,7 +10,7 @@
 
 Dungeons and Dragons is great, but the amount of information needed to make a character and run a campaign is unwieldy. Character sheets are useful for writing down all of that info but their large size and somewhat odd formatting can make finding the necessary info during a critical roll impossible. Enter WiSyRD: Widget Systems for Roleplaying Data. WiSyRD replaces the cluttered character sheet with a set of movable widgets. If you don't want to stare at the super-long spells list while in a non-combat stretch of the campaign, you can move it out of sight. You're in control of where your character's information is.
 
-The widgets speak to each other, too! Modifying your character's attributes will automatically modify your skills. Increasing your level as a magic class will instantly add the correct number of spell slots. WiSyRD has all the useful functionality of D&D Beyond and Roll20's character sheets, but with a level of customizability greater than either system. Head to [WiSyRD](https://wisyrd.herokuapp.com/) to get started.
+The widgets speak to each other, too! Modifying your character's attributes will automatically modify your skills. Increasing your level as a magic class will instantly add the correct number of spell slots. WiSyRD has all the useful functionality of D&D Beyond and Roll20's character sheets, but with a level of customizability greater than either system. Find out the power of WiSyRD by opening the app here: (https://wisyrd.herokuapp.com/).
 
 ## Table of Contents
 
